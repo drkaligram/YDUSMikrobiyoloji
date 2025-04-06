@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YDUS Mikrobiyoloji Kitap Tasarımı - Bölüm 1: İmmünoloji (Detaylı)</title>
+    <style>
+        /* Google Fonts: Montserrat (Başlıklar), Open Sans (Metin) */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
+        /* --- Temel Ayarlar ve Değişkenler --- */
+        :root {
+            --font-primary: 'Open Sans', sans-serif;
+            --font-headings: 'Montserrat', sans-serif;
+            --color-text: #2c3e50; /* Ana metin */
+            --color-primary: #1A2980; /* Koyu Mavi (Başlıklar, Vurgu) */
+            --color-secondary: #26D0CE; /* Turkuaz (Vurgu) */
+            --color-muted: #869ab8; /* Açık Mavimsi Gri (Header/Footer, Alt Yazı) */
+            --color-background: #f8f9fa; /* Sayfa dışı arka plan (daha açık) */
+            --color-border: #e2e8f0; /* Yumuşak kenarlık rengi */
+            --page-width: 210mm;
+            --page-height-min: 297mm;
+            --base-font-size: 11.7pt;
+            --base-line-height: 1.75;
+            --spacing-unit: 1em; /* Dikey boşluklar için temel birim */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-background);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; /* Sayfalar arası boşluk */
+            color: var(--color-text);
+            font-size: var(--base-font-size);
+            line-height: var(--base-line-height);
+        }
+
+        /* --- Ortak Sayfa Stili --- */
+        .page {
+            background-color: #ffffff;
+            width: var(--page-width);
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+/* --- KAPAK SAYFASI (Geliştirilmiş) --- */
+
+/* CSS Değişkenleri (Bunları kendi renkleriniz ve ayarlarınızla tanımlamanız gerekir) */
+:root {
+  --page-height-min: 100vh; /* Veya belirli bir A4 yüksekliği: 297mm; */
+  --color-primary: #4a00e0;  /* Örnek Renk 1 (Mor) */
+  --color-secondary: #8e2de2; /* Örnek Renk 2 (Leylak) */
+  --font-headings: 'Montserrat', sans-serif; /* Örnek Başlık Fontu */
+  --font-body: 'Lato', sans-serif; /* Örnek Gövde Fontu */
+  --spacing-unit: 8px; /* Boşluk Birimi */
+}
+
+@keyframes subtleGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes subtleRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(10deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.cover-page {
+  min-height: var(--page-height-min);
+  padding: 50mm 45mm; /* Üst/Alt padding biraz daha fazla */
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+  background-size: 300% 300%; /* Daha yumuşak geçiş için büyütüldü */
+  animation: subtleGradientShift 28s ease infinite alternate; /* Yavaşlatıldı */
+  color: #ffffff;
+  display: flex; /* Flexbox ile dikey hizalama ve boşluk kontrolü */
+  flex-direction: column; /* İçerik dikey sıralanacak */
+  justify-content: center; /* Dikeyde ortalama */
+  align-items: center; /* Yatayda ortalama */
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Taşmaları gizle */
+  font-family: var(--font-body); /* Genel font */
+}
+
+/* Arka plan şekilleri daha büyük, bulanık ve hareketli */
+.cover-page::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: -10%; /* Hafifçe dışarı taşırıldı */
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.03); /* Biraz daha transparan */
+  border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+  transform-origin: center center;
+  animation: subtleRotate 45s ease-in-out infinite alternate;
+  opacity: 0.6;
+  filter: blur(25px); /* Daha bulanık */
+  z-index: 0; /* İçeriğin arkasında */
+}
+
+.cover-page::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: -8%; /* Hafifçe dışarı taşırıldı */
+  width: 450px;
+  height: 450px;
+  background: rgba(255, 255, 255, 0.035); /* Biraz daha transparan */
+  border-radius: 60% 40% 45% 55% / 55% 60% 40% 45%;
+  transform-origin: center center;
+  animation: subtleRotate 55s ease-in-out infinite alternate-reverse; /* Ters yönde ve farklı hızda */
+  opacity: 0.65;
+  filter: blur(30px); /* Daha bulanık */
+  z-index: 0; /* İçeriğin arkasında */
+}
+
+/* Metin içeriğini gruplayan konteyner */
+.cover-content {
+  z-index: 1; /* Şekillerin üzerinde */
+  position: relative; /* z-index'in çalışması için */
+  max-width: 80%; /* Çok genişlemesini önle */
+}
+
+.cover-title {
+  font-family: var(--font-headings);
+  font-size: 44pt; /* Biraz daha büyük */
+  font-weight: 700;
+  letter-spacing: 2.5px; /* Biraz daha aralıklı */
+  margin-bottom: calc(var(--spacing-unit) * 2.5); /* Boşluk ayarı */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Daha belirgin gölge */
+  /* Arka plan kutusu kaldırıldı */
+}
+
+.cover-subtitle {
+  font-size: 20pt; /* Biraz daha büyük */
+  font-weight: 400;
+  margin-bottom: calc(var(--spacing-unit) * 5); /* Daha fazla boşluk */
+  opacity: 0.9;
+  letter-spacing: 1px;
+   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+.cover-author {
+  font-size: 14pt; /* Biraz daha büyük */
+  font-weight: 500; /* Biraz daha hafif */
+  margin-top: calc(var(--spacing-unit) * 5); /* Daha fazla boşluk */
+  letter-spacing: 0.8px;
+  opacity: 0.95;
+}
+
+.cover-logo-placeholder {
+  position: absolute; /* Mutlak konumlandırma */
+  bottom: 40mm; /* Alttan boşluk */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10pt; /* Biraz daha küçük ve zarif */
+  opacity: 0.8;
+  z-index: 1;
+  min-height: 20px; /* Minimum yükseklik (logo için) */
+  width: 80%; /* Genişlik */
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  /* İsteğe bağlı: Logo için üstte hafif bir çizgi */
+  /* border-top: 1px solid rgba(255, 255, 255, 0.2); */
+  /* padding-top: calc(var(--spacing-unit) * 1.5); */
+}
+
+
+        /* --- İÇERİK SAYFASI --- */
+        .content-page {
+            min-height: calc(var(--page-height-min) - 7mm);
+            padding: 30mm 28mm 30mm 28mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Üst Bilgi (Header) */
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: calc(var(--spacing-unit) * 0.8);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            font-size: 0.9em;
+            color: var(--color-muted);
+            flex-shrink: 0;
+        }
+
+        /* Ana İçerik Alanı */
+        .main-content-area {
+             flex-grow: 1;
+             width: 100%;
+        }
+
+        /* Metin Alanı */
+        .text-content { }
+
+        .text-content h1 {
+            font-family: var(--font-headings); font-size: 1.8em; color: var(--color-primary);
+            border-bottom: 3px solid var(--color-secondary);
+            padding-bottom: 0.6em; margin-top: 0; margin-bottom: 1.6em;
+            font-weight: 700; letter-spacing: 0.8px;
+        }
+
+        .text-content h2 {
+            font-family: var(--font-headings); font-size: 1.4em; color: var(--color-primary);
+            margin-top: 2.2em; margin-bottom: 1.2em; font-weight: 600; letter-spacing: 0.5px;
+            border-left: 4px solid var(--color-secondary); padding-left: 0.7em;
+        }
+        .text-content h3 {
+             font-family: var(--font-headings); font-size: 1.2em; color: var(--color-primary);
+             margin-top: 1.8em; margin-bottom: 1em; font-weight: 600;
+        }
+        .text-content p { margin-bottom: 1.3em; }
+        .text-content ul, .text-content ol { padding-left: 1.5em; margin-bottom: 1.3em; }
+        .text-content li { margin-bottom: 0.5em; }
+        .text-content strong { font-weight: 600; } /* Kalın metin için */
+
+
+        /* Spot Bilgi Kutuları */
+        .spot-box {
+            background-color: #fdfdff; border: 1px solid var(--color-border);
+            border-top: 5px solid var(--color-muted); padding: 1.5em 1.8em;
+            margin: 2.2em 0; border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.05);
+            line-height: 1.7; font-size: 0.95em; position: relative;
+        }
+        .spot-box.tip { border-top-color: #198754; }
+        .spot-box.warning { border-top-color: #dc3545; }
+        .spot-box.clinical { border-top-color: #0d6efd; }
+        .spot-box.detail { border-top-color: #ffc107; }
+
+        .spot-box .icon-container {
+            position: absolute; top: -16px; left: 25px; background-color: #ffffff;
+            padding: 6px; border-radius: 50%; box-shadow: 0 3px 6px rgba(0,0,0,0.1); line-height: 0;
+        }
+         .spot-box .icon-svg { width: 26px; height: 26px; display: block; }
+         .spot-box.tip .icon-svg { color: #198754; }
+         .spot-box.warning .icon-svg { color: #dc3545; }
+         .spot-box.clinical .icon-svg { color: #0d6efd; }
+         .spot-box.detail .icon-svg { color: #ffc107; }
+         .spot-box:not([class*=" tip"]):not([class*=" warning"]):not([class*=" clinical"]):not([class*=" detail"]) .icon-svg { color: var(--color-muted); }
+
+        .spot-box h4 {
+            font-family: var(--font-headings); margin-bottom: 0.9em; font-size: 1.15em;
+            font-weight: 600; color: var(--color-text); padding-top: 18px;
+        }
+        .spot-box ul { margin-bottom: 0; padding-left: 1.2em; list-style-position: outside; }
+        .spot-box li { margin-bottom: 0.6em; }
+        .spot-box li:last-child { margin-bottom: 0; }
+        .spot-box p { margin-bottom: 1em; }
+        .spot-box p:last-child { margin-bottom: 0; }
+
+
+        /* ASCII Şekil Alanı */
+        .ascii-diagram {
+            font-family: 'Courier New', Courier, monospace; white-space: pre;
+            background-color: #f8f9fa; border: 1px solid var(--color-border);
+            padding: 1.8em 2em; margin: 2em 0 0.8em 0; overflow-x: auto;
+            font-size: 0.9em; line-height: 1.5; border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(44, 62, 80, 0.04);
+        }
+        /* ASCII Renkleri */
+        .ascii-diagram .color-mor { color: #6f42c1; }
+        .ascii-diagram .color-pembe { color: #d63384; }
+        .ascii-diagram .color-sari { color: #ffc107; }
+        .ascii-diagram .color-mavi { color: #0d6efd; }
+        .ascii-diagram .color-yesil { color: #198754; }
+        .ascii-diagram .color-kirmizi { color: #dc3545; }
+        .ascii-diagram .color-gri { color: #6c757d; }
+        .ascii-diagram .color-turuncu { color: #fd7e14; }
+
+        /* Şekil Alt Yazısı */
+        .figure-caption {
+            font-size: 0.85em; text-align: center; color: var(--color-muted);
+            margin-bottom: 2.2em; font-style: italic;
+        }
+
+        /* Alt Bilgi (Footer) */
+        .footer {
+            padding-top: calc(var(--spacing-unit) * 0.8); border-top: 1px solid var(--color-border);
+            margin-top: auto; display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.9em; color: var(--color-muted); flex-shrink: 0;
+        }
+
+        /* Yazdırma Ayarları */
+        @media print {
+            * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+            body { background-color: #ffffff !important; padding: 0; margin: 0; gap: 0; font-size: 11pt; line-height: 1.7; color: var(--color-text); }
+            .page { box-shadow: none; margin: 0; width: 100%; min-height: initial; padding: 0; page-break-after: always; }
+            .content-page { padding: 25mm; }
+            .page:last-child { page-break-after: auto; }
+            .cover-page { animation: none; padding: 25mm; }
+            .cover-title { font-size: 36pt; } .cover-subtitle { font-size: 16pt; } .cover-author { font-size: 12pt; }
+            .header, .footer { border-color: var(--color-border); color: var(--color-muted); font-size: 9pt; }
+            .text-content h1 { font-size: 1.8em; color: var(--color-primary); border-color: var(--color-secondary); }
+            .text-content h2 { font-size: 1.4em; color: var(--color-primary); border-left-color: var(--color-secondary); }
+            .text-content h3 { font-size: 1.2em; color: var(--color-primary); }
+            .text-content p { font-size: 1em; widows: 3; orphans: 3; }
+            .text-content ul, .text-content ol, .text-content li { font-size: 1em; }
+            .spot-box { border-color: var(--color-border) !important; box-shadow: none; font-size: 0.95em; page-break-inside: avoid; }
+            .spot-box h4 { padding-top: 18px; font-size: 1.15em; color: var(--color-text); }
+            .spot-box ul, .spot-box li { font-size: 1em; }
+            .ascii-diagram { border-color: var(--color-border) !important; box-shadow: none; font-size: 0.9em; page-break-inside: avoid; }
+            .figure-caption { color: var(--color-muted); font-size: 0.85em; }
+            h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page cover-page">
+  <div class="cover-content">
+    <div class="cover-title">YDUS MİKROBİYOLOJİ</div>
+    <div class="cover-subtitle">Spot Bilgilerle Destekli Konu Anlatımı</div>
+    <div class="cover-author">Uzm. Dr. Sait Ramazan Gülbay • Uzm. Dr. Hanife Tutan</div>
+  </div>
+
+  <div class="cover-logo-placeholder">
+      </div>
+</div>
+
+    <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>Tarihçe ve Kapsam</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                <h1>İMMÜNOLOJİYE GİRİŞ VE TEMEL KAVRAMLAR</h1>
+
+                <h2>1.1. İmmünolojinin Tarihçesi ve Kapsamı</h2>
+                <p>İmmünoloji, biyolojik bütünlüğün korunması ve sürdürülmesi için öz (self) ve öz olmayan (non-self) yapıları ayırt ederek yanıt oluşturan karmaşık biyolojik sistemleri inceleyen bilim dalıdır. Modern tıbbın temel taşlarından biri haline gelen immünoloji, enfeksiyon hastalıklarından otoimmüniteye, kanserden transplantasyona kadar geniş bir yelpazede patofizyolojik süreçlerin anlaşılmasında ve tedavi stratejilerinin geliştirilmesinde merkezi bir rol oynamaktadır. Bu disiplinin kökenleri, ampirik gözlemlere dayanan eski uygulamalara kadar uzanmakla birlikte, bilimsel temelleri ancak 18. yüzyılın sonlarından itibaren atılmaya başlanmıştır.</p>
+                <p><strong>Tarihsel Gelişim:</strong></p>
+                <p><strong>Erken Gözlemler ve Variolasyon:</strong> Enfeksiyöz hastalıklara karşı kazanılan direncin farkındalığı antik çağlara dayanır. Atina vebası sırasında Thukidides (M.Ö. ~430), hastalığı geçirip hayatta kalanların tekrar aynı hastalığa yakalanmadığını gözlemlemiştir. Ancak immünitenin bilinçli manipülasyonuna yönelik ilk adımlar, çiçek hastalığına (smallpox) karşı geliştirilen variolasyon uygulamaları ile atılmıştır. Özellikle 18. yüzyıl başlarında Osmanlı İmparatorluğu'nda yaygın olan bu uygulama, Lady Mary Wortley Montagu tarafından İngiltere'ye taşınmış ve hafif hastalık geçiren bireylerden alınan materyalin sağlıklı bireylere verilerek korunma sağlanması prensibine dayanmıştır.</p>
+                <p><strong>Aşılamanın Bilimsel Temelleri:</strong> İmmünolojinin bilimsel miladı olarak kabul edilen gelişme, Edward Jenner'ın 1796'da çiçek hastalığına karşı geliştirdiği aşıdır. Jenner, sığır çiçeği (cowpox) geçiren sütçü kadınların insan çiçeğine yakalanmadığı gözleminden yola çıkarak, sığır çiçeği püstüllerinden aldığı materyali sağlıklı bireylere inoküle etmiş ve bu bireylerin çiçek hastalığına karşı korunduğunu kanıtlamıştır. Bu uygulama, Latince "vacca" (inek) kelimesinden türetilen "vaccination" (aşılama) teriminin doğmasına yol açmıştır.</p>
+                <p><strong>Mikrop Teorisi ve İmmün Yanıtın Keşfi:</strong> 19. yüzyılın ikinci yarısında Louis Pasteur ve Robert Koch'un çalışmaları, enfeksiyon hastalıklarının mikrobiyal etkenlere bağlı olduğunu ortaya koyarak "mikrop teorisi"ni (germ theory) sağlamlaştırmıştır. Pasteur, aynı zamanda zayıflatılmış (attenüe) patojenlerle (tavuk kolerası, şarbon, kuduz) aşılamanın prensiplerini geliştirerek Jenner'ın çalışmalarını ileriye taşımıştır. Bu dönemde, immün yanıtın doğasına ilişkin temel tartışmalar da başlamıştır. Elie Metchnikoff, fagositoz yapan hücreleri (makrofajlar) keşfederek hücresel immünitenin önemini vurgulamış (1908 Nobel Fizyoloji veya Tıp Ödülü, Paul Ehrlich ile paylaşıldı), Paul Ehrlich ise "yan zincir teorisi" (side-chain theory) ile antikorların varlığını ve spesifitesini öngörerek humoral immünitenin temellerini atmıştır. Ehrlich ayrıca, immün sistemin kendi dokularına saldırmaktan kaçınması gerektiğini ifade eden "horror autotoxicus" kavramını ortaya atmıştır. Emil von Behring ve Shibasaburo Kitasato'nun difteri ve tetanoz antitoksinlerini keşfetmesi (1890), humoral faktörlerin koruyucu immünitedeki rolünü somut olarak göstermiş ve Behring'e ilk Nobel Fizyoloji veya Tıp Ödülü'nü (1901) kazandırmıştır.</p>
+
+                <div class="spot-box tip">
+                    <div class="icon-container">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                    </div>
+                   <h4>Akılda Kalsın: İmmünolojinin Öncüleri</h4>
+                   <ul>
+                       <li><strong>Jenner:</strong> Aşılama (Çiçek aşısı)</li>
+                       <li><strong>Pasteur:</strong> Mikrop teorisi, atenüe aşılar (Kuduz, Şarbon)</li>
+                       <li><strong>Metchnikoff:</strong> Fagositoz, Hücresel immünite</li>
+                       <li><strong>Ehrlich:</strong> Antikor teorisi (Yan zincir), Horror autotoxicus</li>
+                       <li><strong>von Behring:</strong> Antitoksinler, Humoral immünite</li>
+                       <li><strong>Burnet:</strong> Klonal seleksiyon, İmmün tolerans</li>
+                   </ul>
+               </div>
+
+                <p><strong>20. Yüzyıl: Mekanizmaların Aydınlatılması:</strong> 20. yüzyıl, immünolojinin moleküler ve hücresel mekanizmalarının aydınlatıldığı bir dönem olmuştur. Karl Landsteiner'ın ABO kan gruplarını tanımlaması (1930 Nobel Ödülü), immünogenetiğin temellerini atmıştır. Antikorların kimyasal yapısı Arne Tiselius ve Elvin A. Kabat tarafından gama globulin fraksiyonunda olduklarının gösterilmesiyle aydınlatılmaya başlanmış, Rodney Porter ve Gerald Edelman tarafından detaylı moleküler yapılarının çözümlenmesiyle sonuçlanmıştır (1972 Nobel Ödülü). Frank Macfarlane Burnet'in öncülüğünü yaptığı "klonal seleksiyon teorisi", antijen spesifik lenfositlerin nasıl seçilip çoğaldığını açıklamış ve adaptif immünitenin temel prensibini oluşturmuştur (1960 Nobel Ödülü, Peter Medawar ile paylaşıldı - kazanılmış immünolojik tolerans çalışmaları için). T ve B lenfositlerinin ayrı hücre grupları olarak tanımlanması, bunların farklı fonksiyonları (hücresel ve humoral immünite) ve alt tipleri (yardımcı T, sitotoksik T) immün yanıtın anlaşılmasında kritik adımlar olmuştur. George Snell, Jean Dausset ve Baruj Benacerraf'ın Majör Histokompatibilite Kompleksi (MHC) genlerini ve moleküllerini keşfetmeleri (1980 Nobel Ödülü) ve Peter C. Doherty ile Rolf M. Zinkernagel'in T hücrelerinin antijen tanımada MHC kısıtlılığını göstermeleri (1996 Nobel Ödülü), antijen sunumu ve T hücre aktivasyonunun anlaşılmasını sağlamıştır. Georges Köhler ve César Milstein'ın monoklonal antikor üretim tekniğini geliştirmesi (1984 Nobel Ödülü), hem tanısal immünolojide hem de terapötik yaklaşımlarda bir devrim yaratmıştır. Sitokinlerin (interferonlar, interlökinler) keşfi, immün hücreler arası iletişimin moleküler temelini ortaya koymuştur. Primer immün yetmezliklerin (Bruton agamaglobulinemisi, DiGeorge sendromu vb.) tanımlanması, immün sistem bileşenlerinin fonksiyonlarının anlaşılmasına katkıda bulunmuştur.</p>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 1</span>
+        </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>Modern Dönem ve Kapsam</span> </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                <p><strong>Modern Dönem ve Gelecek:</strong> 20. yüzyılın sonları ve 21. yüzyıl, moleküler biyoloji tekniklerinin entegrasyonu ile immünolojide yeni bir çağ başlatmıştır. T hücre reseptörü (TCR), B hücre reseptörü (BCR), MHC ve sitokin genlerinin klonlanması, sinyal iletim yollarının aydınlatılması, immün yanıtın moleküler detaylarının anlaşılmasını sağlamıştır. Doğal immünitenin önemi, Toll-benzeri reseptörlerin (TLR) ve diğer örüntü tanıma reseptörlerinin (PRR) keşfiyle yeniden vurgulanmış (Bruce Beutler ve Jules Hoffmann, 2011 Nobel Ödülü), inflamatuar süreçlerin moleküler mekanizmaları (inflamazomlar vb.) ortaya çıkarılmıştır. Regülatör T hücreleri (Treg) gibi immün yanıtı baskılayan hücre popülasyonlarının tanımlanması, tolerans ve otoimmünitenin anlaşılmasına yeni boyutlar katmıştır. Sistem immünolojisi, genomik, proteomik, metabolomik gibi "-omik" teknolojileri ve hesaplamalı biyoloji yaklaşımlarını kullanarak immün sistemi bütüncül bir bakış açısıyla analiz etmektedir. Son yıllarda kanser immünoterapisindeki gelişmeler, özellikle immün kontrol noktası inhibitörlerinin (James P. Allison ve Tasuku Honjo, 2018 Nobel Ödülü) ve CAR-T hücre tedavisinin klinik başarıları, immünolojinin terapötik potansiyelini çarpıcı bir şekilde göstermiştir. Mukozal immünite, mikrobiyota-immün sistem etkileşimi, immünometabolizma ve nöroimmünoloji gibi alanlar aktif araştırma konuları olmaya devam etmektedir.</p>
+                <p><strong>İmmünolojinin Kapsamı:</strong></p>
+                <p>Günümüzde immünoloji, sadece enfeksiyonlara karşı savunma mekanizmalarını değil, aynı zamanda aşağıdaki gibi çok çeşitli alanları kapsayan multidisipliner bir bilim dalıdır:</p>
+                <ul>
+                    <li><strong>Enfeksiyon Hastalıkları:</strong> Patojen tanınması, immün yanıtın aktivasyonu, patojen eliminasyonu ve immünolojik hafıza oluşumu. Patojenlerin immün sistemden kaçış mekanizmaları.</li>
+                    <li><strong>Aşı Bilimi (Vaccinology):</strong> Koruyucu immünite oluşturma prensipleri, aşı geliştirme stratejileri, adjuvanlar ve aşı güvenliği.</li>
+                    <li><strong>Otoimmünite:</strong> Öz toleransın bozulması sonucu ortaya çıkan hastalıkların (romatoid artrit, SLE, tip 1 diyabet, multipl skleroz vb.) patogenezi, tanısı ve tedavisi.</li>
+                    <li><strong>Alerji ve Aşırı Duyarlılık:</strong> Zararsız çevresel antijenlere karşı gelişen abartılı veya uygunsuz immün yanıtların (astım, anafilaksi, kontakt dermatit vb.) mekanizmaları ve yönetimi.</li>
+                    <li><strong>İmmün Yetmezlikler:</strong> İmmün sistem bileşenlerindeki kalıtsal (primer) veya kazanılmış (sekonder, örn: HIV/AIDS, immünsüpresif tedavi) defektler sonucu ortaya çıkan hastalıklar.</li>
+                    <li><strong>Transplantasyon İmmünolojisi:</strong> Doku ve organ nakillerinde alıcı immün sisteminin grefti reddetme (rejeksiyon) mekanizmaları, doku uyumu (HLA) ve immünsüpresif tedaviler. Greft-versus-host hastalığı.</li>
+                    <li><strong>Tümör İmmünolojisi:</strong> Kanser hücrelerine karşı immün yanıt (immün gözetim), tümörlerin immün sistemden kaçış mekanizmaları ve kanser immünoterapisi (checkpoint inhibitörleri, CAR-T hücreleri, terapötik antikorlar, kanser aşıları).</li>
+                    <li><strong>İmmün Tanı:</strong> Hastalıkların teşhisinde, takibinde ve prognozunda kullanılan immünolojik testler (antikor ölçümleri, hücre sayımları, fonksiyonel testler).</li>
+                    <li><strong>İmmünofarmakoloji:</strong> İmmün sistemi modüle eden (baskılayan veya uyaran) ilaçların geliştirilmesi ve klinik kullanımı.</li>
+                </ul>
+
+                <h2>1.2. İmmün Sistemin Genel Tanımı ve Fonksiyonları</h2>
+                <p>İmmün sistem, konakçıyı enfeksiyöz ajanlara ve malign transformasyona karşı koruyan, aynı zamanda doku homeostazını sürdüren, özelleşmiş hücreler, moleküller ve organlardan oluşan entegre bir networktür. Temel prensibi, "self" (kendinden olan) ile "non-self" (kendinden olmayan) veya "altered-self/danger" (değişmiş/tehlikeli kendinden) ayrımını yapabilmektir.</p>
+                <p><strong>Ana Fonksiyonları:</strong></p>
+                <ul>
+                    <li><strong>Enfeksiyöz Ajanlara Karşı Savunma:</strong> Virüsler, bakteriler, funguslar ve parazitler gibi çeşitli patojenleri tanır, kontrol altına alır ve elimine eder.</li>
+                    <li><strong>İmmün Gözetim (Immune Surveillance):</strong> Vücutta sürekli olarak oluşan prekanseröz veya kanseröz hücreleri tanır ve yok eder.</li>
+                    <li><strong>Doku Homeostazı ve Onarım:</strong> Ölü, hasarlı veya yaşlanmış hücrelerin temizlenmesi ve doku onarımına katkı.</li>
+                    <li><strong>Öz Toleransın Sürdürülmesi:</strong> Kendi dokularına karşı reaksiyon vermeme.</li>
+                    <li><strong>Zararlı Yabancı Moleküllerin Eliminasyonu:</strong> Toksinler gibi.</li>
+                </ul>
+                <p>İmmün sistemin düzgün çalışması sağlık için elzemdir. Yetersiz çalıştığında immün yetmezlikler, aşırı veya yanlış çalıştığında ise alerjiler ve otoimmün hastalıklar ortaya çıkar.</p>
+
+                 <div class="spot-box clinical">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 18v-4"/><path d="m12 8 3-3"/><path d="m12 8-3-3"/></svg>
+                     </div>
+                    <h4>Klinik Bağlantı: İmmün Gözetim ve Kanser</h4>
+                    <p>İmmün gözetim mekanizmalarındaki yetersizlikler veya tümör hücrelerinin immün sistemden kaçış mekanizmaları geliştirmesi, kanser gelişimine katkıda bulunur. Kanser immünoterapileri, bu gözetimi yeniden aktive etmeyi veya güçlendirmeyi hedefler.</p>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 2</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>Doğal ve Kazanılmış İmmünite</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                <h2>1.3. Doğal (Innate) ve Kazanılmış (Adaptive) İmmünite Arasındaki Farklar ve Etkileşimler</h2>
+                <p>İmmün yanıtlar, evrimsel olarak daha eski olan doğal immünite ve daha sonra gelişmiş olan kazanılmış immünite olmak üzere iki temel kolda incelenir. Bu iki sistem, birbiriyle sıkı bir işbirliği içinde çalışır.</p>
+
+                <p><strong>Doğal İmmünite (Non-spesifik, Doğuştan Gelen):</strong></p>
+                <ul>
+                    <li><strong>Yanıt Hızı:</strong> Çok hızlıdır (dakikalar ila saatler içinde). İlk savunma hattıdır.</li>
+                    <li><strong>Özgüllük:</strong> Sınırlı ve sabittir. PAMP'ları veya DAMP'ları tanır (PRR'lar aracılığıyla).</li>
+                    <li><strong>Hafıza:</strong> Yoktur (klasik anlamda).</li>
+                    <li><strong>Bileşenleri:</strong> Fiziksel/kimyasal bariyerler, fagositler (nötrofiller, makrofajlar), NK hücreleri, mast hücreleri, DC'ler, kompleman, sitokinler (TNF-α, IL-1, Tip I IFN).</li>
+                </ul>
+
+                <p><strong>Kazanılmış İmmünite (Spesifik, Edinsel):</strong></p>
+                 <ul>
+                    <li><strong>Yanıt Hızı:</strong> Yavaştır (günler sürer).</li>
+                    <li><strong>Özgüllük:</strong> Yüksektir (TCR, BCR).</li>
+                    <li><strong>Hafıza:</strong> Vardır.</li>
+                    <li><strong>Bileşenleri:</strong> T lenfositleri (Th, CTL, Treg), B lenfositleri (plazma hücreleri -> antikorlar), APC'ler.</li>
+                </ul>
+
+                <p><strong>Etkileşimler:</strong> Doğal immünite, kazanılmış immüniteyi başlatır ve yönlendirir (APC'ler, sitokinler). Kazanılmış immünite, doğal immünite mekanizmalarını güçlendirir (opsonizasyon, ADCC, makrofaj aktivasyonu).</p>
+
+                <div class="ascii-diagram">
+  <span class="color-mavi">Doğal İmmünite</span>                     <span class="color-yesil">Kazanılmış İmmünite</span>
+===================                     =====================
+ <span class="color-gri">Yanıt:</span> Hızlı (Saatler)                <span class="color-gri">Yanıt:</span> Yavaş (Günler)
+ <span class="color-gri">Özgüllük:</span> Sınırlı (PAMP/DAMP)         <span class="color-gri">Özgüllük:</span> Yüksek (Antijen)
+ <span class="color-gri">Hafıza:</span> Yok                           <span class="color-gri">Hafıza:</span> Var
+ <span class="color-gri">Reseptör:</span> PRR (Germline)            <span class="color-gri">Reseptör:</span> TCR/BCR (Somatik Rek.)
+ <span class="color-gri">Hücreler:</span> Fagosit, NK, DC, Mast...  <span class="color-gri">Hücreler:</span> T Hüc, B Hüc, Plazma Hüc.
+ <span class="color-gri">Moleküller:</span> Kompleman, Sitokinler   <span class="color-gri">Moleküller:</span> Antikorlar, Sitokinler
+         |                                    ^
+         | <span class="color-turuncu">Başlatma/Yönlendirme</span>             | <span class="color-turuncu">Güçlendirme/Yardım</span>
+         | <span class="color-turuncu">(APC, Kostimülasyon, Sitokinler)</span>   | <span class="color-turuncu">(Opsonizasyon, ADCC vb.)</span>
+         +------------------------------------+
+                </div>
+                <div class="figure-caption">Şekil 1.1: Doğal ve Kazanılmış İmmünite Arasındaki Temel Farklar ve Etkileşim</div>
+
+
+                <div class="spot-box detail">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+                     </div>
+                    <h4>Detay Bilgi: İmmünite Kollarının İşbirliği</h4>
+                    <p>Doğal immünite sadece ilk savunma hattı değildir, aynı zamanda kazanılmış yanıtın tipini de belirler. Örneğin, bir APC'nin hangi PRR'lar aracılığıyla uyarıldığı ve hangi sitokinleri (örn. IL-12 vs IL-4) salgıladığı, gelişecek olan T hücre yanıtının Th1 mi yoksa Th2 mi olacağını büyük ölçüde etkiler.</p>
+                </div>
+
+                <h2>1.4. İmmün Sistemin Hücreleri</h2>
+                <p>Tüm immün sistem hücreleri, kemik iliğindeki multipotent Hematopoietik Kök Hücrelerden (HSC) köken alır ve Miyeloid ile Lenfoid ana soy hatlarına ayrılır.</p>
+
+                <div class="ascii-diagram">
+       <span class="color-kirmizi">Hematopoietik Kök Hücre (HSC)</span>
+                   <span class="color-gri">Kemik İliği</span>
+                       |
+         +-------------+-------------+
+         |                           |
+<span class="color-mavi">Ortak Lenfoid Progenitör (CLP)</span> <span class="color-turuncu">Ortak Miyeloid Progenitör (CMP)</span>
+         |                           |
++--------+--------+                  +----------+----------+
+|        |        |                  |          |          |
+<span class="color-mavi">B Hüc.</span>   <span class="color-mavi">NK Hüc.</span>  <span class="color-mavi">T Hüc.</span>           <span class="color-turuncu">Megakaryosit</span> <span class="color-turuncu">Eritroblast</span> <span class="color-turuncu">Mast Hüc.</span>
+<span class="color-gri">(Kemik İliği)</span> <span class="color-gri">(?)</span>  <span class="color-gri">(Timus)</span>            |            |
+                                      |            |
+                                      <span class="color-turuncu">Trombosit</span>    <span class="color-turuncu">Eritrosit</span>
+                                      |
+                                      +----------+----------+----------+
+                                      |          |          |          |
+                                     <span class="color-turuncu">Bazofil</span>  <span class="color-turuncu">Nötrofil</span> <span class="color-turuncu">Eozinofil</span>  <span class="color-turuncu">Monosit</span>
+                                                                        |
+                                                                  +-----+-----+
+                                                                  |           |
+                                                                 <span class="color-turuncu">Makrofaj</span>   <span class="color-turuncu">Dendritik Hücre (DC)</span>
+                </div>
+                <div class="figure-caption">Şekil 1.2: Hematopoez ve İmmün Hücre Soy Hatları (Basitleştirilmiş)</div>
+
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 3</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>İmmün Hücreler (Devam)</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h3>1.4.1. Lenfoid Soy</h3>
+                <p>Adaptif immünitenin özgüllük ve hafızasından sorumlu ana hücrelerdir. Ayrıca doğal immünitede rol alan NK hücrelerini de içerir.</p>
+                <p><strong>T Lenfositleri:</strong> Timusta olgunlaşırlar, TCR taşırlar, antijeni MHC ile tanırlar.</p>
+                <ul>
+                    <li><strong>Yardımcı T Hücreleri (Th; CD4+):</strong> APC'lerden MHC-II ile sunulan antijeni tanır, sitokin salgılayarak diğer hücreleri yönetir (Th1, Th2, Th17, Tfh alt tipleri).</li>
+                    <li><strong>Sitotoksik T Lenfositleri (CTL; CD8+):</strong> Çekirdekli hücrelerden MHC-I ile sunulan antijeni tanır, hedef hücreleri (virüslü, tümör) öldürür (Perforin/Granzim, Fas/FasL).</li>
+                    <li><strong>Düzenleyici T Hücreleri (Treg; CD4+CD25+FoxP3+):</strong> Öz toleransı sağlar, immün yanıtı baskılar (TGF-β, IL-10).</li>
+                    <li><strong>Gamma Delta (γδ) T Hücreleri:</strong> Farklı TCR taşır, MHC'siz tanıma yapabilir, mukozal immünitede önemlidir.</li>
+                </ul>
+
+                <div class="spot-box clinical">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 18v-4"/><path d="m12 8 3-3"/><path d="m12 8-3-3"/></svg>
+                     </div>
+                    <h4>Klinik Bağlantı: CD4+ T Hücre Sayımı</h4>
+                    <p>CD4+ Yardımcı T hücrelerinin sayısı, özellikle HIV enfeksiyonunun takibinde kritik bir parametredir. Bu hücrelerin azalması, immün sistemin ciddi şekilde zayıfladığını gösterir ve fırsatçı enfeksiyon riskini artırır.</p>
+                </div>
+
+                <p><strong>B Lenfositleri:</strong> Kemik iliğinde olgunlaşır, yüzeylerinde BCR (mIg) taşır, antijeni doğrudan tanır.</p>
+                 <ul>
+                    <li><strong>Plazma Hücreleri:</strong> Farklılaşmış B hücreleridir, bol miktarda antikor salgılar (Humoral immünite).</li>
+                    <li><strong>Hafıza B Hücreleri:</strong> Uzun ömürlüdür, ikincil yanıtta hızla aktive olur.</li>
+                </ul>
+                <p><strong>Doğal Katil (NK) Hücreleri:</strong> Lenfoid kökenli doğal immünite hücresidir. Önceden duyarlanma gerekmez. MHC-I ekspresyonu azalmış hücreleri ("missing-self") tanıyıp öldürür (aktive edici/inhibitör reseptör dengesi). Perforin/Granzim kullanır, IFN-γ salgılar.</p>
+
+                <h3>1.4.2. Miyeloid Soy</h3>
+                <p>Doğal immünitenin ana efektör hücrelerini ve APC'leri içerir.</p>
+                <ul>
+                    <li><strong>Monositler ve Makrofajlar:</strong> Monositler kanda, makrofajlar dokularda bulunur (Kupffer, alveolar makrofaj, mikroglia vb.). Fagositoz, antijen sunumu (MHC-II), sitokin üretimi (pro/anti-inflamatuar), doku onarımı yaparlar. M1/M2 polarizasyonu gösterebilirler.</li>
+                    <li><strong>Dendritik Hücreler (DC):</strong> En potent profesyonel APC'lerdir. Antijeni yakalar, işler, olgunlaşıp lenf düğümüne göç eder ve naif T hücrelerini aktive ederler (MHC-I/II, kostimülasyon, sitokinler). Doğal ve kazanılmış immünite arası köprüdür. (cDC1, cDC2, pDC alt tipleri).</li>
+                    <li><strong>Nötrofiller (PMN):</strong> Kanda en bol bulunan fagositlerdir. Akut bakteriyel/fungal enfeksiyonlarda ilk yanıttadırlar. Fagositoz, degranülasyon (MPO, proteazlar), NETosis ile savaşırlar.</li>
+                    <li><strong>Eozinofiller:</strong> Parazit (helmint) savunması ve alerjide rol alırlar. Toksik granül proteinleri (MBP, ECP) içerirler.</li>
+                    <li><strong>Bazofiller:</strong> Kanda bulunur, histamin/heparin içerir, alerji ve parazit yanıtında rol alır (FcεRI+).</li>
+                    <li><strong>Mast Hücreleri:</strong> Dokularda yerleşiktir (damar/sinir yakını). FcεRI+ aracılı degranülasyonla histamin, heparin gibi mediyatörleri hızla salar, ayrıca yeni mediyatörler (lökotrien, PG, sitokin) üretir. Alerji, anafilaksi, inflamasyonda önemlidirler.</li>
+                </ul>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 4</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>APC'ler ve Lenfoid Organlar</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <div class="spot-box tip">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                     </div>
+                    <h4>Akılda Kalsın: Profesyonel Antijen Sunan Hücreler (pAPC)</h4>
+                    <p>Naif T lenfositlerini etkin bir şekilde aktive edebilen hücrelerdir. Başlıca pAPC'ler dendritik hücreler (en potent), makrofajlar ve B lenfositleridir. Bu hücreler, antijeni işleyip MHC molekülleriyle sunmanın yanı sıra, T hücre aktivasyonu için gerekli olan kostimülatör sinyalleri (örn., CD80/CD86'nın T hücresindeki CD28'e bağlanması) de sağlarlar.</p>
+                </div>
+
+                <h2>1.5. İmmün Sistemin Organları ve Dokuları</h2>
+                <p>İmmün hücrelerin gelişimi, olgunlaşması ve fonksiyonları özelleşmiş lenfoid organ ve dokularda gerçekleşir.</p>
+                <h3>1.5.1. Primer (Birincil) Lenfoid Organlar</h3>
+                <p>Lenfositlerin antijenden bağımsız olarak gelişip olgunlaştığı, merkezi toleransın kazanıldığı yerlerdir.</p>
+                <ul>
+                    <li><strong>Kemik İliği:</strong> Tüm kan hücrelerinin üretim merkezi (hematopoez). B lenfositlerinin olgunlaşma yeri (V(D)J rekombinasyonu, negatif seçilim).</li>
+                    <li><strong>Timus:</strong> T lenfositlerinin olgunlaşma ve seçilim (pozitif ve negatif seçilim - MHC restriksiyonu ve merkezi tolerans) yeri. Korteks (pozitif seçilim) ve medulla (negatif seçilim, AIRE+) bölgeleri bulunur.</li>
+                </ul>
+                <h3>1.5.2. Sekonder (İkincil) Lenfoid Organlar ve Dokular</h3>
+                <p>Olgun naif lenfositlerin antijenlerle karşılaşıp kazanılmış immün yanıtları başlattığı yerlerdir.</p>
+                <ul>
+                    <li><strong>Lenf Düğümleri:</strong> Lenf sıvısını filtreler. Korteks (B hücre folikülleri, germinal merkezler), Parakorteks (T hücreleri, DC'ler) ve Medulla (plazma hücreleri) bölgeleri bulunur. Antijenler ve APC'ler afferent lenfatiklerle, naif lenfositler HEV'ler aracılığıyla kana girer.</li>
+                    <li><strong>Dalak:</strong> Kanı filtreler. Beyaz pulpa (PALS - T hücreleri, Foliküller - B hücreleri, Marjinal Zon - antijen yakalama) ve Kırmızı pulpa (eritrosit yıkımı) içerir.</li>
+                    <li><strong>Mukoza İlişkili Lenfoid Doku (MALT):</strong> Mukoza yüzeylerini korur (GALT, BALT, NALT). Organize (Peyer plakları, tonsiller) veya dağınık (IEL) olabilir. Peyer plaklarında M hücreleri antijen transportu yapar. Ana efektör mekanizma genellikle Sekretuvar IgA (sIgA)'dır.</li>
+                </ul>
+
+                 <div class="ascii-diagram">
+   <span class="color-gri">Lenf Düğümü (Şematik Kesit)</span>
+
+ <span class="color-yesil">Afferent Lenfatik</span> ---> +-------------------------------------+
+                     | <span class="color-mavi">Kapsül</span>                              |
+                     |   <span class="color-yesil">Subkapsüler Sinüs</span>                 |
+                     | +---------------------------------+ |
+                     | | <span class="color-kirmizi">KORTEKS</span>                       | |
+                     | |   .~~~~~~~~~.                   | |
+                     | |  ( <span class="color-pembe">Folikül</span> ) <span class="color-gri">(B Hüc.)</span>         | |
+                     | | ( <span class="color-mor">Germ. Mrk</span> )                   | |
+                     | |  '~~~~~~~~~'                    | |
+                     | +---------------------------------+ |
+                     | | <span class="color-sari">PARAKORTEKS</span>                   | |
+                     | | <span class="color-gri"> - T Hücreleri</span> (<span class="color-mavi">T</span>)             | |
+                     | | <span class="color-gri"> - DC'ler</span> (<span class="color-turuncu">D</span>)                  | |
+                     | | <span class="color-gri"> - HEV</span> [<span class="color-yesil">H</span>]                   | |
+                     | |    <span class="color-mavi">T</span>   <span class="color-turuncu">D</span>     <span class="color-mavi">T</span>   [<span class="color-yesil">H</span>]         | |
+                     | +---------------------------------+ |
+                     | | <span class="color-gri">MEDULLA</span>                       | |
+                     | | <span class="color-gri"> - Medüller Kordonlar</span> (<span class="color-mor">P</span>,<span class="color-turuncu">M</span>)    | |
+                     | | <span class="color-gri"> - Medüller Sinüs</span>              | |
+                     | |   <span class="color-mor">P</span>       <span class="color-turuncu">M</span>       <span class="color-mor">P</span>           | |
+                     | +---------------------------------+ |
+                     |   <span class="color-yesil">Efferent Lenfatik</span> ----> Çıkış   |
+                     +-------------------------------------+
+                 </div>
+                 <div class="figure-caption">Şekil 1.3: Lenf Düğümünün Yapısal Organizasyonu (ASCII)</div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 5</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>MALT ve Lenfosit Dolaşımı</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <div class="spot-box clinical">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 18v-4"/><path d="m12 8 3-3"/><path d="m12 8-3-3"/></svg>
+                     </div>
+                    <h4>Klinik Bağlantı: Sekretuvar IgA (sIgA)</h4>
+                    <p>sIgA, mukozal yüzeylerde bulunan dimerik yapıda bir antikordur (J zinciri ile bağlanır ve transport sırasında sekretuvar komponent eklenir). Patojenlerin ve toksinlerin epitel hücrelerine yapışmasını engelleyerek ("immün dışlama") enfeksiyonların başlamasını önlemede kritik rol oynar. IgA eksikliği, tekrarlayan mukozal enfeksiyonlara yatkınlık yaratabilir.</p>
+                </div>
+
+                <h2>1.6. Lenfosit Dolaşımı ve Hücre Trafiği (Lymphocyte Recirculation and Trafficking)</h2>
+                <p>Lenfositler statik değildir; kan, lenf ve sekonder lenfoid organlar arasında sürekli dolaşırlar (recirculation). Bu, antijenlerin hızla tespitini sağlar. Hücre trafiği (homing ve ekstravazasyon), adhezyon molekülleri (Selektinler, İntegrinler) ve kemokinler/kemokin reseptörleri arasındaki etkileşimlerle düzenlenir.</p>
+                <p><strong>Adhezyon Molekülleri:</strong> Selektinler (L, E, P) yuvarlanmayı (rolling), İntegrinler (LFA-1, VLA-4) kemokin aktivasyonu sonrası sıkı yapışmayı (firm adhesion) sağlar.</p>
+                <p><strong>Kemokinler:</strong> Hücre hareketini (kemotaksi) yönlendirir ve integrin aktivasyonunu tetikler. Farklı kemokin/reseptör çiftleri (CCR7/CCL19-CCL21, CXCR4/CXCL12 vb.) farklı hücrelerin göçünü kontrol eder.</p>
+
+<div class="ascii-diagram" style="font-family: monospace; white-space: pre; line-height: 1.2; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; color: #333;">
+<span style="color: #0077cc;">&lt;-- Kan Akımı --&gt;</span> <span style="color: #cc3333;">(L)</span><span style="color: gray;"> ~~~ </span><span style="color: #cc3333;">(L)</span> <span style="color: #0077cc;">--&gt;</span> <span style="color: gray;"> (Kan Damarı Lümeni / İçi)</span>
+<span style="color: #228b22;">+===============================================+</span><span style="color: #228b22;"> &lt;-- Endotel Yüzeyi (Lümene Bakan Taraf)</span>
+<span style="color: #228b22;">|</span> <span style="color: #555;">1. Rolling (Geçici Bağlanma, Yavaşlama)</span>       <span style="color: #228b22;">|</span> <span style="color: #cc9900;">S</span><span style="color: gray;">: Selektin Lig. (<span style="color: #cc3333;">L</span>)</span>
+<span style="color: #228b22;">|</span>  <span style="color: #cc3333;">.--.</span> <span style="color: #cc9900;">S</span><span style="color: gray;">       </span><span style="color: #cc3333;">.--.</span> <span style="color: #cc9900;">S</span><span style="color: gray;">                      </span><span style="color: #228b22;">|</span> <span style="color: #228b22;">E</span><span style="color: gray;">: E/P-Selektin (<span style="color: #228b22;">E</span>)</span>
+<span style="color: #228b22;">|</span> <span style="color: #cc3333;">( L )</span><span style="color: gray;">--<span style="color: #228b22;">E</span> ~~~ </span><span style="color: #cc3333;">( L )</span><span style="color: gray;">--<span style="color: #228b22;">E</span>                      </span><span style="color: #228b22;">|</span> <span style="color: gray;"> K: Kemokin (<span style="color: #228b22;">E</span>'de sunulur)</span>
+<span style="color: #228b22;">|</span>  <span style="color: #cc3333;">`--'</span><span style="color: gray;">        </span><span style="color: #cc3333;">`--'</span><span style="color: gray;"> \</span><span style="color: gray;">                       </span><span style="color: #228b22;">|</span> <span style="color: gray;"> R: Kemokin Rec. (<span style="color: #cc3333;">L</span>)</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">                     \</span><span style="color: gray;">                        </span><span style="color: #228b22;">|</span> <span style="color: #cc3333;">I</span><span style="color: gray;">: İntegrin (<span style="color: #cc3333;">L</span>) Düşük Af.</span>
+<span style="color: #228b22;">|</span> <span style="color: #ff8c00;">2. Aktivasyon (Sinyal)</span><span style="color: gray;"> \</span><span style="color: gray;">                       </span><span style="color: #228b22;">|</span> <span style="color: #cc3333;">I*</span><span style="color: gray;">:İntegrin (<span style="color: #cc3333;">L</span>) Yüksek Af.</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">   K -&gt; </span><span style="color: #cc3333;">R .--. I</span><span style="color: gray;">     \</span><span style="color: gray;">                      </span><span style="color: #228b22;">|</span> <span style="color: #228b22;">C</span><span style="color: gray;">: ICAM/VCAM (<span style="color: #228b22;">E</span>)</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">       <span style="color: #cc3333;">( L )</span> --(&gt;) <span style="color: #cc3333;">I*</span><span style="color: gray;"> (Konf. Değişim)</span><span style="color: gray;">       </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">        <span style="color: #cc3333;">`--'</span> \</span><span style="color: gray;">                               </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">              \</span><span style="color: gray;">                              </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span> <span style="color: #555;">3. Adhesion (Sıkı Tutunma)</span><span style="color: gray;"> \ <span style="color: #cc3333;">.--. I*</span>&lt;====&gt;<span style="color: #228b22;">C</span></span><span style="color: gray;"> </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">                             <span style="color: #cc3333;">( L )</span>------<span style="color: #228b22;">C</span></span><span style="color: gray;"> </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">                              <span style="color: #cc3333;">`--'</span>------<span style="color: #228b22;">C</span></span><span style="color: gray;"> </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">                                 |</span><span style="color: gray;">                 </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span> <span style="color: #555;">4. Diapedez (Transmigrasyon)</span><span style="color: gray;"> v</span><span style="color: gray;">                 </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">+====================<span style="color: gray;">V</span>==========================+</span><span style="color: #228b22;"> &lt;-- Endotel Hücre Aralığı/İçi</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">                  <span style="color: #cc3333;">( L )</span></span><span style="color: gray;">                       </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">|</span><span style="color: gray;">                <span style="color: #cc3333;">.--' '--.</span></span><span style="color: gray;">  (PECAM-1 vb.)</span><span style="color: gray;">      </span><span style="color: #228b22;">|</span>
+<span style="color: #228b22;">+===============<span style="color: gray;">,'_____`,</span>=======================+</span><span style="color: gray;"> &lt;-- Bazal Membran</span>
+<span style="color: gray;">                     V</span>
+<span style="color: gray;">                 Dokuya Geçiş (Damar Dışı)</span>
+</div>
+
+Bu diyagramda adımlar şu şekilde özetlenmektedir:
+1.  **Rolling:** Lökosit (L), endotel yüzeyinde (E) bulunan selektinlere (S) geçici olarak bağlanarak yuvarlanır. (Endotel yüzeyinde gerçekleşir)
+2.  **Aktivasyon:** Endotelden gelen kemokinler (K), lökosit reseptörlerine (R) bağlanır ve integrinleri (I) yüksek afiniteli forma (I*) dönüştürür. (Endotel yüzeyinde gerçekleşir)
+3.  **Adhesion:** Yüksek afiniteli integrinler (I*), endotel ligandlarına (C) sıkıca bağlanır. (Endotel yüzeyinde gerçekleşir)
+4.  **Diapedez:** Lökosit, endotel hücrelerinin arasından veya içinden geçerek bazal membranı aşar ve damar dışındaki dokuya ulaşır. (Endotel bariyerini geçiş)
+
+Umarım bu "yenilenmiş" ve açıklığa kavuşturulmuş diyagram süreci daha doğru bir şekilde anlamanıza yardımcı olur.
+                 <div class="figure-caption">Şekil 1.4: Lökosit Ekstravazasyon Basamakları (ASCII)</div>
+
+                <p><strong>Ekstravazasyon Kaskadı:</strong> Rolling -> Aktivasyon -> Firm Adhesion -> Transendotelyal Migrasyon (Diapedez).</p>
+                <p><strong>Özgül Homing:</strong> Naif lenfositler L-selektin/CCR7 ile lenf düğümüne (HEV), efektör/hafıza hücreleri ise farklı reseptörlerle (örn., E/P-selektin ligandları, VLA-4, α4β7) inflamasyon bölgelerine veya spesifik dokulara (örn. bağırsak) göç eder.</p>
+
+                 <div class="spot-box detail">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+                     </div>
+                    <h4>Detay Bilgi: Homing Reseptörleri</h4>
+                    <p>Naif T hücrelerinin lenf düğümlerine girmesi için kritik olan L-selektin (CD62L) ve CCR7 kemokin reseptörü ekspresyonu, aktive olmuş efektör/hafıza T hücrelerinde genellikle azalır. Bunun yerine, inflamasyon bölgesine veya hedef dokuya (örn. deri için CLA ve CCR4, bağırsak için α4β7 ve CCR9) özgü homing reseptörleri eksprese edilir.</p>
+                </div>
+
+            </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 6</span> </div>
+    </div> 
+    <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>Giriş ve Bariyerler</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                <h1>BÖLÜM 2: DOĞAL İMMÜNİTE</h1>
+                <p>
+                    Doğal immünite (innate immunity), konakçının patojenlere veya doku hasarına karşı verdiği ilk, hızlı ve non-spesifik (ancak örüntüye dayalı) savunma yanıtıdır. Evrimsel olarak korunmuş bu sistem, patojenleri tanımak ve elimine etmek için hazır mekanizmalara sahiptir ve kazanılmış immün yanıtın başlaması için kritik sinyalleri sağlar.
+                </p>
+
+                <h2>2.1. Fiziksel ve Kimyasal Bariyerler</h2>
+                <p>Konakçının ilk savunma hattını oluşturan bu bariyerler, mikroorganizmaların vücuda girişini veya yerleşmesini engeller.</p>
+
+                <h3>Fiziksel/Mekanik Bariyerler:</h3>
+                <ul>
+                    <li><strong>Deri:</strong> Stratifiye, keratinize olmuş epidermis tabakası, sıkı bağlantılar (tight junctions), deskuamasyon.</li>
+                    <li><strong>Mukoz Membranlar:</strong> Sıkı bağlantılar, mukus salgısı (goblet), silier hareket (solunum), peristaltizm (sindirim), sıvı akışı (idrar, gözyaşı).</li>
+                </ul>
+
+                <h3>Kimyasal Bariyerler:</h3>
+                <ul>
+                    <li><strong>Asidik Ortam:</strong> Mide (HCl), deri, vajina.</li>
+                    <li><strong>Antimikrobiyal Enzimler:</strong> Lizozim (peptidoglikan yıkar), sekretuvar fosfolipaz A2 (membran hidrolizi).</li>
+                    <li><strong>Antimikrobiyal Peptidler (AMP'ler):</strong> Defensinler (α, β), Katelisidinler (LL-37). Membran bütünlüğünü bozarlar.</li>
+                    <li><strong>Diğer Moleküller:</strong> Laktoferrin/transferrin (Fe bağlar), Surfaktan proteinleri (SP-A, SP-D; opsonin), RNaz/DNaz.</li>
+                </ul>
+                 <h3>Mikrobiyolojik Bariyerler:</h3>
+                 <ul>
+                    <li><strong>Kommensal Mikrobiyota:</strong> Rekabet (besin, yer), antimikrobiyal madde üretimi (bakteriyosin), pH değişikliği, immün modülasyon ile kolonizasyon direnci sağlar.</li>
+                 </ul>
+
+                 <div class="spot-box tip">
+                     <div class="icon-container">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                     </div>
+                    <h4>Akılda Kalsın: Bariyerlerin Önemi</h4>
+                    <p>Doğal immünitenin en önemli ve sürekli aktif olan kısmı fiziksel ve kimyasal bariyerlerdir. Bu bariyerlerin bütünlüğünün bozulması (örn. yanıklar, yaralanmalar, kateterler, pH değişiklikleri, antibiyotik kullanımı ile flora bozulması) enfeksiyon riskini dramatik olarak artırır.</p>
+                </div>
+
+                <h2>2.2. Patojen İlişkili Moleküler Paternler (PAMP'lar) ve Hasar İlişkili Moleküler Paternler (DAMP'lar)</h2>
+                <p>Doğal immün sistem, mikroorganizma grupları için ortak olan (PAMP'lar) veya hasarlı/stres altındaki konakçı hücrelerinden salınan (DAMP'lar) belirli moleküler yapıları tanır.</p>
+                <ul>
+                    <li><strong>PAMP Örnekleri:</strong> LPS (Gram-negatif), Peptidoglikan/LTA (Gram-pozitif), Flagellin, CpG DNA (bakteri), dsRNA/ssRNA (virüs), Mannan/β-Glukan (mantar).</li>
+                    <li><strong>DAMP Örnekleri (Alarminler):</strong> HMGB1, ATP, Ürik Asit Kristalleri (MSU), S100 proteinleri, HSP'ler, Mitokondriyal DNA, Formillenmiş Peptidler.</li>
+                </ul>
+
+                 <div class="spot-box detail">
+                     <div class="icon-container">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+                     </div>
+                    <h4>Detay Bilgi: PAMP vs. DAMP</h4>
+                    <p>PAMP'lar eksojen (mikrobiyal kökenli) tehlike sinyalleriyken, DAMP'lar endojen (konakçı kökenli) tehlike sinyalleridir. Her ikisi de PRR'ları aktive ederek inflamatuar yanıtı tetikler. DAMP'ların neden olduğu inflamasyon "steril inflamasyon" olarak adlandırılır (örn. travma, iskemi, kristal birikimi).</p>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 6</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>PRR'lar ve Sinyal İletimi</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h2>2.3. Patern Tanıma Reseptörleri (PRR'lar)</h2>
+                <p>Doğal immün sistem hücreleri, PAMP'ları ve DAMP'ları tanımak için çeşitli PRR'lar eksprese ederler. PRR aktivasyonu, inflamatuar yanıtları ve adaptif immünitenin başlamasını tetikler.</p>
+
+                <h3>Toll Benzeri Reseptörler (TLR'lar):</h3>
+                <p>Tip I transmembran proteinleridir. Hücre yüzeyinde (TLR1, 2, 4, 5, 6) veya endozomlarda (TLR3, 7, 8, 9) bulunurlar.</p>
+                <ul>
+                    <li>Yüzey TLR'ları: Bakteriyel/fungal PAMP'ları tanır (TLR4: LPS; TLR5: Flagellin; TLR2/1 veya TLR2/6: Peptidoglikan, Lipoproteinler).</li>
+                    <li>Endozomal TLR'ları: Mikrobiyal nükleik asitleri tanır (TLR3: dsRNA; TLR7/8: ssRNA; TLR9: CpG DNA).</li>
+                    <li>Sinyal İletimi: TIR domainleri üzerinden MyD88 veya TRIF adaptörlerini kullanır. MyD88 -> NF-κB/MAPK aktivasyonu (Pro-inflamatuar sitokinler). TRIF -> IRF3/7 aktivasyonu (Tip I IFN üretimi) ve geç NF-κB aktivasyonu.</li>
+                </ul>
+
+                 <div class="ascii-diagram">
+<span class="color-gri">TLR Sinyal Yolağı (Basitleştirilmiş)</span>
+
+ <span class="color-yesil">Hücre Yüzeyi</span>        | <span class="color-yesil">Endozom</span>
+ <span class="color-mavi">PAMP</span> -> <span class="color-kirmizi">TLR(örn. 4)</span> | <span class="color-mavi">PAMP</span> -> <span class="color-kirmizi">TLR(örn. 3,7,9)</span>
+        |             |        |
+      <span class="color-sari">TIR</span> Domain      |      <span class="color-sari">TIR</span> Domain
+        |             |        |
+     <span class="color-turuncu">MyD88</span> Adaptör   |     <span class="color-turuncu">TRIF</span> Adaptör
+     /     \        |     /     \
+   <span class="color-gri">NF-kB</span>   <span class="color-gri">MAPK</span>       |   <span class="color-gri">IRF3/7</span>  <span class="color-gri">(Geç NF-kB)</span>
+    |       |       |    |
+    v       v       |    v
+<span class="color-pembe">Pro-inflam.</span>     | <span class="color-pembe">Tip I IFN</span>
+ <span class="color-pembe">Sitokinler</span>       |  <span class="color-pembe">Üretimi</span>
+ <span class="color-gri">(TNF, IL-1, IL-6)</span> |
+                 </div>
+                 <div class="figure-caption">Şekil 2.1: TLR Sinyal Yolakları Özeti (ASCII)</div>
+
+                <h3>NOD Benzeri Reseptörler (NLR'lar):</h3>
+                <p>Sitoplazmik sensörlerdir (NOD, LRR domainleri içerir).</p>
+                <ul>
+                    <li><strong>NOD1/NOD2:</strong> Bakteriyel peptidoglikan fragmanlarını tanır -> RIPK2 -> NF-κB/MAPK aktivasyonu.</li>
+                    <li><strong>NLRP'ler (örn., NLRP3):</strong> Çeşitli PAMP/DAMP'lar ve hücresel stres sinyalleri ile aktive olur -> İnflamazom kompleksi (NLRP3 + ASC + Pro-Kaspaz-1) oluşumu. Aktif Kaspaz-1 -> Pro-IL-1β/Pro-IL-18'i keser (aktif sitokinler) + Piroptozisi (Gasdermin D aracılı inflamatuar hücre ölümü) tetikler.</li>
+                </ul>
+
+                <h3>RIG-I Benzeri Reseptörler (RLR'lar):</h3>
+                <p>Sitoplazmik RNA helikazlardır (RIG-I, MDA5). Viral RNA'ları tanır -> MAVS adaptörü (mitokondri) -> TBK1/IKKε -> IRF3/7 aktivasyonu -> Güçlü Tip I IFN yanıtı.</p>
+
+                <h3>C-Tipi Lektin Reseptörleri (CLR'lar):</h3>
+                <p>Genellikle hücre yüzeyinde, karbonhidratları (özellikle fungal) tanır (Dectin-1: β-glukan; Dectin-2/Mincle: Mannoz; Mannoz Reseptörü). Fagositozu ve Syk-CARD9 -> NF-κB/MAPK aktivasyonunu tetikleyebilirler.</p>
+
+                <h3>Diğer Sitozolik Sensörler:</h3>
+                <p>cGAS gibi DNA sensörleri -> STING adaptörü -> TBK1 -> IRF3 aktivasyonu -> Tip I IFN yanıtı.</p>
+
+                <div class="spot-box tip">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                     </div>
+                    <h4>Akılda Kalsın: PRR Aileleri ve Lokalizasyonları</h4>
+                    <ul>
+                        <li><strong>Hücre Yüzeyi:</strong> TLR1, TLR2, TLR4, TLR5, TLR6, CLR'lar (Bakteri/Mantar dış yapıları)</li>
+                        <li><strong>Endozom/Lizozom:</strong> TLR3, TLR7, TLR8, TLR9 (Mikrobiyal Nükleik Asitler)</li>
+                        <li><strong>Sitozol:</strong> NLR'lar (Peptidoglikan, PAMP/DAMP -> İnflamazom), RLR'lar (Viral RNA), cGAS (DNA)</li>
+                    </ul>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 7</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>Fagositoz</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h2>2.4. Fagositoz Mekanizmaları ve Fagositik Hücreler</h2>
+                <p>Fagositoz ("hücre yeme"), başta nötrofiller ve makrofajlar olmak üzere profesyonel fagositlerin, mikroorganizmaları veya partikülleri yutarak internalize etmesi ve parçalaması işlemidir.</p>
+                <p><strong>Profesyonel Fagositler:</strong> Nötrofiller, Makrofajlar, Dendritik Hücreler.</p>
+                <p><strong>Fagositoz Süreci:</strong></p>
+                <ol>
+                    <li><strong>Kemotaksi ve Tanıma/Bağlanma:</strong> Fagositlerin kemoatraktanlarla bölgeye çekilmesi ve partiküle bağlanması (Doğrudan PRR'lar ile veya Opsoninler [IgG, C3b] aracılığıyla FcR/CR'lar üzerinden).</li>
+                    <li><strong>Yutma (Engulfment):</strong> Psödopodların partikülü sarması ve fagozom oluşumu (Aktin polimerizasyonu, Rho GTPazlar).</li>
+                    <li><strong>Fagozom Olgunlaşması:</strong> Fagozomun endozomlar ve lizozomlarla kaynaşarak pH'ının düşmesi ve hidrolitik enzimlerle dolması (Fagolizozom).</li>
+                    <li><strong>Öldürme ve Yıkım:</strong>
+                        <ul>
+                            <li><strong>Oksijene Bağımlı (Respiratuar Patlama):</strong> NADPH Oksidaz (Phox) -> O₂•− (Süperoksit). SOD -> H₂O₂. MPO (Nötrofil) -> HOCl (Hipokloröz asit). Fenton Rxn -> •OH (Hidroksil radikali). Bunlar Reaktif Oksijen Türleridir (ROS). iNOS (Makrofaj) -> NO (Nitrik Oksit). NO + O₂•− -> ONOO− (Peroksinitrit). Bunlar Reaktif Nitrojen Türleridir (RNS). ROS/RNS mikrobiyal makromoleküllere zarar verir.</li>
+                            <li><strong>Oksijenden Bağımsız:</strong> Lizozomal enzimler (proteaz, lipaz, nükleaz), AMP'ler (defensin, katelisidin), Lizozim, Laktoferrin, Düşük pH.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Antijen Sunumu:</strong> Makrofaj ve DC'ler, parçalanan antijenleri MHC molekülleriyle T hücrelerine sunar.</li>
+                </ol>
+
+                 <div class="ascii-diagram">
+<span class="color-gri">Fagositoz Aşamaları</span>
+
+<span class="color-kirmizi">1. Kemotaksi/Adezyon:</span>
+   <span class="color-turuncu">Fagosit</span> ~~~~> <span class="color-mavi">Bakteri</span> (Opsonize olabilir <span class="color-sari">O</span>)
+     <span class="color-gri">FcR/CR/PRR</span>   <span class="color-sari">O</span><span class="color-mavi">()</span><span class="color-sari">O</span>
+
+<span class="color-kirmizi">2. Yutma (Ingestion):</span>
+   <span class="color-turuncu">.-----.</span>
+   <span class="color-turuncu">|</span> <span class="color-mavi">()</span>  <span class="color-turuncu">|</span> <-- Psödopodlar fagozomu oluşturur
+   <span class="color-turuncu">'-----'</span>
+
+<span class="color-kirmizi">3. Fago-lizozom Oluşumu:</span>
+   <span class="color-turuncu">.-------.</span>   <span class="color-yesil">(Lizozom)</span>
+   <span class="color-turuncu">|</span> <span class="color-pembe">F-L</span> <span class="color-turuncu">|</span> <--- <span class="color-yesil">(Enzimler)</span>
+   <span class="color-turuncu">'-------'</span>
+
+<span class="color-kirmizi">4. Öldürme/Sindirim:</span>
+   <span class="color-turuncu">.-------.</span>
+   <span class="color-turuncu">|</span> <span class="color-red">ROS/RNS</span> <span class="color-turuncu">|</span> <-- Respiratuar patlama
+   <span class="color-turuncu">|</span> <span class="color-yesil">Enzimler</span><span class="color-turuncu">|</span> <-- Lizozomal aktivite
+   <span class="color-turuncu">|</span> <span class="color-gri">Artıklar</span><span class="color-turuncu">|</span>
+   <span class="color-turuncu">'-------'</span>
+
+<span class="color-kirmizi">5. Atılım/Sunum:</span>
+   <span class="color-turuncu">.-----.</span> ---> <span class="color-gri">(Ekzositoz)</span> / <span class="color-gri">(MHC ile Antijen Sunumu)</span>
+   <span class="color-turuncu">'-----'</span>
+                 </div>
+                 <div class="figure-caption">Şekil 2.2: Fagositoz Sürecinin Basamakları (ASCII)</div>
+
+                 <div class="spot-box clinical">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 18v-4"/><path d="m12 8 3-3"/><path d="m12 8-3-3"/></svg>
+                     </div>
+                    <h4>Klinik Bağlantı: Kronik Granülomatöz Hastalık (CGD)</h4>
+                    <p>NADPH oksidaz (Phox) enzim kompleksinin genetik defektleri sonucu ortaya çıkan bir primer immün yetmezliktir. Fagositlerde respiratuar patlama ve ROS üretimi bozulur. Hastalar, özellikle katalaz pozitif mikroorganizmaların (örn., *S. aureus*, *Aspergillus*) neden olduğu tekrarlayan, ciddi enfeksiyonlara ve granülom oluşumuna yatkındır. Tanıda NBT (Nitroblue Tetrazolium) testi veya DHR (Dihydrorhodamine) akım sitometri testi kullanılır.</p>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 8</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>NK Hücreleri ve Diğer Granülositler</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h2>2.5. Doğal Katil (NK) Hücreleri: Aktivasyon, İnhibisyon ve Fonksiyonları</h2>
+                <p>NK hücreleri, önceden duyarlanmaya gerek duymadan hedef hücreleri (özellikle virüsle enfekte olmuş hücreler ve tümör hücreleri) tanıyıp öldürebilen sitotoksik lenfositlerdir.</p>
+                <p><strong>Tanıma Mekanizması:</strong> Aktive edici ve inhibe edici reseptör sinyallerinin dengesine dayanır.</p>
+                <ul>
+                    <li><strong>İnhibe Edici Reseptörler:</strong> Sağlıklı hücrelerdeki MHC Sınıf I'i tanır (KIR'lar, CD94/NKG2A). Bağlanma -> İnhibisyon.</li>
+                    <li><strong>Aktive Edici Reseptörler:</strong> Stres ligandlarını (NKG2D -> MIC-A/B), viral/tümör antijenlerini (NCR'lar) veya antikora kaplı hücreleri (CD16 -> ADCC) tanır.</li>
+                    <li><strong>Aktivasyon:</strong> "Missing-Self" (MHC-I kaybı) veya "Stress-Induced Self" (aktive edici ligand artışı) durumlarında veya sitokinlerle (IL-2, IL-12, IL-15, Tip I IFN) aktive olurlar.</li>
+                </ul>
+                 <p><strong>Efektör Fonksiyonlar:</strong></p>
+                 <ul>
+                     <li><strong>Sitotoksisite:</strong> Perforin/Granzim salınımı veya FasL aracılı apoptoz.</li>
+                     <li><strong>Sitokin Üretimi:</strong> Özellikle IFN-γ (makrofaj aktivasyonu, Th1 yanıtı güçlendirme).</li>
+                 </ul>
+
+                 <div class="spot-box warning">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                     </div>
+                     <h4>Sınav Uyarısı: İmmün Kaçış Mekanizmaları</h4>
+                    <p>Bazı virüsler (örn., CMV, HSV) ve tümörler, NK hücrelerinden veya CTL'lerden kaçmak için MHC Sınıf I ekspresyonunu modüle eden veya inhibe edici/aktive edici ligandların ekspresyonunu değiştiren mekanizmalar geliştirmişlerdir.</p>
+                </div>
+
+                <h2>2.6. Mast Hücreleri, Bazofiller ve Eozinofillerin Rolleri</h2>
+                <p>Bu granülositler genellikle alerjik reaksiyonlarla ilişkilendirilse de, doğal immün yanıtlarda da rolleri vardır.</p>
+                <ul>
+                    <li><strong>Mast Hücreleri:</strong> Dokularda yerleşiktir. IgE/FcεRI dışında PAMP/DAMP/Kompleman ile de aktive olabilir. Hızlı degranülasyon (histamin, heparin, proteazlar) ve yeni mediyatör sentezi (LT, PG, sitokinler) ile inflamasyon, vazodilatasyon, permeabilite artışı ve lökosit göçünü tetikler.</li>
+                    <li><strong>Bazofiller:</strong> Kanda dolaşır. Mast hücrelerine benzer mediyatörler içerir. Alerji ve parazit yanıtında Th2 yönelimini destekleyen IL-4/IL-13 salgılar.</li>
+                    <li><strong>Eozinofiller:</strong> Dokularda bulunur. Helmintlere karşı savunmada toksik granül proteinlerini (MBP, ECP) salarlar. Alerjik inflamasyonda da önemlidirler.</li>
+                </ul>
+
+                <div class="spot-box clinical">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 18v-4"/><path d="m12 8 3-3"/><path d="m12 8-3-3"/></svg>
+                     </div>
+                    <h4>Klinik Bağlantı: Eozinofili</h4>
+                    <p>Kanda veya dokularda eozinofil sayısının artması (eozinofili), sıklıkla altta yatan bir paraziter enfeksiyon (özellikle helmintler) veya alerjik bir durumu (astım, atopik dermatit, alerjik rinit) düşündürür. Bazı maligniteler ve hipereozinofilik sendromlar da eozinofiliye neden olabilir.</p>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 9</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>Kompleman Sistemi</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h2>2.7. Kompleman Sistemi: Aktivasyon Yolları, Düzenlenmesi ve Biyolojik Fonksiyonları</h2>
+                <p>Kompleman sistemi, plazmada inaktif halde bulunan proteinlerden oluşan bir kaskad sistemidir ve doğal/kazanılmış immünitenin önemli bir efektör koludur.</p>
+                <p><strong>Aktivasyon Yolları:</strong> Üç yol da C3 konvertaz oluşumuyla birleşir.</p>
+                <ul>
+                    <li><strong>Klasik Yol:</strong> Antikor-Antijen kompleksleri (IgM, IgG) veya CRP tarafından tetiklenir. C1qrs -> C4 -> C2 -> C4b2a (C3 Konvertaz).</li>
+                    <li><strong>Lektin Yolu:</strong> Mikrobiyal yüzeylerdeki karbonhidratlara (mannoz) MBL veya Fikolinlerin bağlanmasıyla tetiklenir. MASP'lar -> C4 -> C2 -> C4b2a (C3 Konvertaz).</li>
+                    <li><strong>Alternatif Yol:</strong> Patojen yüzeylerinde spontan C3 hidrolizi ("tick-over") ile başlar ve pozitif geri besleme ile amplifiye olur. C3b + Faktör B + Faktör D -> C3bBb (C3 Konvertaz). Properdin ile stabilize edilir.</li>
+                </ul>
+                <p><strong>Merkezi Rol: C3 ve C5 Konvertazlar:</strong> C3 konvertaz (C4b2a veya C3bBb), C3'ü C3a ve C3b'ye keser. C5 konvertaz (C4b2a3b veya C3bBb3b), C5'i C5a ve C5b'ye keser.</p>
+
+                 <div class="ascii-diagram">
+<span class="color-gri">Kompleman Aktivasyon Yollarının Birleşimi</span>
+
+ <span class="color-kirmizi">Klasik Yol</span>         <span class="color-yesil">Lektin Yolu</span>         <span class="color-mavi">Alternatif Yol</span>
+<span class="color-gri">(Antikor-Ag / CRP)</span>   <span class="color-gri">(MBL/Fikolin-KH)</span>    <span class="color-gri">(Patojen Yüzeyi)</span>
+       |                    |                     |
+       v                    v                     v
+   <span class="color-kirmizi">C4b2a</span>                <span class="color-yesil">C4b2a</span>               <span class="color-mavi">C3bBb</span>
+   <span class="color-gri">(C3 Konvertaz)</span>       <span class="color-gri">(C3 Konvertaz)</span>      <span class="color-gri">(C3 Konvertaz)</span>
+       \                    /                     /
+        \                  /                     /
+         +------- <span class="color-sari">C3</span> ------+--------------------+
+         |        /|\        |                    |
+         |         |         |                    |
+         v         |         v                    v
+       <span class="color-turuncu">C3a</span>       <span class="color-pembe">C3b</span> -----+--> <span class="color-mavi">C3bBb</span> <span class="color-gri">(Amplifikasyon)</span>
+ <span class="color-gri">(Anafilatoksin)</span>  <span class="color-gri">(Opsonin)</span>  |      <span class="color-gri">(Alternatif Yol)</span>
+                   |      |
+                   +------+--> <span class="color-sari">C5 Konvertaz</span>
+                   |           <span class="color-gri">(C4b2a3b / C3bBb3b)</span>
+                   |                 |
+                   |                 v <span class="color-sari">C5</span>
+                   |                / \
+                   |               /   \
+                   v              v     v
+            <span class="color-gri">Efektör</span>         <span class="color-turuncu">C5a</span>   <span class="color-pembe">C5b</span> --> <span class="color-mor">C6,C7,C8,C9</span>
+           <span class="color-gri">Fonksiyonlar</span>    <span class="color-gri">(Anafilatoksin</span>   |      <span class="color-gri">(MAC Oluşumu)</span>
+                         <span class="color-gri"> Kemotaksi)</span>      v
+                                         <span class="color-mor">LİZİS</span>
+                 </div>
+                 <div class="figure-caption">Şekil 2.3: Kompleman Aktivasyon Yollarının Özeti (ASCII)</div>
+
+                <p><strong>Biyolojik Fonksiyonlar:</strong></p>
+                <ul>
+                    <li><strong>Opsonizasyon ve Fagositoz:</strong> C3b kaplı mikropların fagositlerce (CR'lar aracılığıyla) tanınması ve yutulması.</li>
+                    <li><strong>İnflamasyon:</strong> C3a ve C5a (Anafilatoksinler) mast hücrelerini aktive eder, permeabiliteyi artırır, lökositleri (özellikle C5a) bölgeye çeker.</li>
+                    <li><strong>Hücre Lizisi:</strong> C5b-9 (MAC) hedef hücre membranında por oluşturarak ozmotik lizise neden olur (özellikle Gram-negatif bakterilere etkili).</li>
+                    <li><strong>İmmün Kompleks Temizliği:</strong> C3b kaplı komplekslerin eritrositlerle (CR1) taşınıp dalak/karaciğerde temizlenmesi.</li>
+                </ul>
+                <p><strong>Düzenleme:</strong> Konakçı hücre hasarını önlemek için C1-INH, Faktör H, Faktör I, DAF (CD55), MCP (CD46), CD59 (Protectin) gibi düzenleyici proteinler bulunur.</p>
+
+                <div class="spot-box clinical">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 18v-4"/><path d="m12 8 3-3"/><path d="m12 8-3-3"/></svg>
+                     </div>
+                    <h4>Klinik Bağlantı: Kompleman Eksiklikleri</h4>
+                    <ul>
+                        <li><strong>Erken komponent (C1, C4, C2) eksiklikleri:</strong> İmmün kompleks temizliğinde bozulma nedeniyle SLE benzeri otoimmün hastalıklara yatkınlık.</li>
+                        <li><strong>C3 eksikliği:</strong> Her üç yol da bozulur. Tekrarlayan, ciddi piyojenik bakteri enfeksiyonlarına yatkınlık.</li>
+                        <li><strong>Terminal komponent (C5-C9) eksiklikleri:</strong> MAC oluşumu bozulur. Özellikle *Neisseria* türlerine (meningokok, gonokok) karşı tekrarlayan enfeksiyonlara yatkınlık.</li>
+                        <li><strong>Düzenleyici protein eksiklikleri:</strong> C1-INH eksikliği (Herediter Anjiyoödem), DAF/CD59 eksikliği (PNH). Faktör H/I eksikliği (Atipik HÜS).</li>
+                    </ul>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 10</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>İnflamasyon</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h2>2.8. İnflamasyon: Akut ve Kronik İnflamasyonun Mekanizmaları, Hücresel ve Moleküler Bileşenleri</h2>
+                <p>İnflamasyon (Yangı), vaskülarize dokuların enfeksiyon veya hasara verdiği temel, koruyucu yanıttır. Klasik belirtileri: Rubor (kızarıklık), Tumor (şişlik), Calor (ısı artışı), Dolor (ağrı) ve Functio laesa (fonksiyon kaybı).</p>
+
+                <h3>Akut İnflamasyon:</h3>
+                <ul>
+                    <li><strong>Özellikler:</strong> Hızlı başlangıç, kısa süre, nötrofil infiltrasyonu, vasküler değişiklikler (vazodilatasyon, permeabilite artışı), eksüdasyon (ödem).</li>
+                    <li><strong>Tetikleyiciler:</strong> Enfeksiyon (PAMP), doku nekrozu (DAMP), yabancı cisim, immün reaksiyonlar.</li>
+                    <li><strong>Ana Olaylar:</strong>
+                        <ol>
+                            <li><strong>Vasküler Değişiklikler:</strong> Mediyatörler (histamin, PG, LT, TNF, IL-1) vazodilatasyon ve permeabilite artışı yapar.</li>
+                            <li><strong>Hücresel Olaylar (Lökosit Ekstravazasyonu):</strong> Marjinasyon -> Rolling (Selektinler) -> Adezyon (İntegrinler - Kemokin aktivasyonu ile) -> Transmigrasyon (Diapedez).</li>
+                            <li><strong>Fagositoz ve Eliminasyon:</strong> Nötrofiller ve makrofajlar etkeni temizler.</li>
+                            <li><strong>Sonlanma (Resolution):</strong> Uyaran kalkınca anti-inflamatuar mediyatörler (lipoksin, resolvin, IL-10, TGF-β) ile yanıt sonlanır, onarım başlar.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                 <div class="ascii-diagram">
+<span class="color-gri">Akut İnflamasyonun Ana Olayları</span>
+
+ <span class="color-kirmizi">1. Uyaran (Patojen/Hasar)</span> -> <span class="color-turuncu">Makrofaj/Mast Hücresi Aktivasyonu</span>
+                             |
+                             v <span class="color-gri">(Histamin, TNF, IL-1, Kemokinler)</span>
+      +----------------------+-----------------------+
+      | <span class="color-yesil">VASKÜLER YANIT</span>         | <span class="color-mavi">HÜCRESEL YANIT</span>              |
+      |                      |                       |
+      | - Vazodilatasyon     |                       | <span class="color-gri">(Kandan Dokuya Göç)</span>
+      |   (-> Kızarıklık, Isı)|                       |
+      | - Permeabilite Artışı|                       | <span class="color-mavi">Lökositler (Önce Nötrofil)</span>
+      |   (-> Eksüdasyon/Ödem)|                       |     |
+      |                      |                       |     v <span class="color-gri">(Ekstravazasyon)</span>
+      |                      |                       |   <span class="color-mavi">Marjinasyon</span>
+      |                      |                       |     |
+      |                      |                       |     v <span class="color-gri">(Selektinler)</span>
+      |                      |                       |   <span class="color-mavi">Rolling</span>
+      |                      |                       |     |
+      |                      |                       |     v <span class="color-gri">(Kemokin/İntegrin)</span>
+      |                      |                       |   <span class="color-mavi">Adezyon</span>
+      |                      |                       |     |
+      |                      |                       |     v <span class="color-gri">(Diapedez)</span>
+      |                      |                       |   <span class="color-mavi">Transmigrasyon</span>
+      +----------------------+-----------------------+     |
+                             |                             |
+                             +---------> <span class="color-kirmizi">ETKENİN ELİMİNASYONU</span> <---+
+                                         <span class="color-gri">(Fagositoz vb.)</span>
+                                               |
+                                               v
+                                         <span class="color-yesil">SONLANMA / ONARIM</span>
+                 </div>
+                 <div class="figure-caption">Şekil 2.4: Akut İnflamasyonun Şematik Özeti (ASCII)</div>
+
+                <h3>Kronik İnflamasyon:</h3>
+                 <ul>
+                    <li><strong>Özellikler:</strong> Uzamış süre, eş zamanlı yıkım ve onarım (fibrozis), mononükleer hücre infiltrasyonu (makrofaj, lenfosit, plazma hücresi).</li>
+                    <li><strong>Nedenler:</strong> Persistan enfeksiyonlar (Tbc), aşırı duyarlılık (otoimmünite, alerji), uzun süreli toksin maruziyeti.</li>
+                    <li><strong>Granülomatöz İnflamasyon:</strong> Kronik inflamasyonun özel bir tipi. Aktive makrofajlar (epiteloid histiyositler) ve lenfositlerden oluşan granülomlar (Tbc, sarkoidoz, yabancı cisim). Dev hücreler içerebilir. Kazeöz veya non-kazeöz olabilir.</li>
+                </ul>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 11</span> </div>
+    </div> <div class="page content-page">
+        <div class="header">
+            <span>Bölüm 2: Doğal (Innate) İmmünite</span>
+            <span>Sitokinler ve Kemokinler</span>
+        </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                 <h3>İnflamasyonun Moleküler Mediyatörleri:</h3>
+                 <p>Çok sayıda kimyasal aracı inflamasyonu yönetir:</p>
+                 <ul>
+                     <li><strong>Vazoaktif Aminler:</strong> Histamin, Serotonin.</li>
+                     <li><strong>Plazma Proteaz Sistemleri:</strong> Kompleman (C3a, C5a), Kinin (Bradikinin), Koagülasyon.</li>
+                     <li><strong>Araşidonik Asit Metabolitleri (Eikozanoidler):</strong> Prostaglandinler (COX yolu), Lökotrienler (LOX yolu), Lipoksinler.</li>
+                     <li><strong>Sitokinler ve Kemokinler:</strong> (Aşağıda detaylı).</li>
+                     <li><strong>Diğerleri:</strong> PAF, ROS, NO.</li>
+                 </ul>
+
+                 <div class="spot-box warning">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                     </div>
+                     <h4>Sınav Uyarısı: Sitokin Fırtınası</h4>
+                    <p>Bazı enfeksiyonlarda (örn., sepsis, bazı viral enfeksiyonlar) veya inflamatuar durumlarda proinflamatuar sitokinlerin (özellikle TNF-α, IL-1, IL-6) aşırı ve kontrolsüz salınımı "sitokin fırtınası" olarak adlandırılır. Bu durum, yaygın endotel hasarı, koagülopati, çoklu organ yetmezliği ve yüksek mortalite ile sonuçlanabilen sistemik bir inflamatuar yanıttır.</p>
+                </div>
+
+                <h2>2.9. Doğal İmmünitede Sitokinler ve Kemokinler</h2>
+                <p>Sitokinler hücreler arası iletişimi sağlayan proteinlerdir. Kemokinler lökosit göçünü yönlendiren bir alt gruptur.</p>
+                <ul>
+                    <li><strong>Anahtar Pro-inflamatuar Sitokinler:</strong>
+                        <ul>
+                            <li><strong>TNF-α:</strong> Endotel aktivasyonu, ateş, akut faz yanıtı, kaşeksi. Yüksek dozu septik şok.</li>
+                            <li><strong>IL-1 (α/β):</strong> TNF benzeri etkiler. IL-1β salınımı için inflamazom gerekir.</li>
+                            <li><strong>IL-6:</strong> Akut faz proteinlerini (CRP) güçlü uyarır, B hücre farklılaşması, ateş.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tip I İnterferonlar (IFN-α, IFN-β):</strong> Ana kaynak pDC'ler ve virüsle enfekte hücreler. Antiviral durum oluşturur (ISG'ler), NK aktivitesini artırır, MHC-I ekspresyonunu artırır.</li>
+                    <li><strong>IL-12:</strong> DC ve makrofajlardan salınır. NK ve T hücrelerinden IFN-γ üretimini uyarır. Th1 farklılaşmasını sağlar.</li>
+                    <li><strong>IL-18:</strong> IL-12 ile sinerjistik olarak IFN-γ üretimini uyarır. Salınımı Kaspaz-1 gerektirir.</li>
+                    <li><strong>İmmünosüpresif Sitokinler:</strong> IL-10, TGF-β. Yanıtı sınırlar.</li>
+                    <li><strong>Kemokinler:</strong> Lökosit göçünü yönlendirir (örn., IL-8/CXCL8 -> Nötrofil; MCP-1/CCL2 -> Monosit; CCL19/CCL21 -> Naif T/DC homingi).</li>
+                </ul>
+
+                 <div class="spot-box tip">
+                     <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                     </div>
+                    <h4>Akılda Kalsın: Anahtar Sitokin Fonksiyonları</h4>
+                    <ul>
+                        <li><strong>Pro-inflamatuar/Akut Faz:</strong> TNF-α, IL-1, IL-6</li>
+                        <li><strong>Antiviral:</strong> Tip I IFN (IFN-α/β)</li>
+                        <li><strong>Th1 Yanıtı/Hücresel İmmünite:</strong> IL-12, IFN-γ</li>
+                        <li><strong>Th2 Yanıtı/Humoral/Alerji:</strong> IL-4, IL-5, IL-13 (Kazanılmış immünitede daha belirgin)</li>
+                        <li><strong>Nötrofil Kemotaksisi:</strong> IL-8 (CXCL8)</li>
+                        <li><strong>Anti-inflamatuar/Düzenleyici:</strong> IL-10, TGF-β</li>
+                    </ul>
+                </div>
+                 </div> </div> <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık</span>
+            <span>Sayfa 12</span> </div>
+    </div>  <div class="footer">
+</body>
+</html>
