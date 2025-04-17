@@ -1,0 +1,4387 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzm.Dr. Sait Ramazan Gülbay - Gelişmiş Eğitim Materyalleri & Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/favicon.ico" sizes="any"> 
+<style>
+:root {
+    color-scheme: light dark;
+
+    --hue-primary: 238;
+    --hue-secondary: 212;
+    --hue-tertiary: 260;
+    --hue-success: 150;
+    --hue-error: 3;
+    --hue-warning: 48;
+    --hue-neutral: 225;
+
+    --chroma-accent: 0.2;
+    --chroma-secondary: 0.12;
+    --chroma-tertiary: 0.15;
+    --chroma-vibrant: 0.25;
+    --chroma-subtle: 0.07;
+    --chroma-neutral: 0.02;
+    --chroma-neutral-subtle: 0.01;
+
+    --lightness-brand-light: 62%;
+    --lightness-brand-dark: 66%;
+
+    --lightness-text-strong-light: 8%;
+    --lightness-text-normal-light: 18%;
+    --lightness-text-soft-light: 38%;
+    --lightness-text-muted-light: 55%;
+
+    --lightness-surface-1-light: 100%;
+    --lightness-surface-2-light: 98%;
+    --lightness-surface-3-light: 96%;
+    --lightness-surface-4-light: 93.5%;
+    --lightness-surface-overlay-light: 90%;
+
+    --lightness-border-light: 90%;
+    --lightness-border-hover-light: 84%;
+    --lightness-border-focus-light: 78%;
+
+    --lightness-text-on-accent-light: 99%;
+
+    --bg-secondary-rgb-light: 250, 251, 253;
+    --bg-tertiary-rgb-light: 245, 247, 250;
+
+    --accent-primary-light: oklch(var(--lightness-brand-light) var(--chroma-accent) var(--hue-primary));
+    --accent-primary-hover-light: oklch(calc(var(--lightness-brand-light) - 6%) var(--chroma-accent) var(--hue-primary));
+    --accent-primary-active-light: oklch(calc(var(--lightness-brand-light) - 12%) var(--chroma-accent) var(--hue-primary));
+
+    --accent-secondary-light: oklch(calc(var(--lightness-brand-light) + 6%) var(--chroma-secondary) var(--hue-secondary));
+    --accent-secondary-hover-light: oklch(calc(var(--lightness-brand-light) + 1%) var(--chroma-secondary) var(--hue-secondary));
+    --accent-secondary-active-light: oklch(calc(var(--lightness-brand-light) - 4%) var(--chroma-secondary) var(--hue-secondary));
+
+    --accent-tertiary-light: oklch(calc(var(--lightness-brand-light) + 10%) var(--chroma-tertiary) var(--hue-tertiary));
+
+    --text-1-light: oklch(var(--lightness-text-strong-light) var(--chroma-neutral) var(--hue-neutral));
+    --text-2-light: oklch(var(--lightness-text-normal-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-3-light: oklch(var(--lightness-text-soft-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-muted-light: oklch(var(--lightness-text-muted-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-on-accent-light: oklch(var(--lightness-text-on-accent-light) var(--chroma-neutral-subtle) var(--hue-primary));
+
+    --surface-1-light: oklch(var(--lightness-surface-1-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-2-light: oklch(var(--lightness-surface-2-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-3-light: oklch(var(--lightness-surface-3-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-4-light: oklch(var(--lightness-surface-4-light) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-accent-light: oklch(calc(var(--lightness-brand-light) + 28%) var(--chroma-subtle) var(--hue-primary) / 0.85);
+    --surface-overlay-light: oklch(var(--lightness-surface-overlay-light) var(--chroma-neutral-subtle) var(--hue-neutral) / 0.8);
+
+    --border-1-light: oklch(var(--lightness-border-light) var(--chroma-neutral-subtle) var(--hue-neutral) / 0.8);
+    --border-2-light: oklch(calc(var(--lightness-border-light) - 6%) var(--chroma-neutral-subtle) var(--hue-neutral) / 0.9);
+    --border-accent-light: oklch(var(--lightness-brand-light) var(--chroma-subtle) var(--hue-primary) / 0.7);
+    --border-hover-light: oklch(var(--lightness-border-hover-light) var(--chroma-neutral) var(--hue-neutral));
+    --border-focus-light: oklch(var(--lightness-border-focus-light) var(--chroma-accent) var(--hue-primary));
+
+    --shadow-color-light: oklch(var(--lightness-text-strong-light) 0.007 0 / 8%);
+    --shadow-hover-color-light: oklch(var(--lightness-text-strong-light) 0.008 0 / 14%);
+    --shadow-inset-light: inset 0 1px 3px 0 oklch(var(--lightness-text-strong-light) 0.004 0 / 6%);
+    --shadow-highlight-light: 0 0.5px 0.5px oklch(100% 0.005 0 / 60%) inset;
+
+    --shadow-sm-light: 0 1px 2px 0 var(--shadow-color-light), 0 2px 4px -1px var(--shadow-color-light);
+    --shadow-md-light: 0 4px 8px -2px var(--shadow-color-light), 0 2px 4px -2px var(--shadow-color-light);
+    --shadow-lg-light: 0 12px 16px -4px var(--shadow-color-light), 0 4px 6px -4px var(--shadow-color-light);
+    --shadow-xl-light: 0 20px 25px -5px var(--shadow-color-light), 0 10px 10px -6px var(--shadow-color-light);
+    --shadow-2xl-light: 0 28px 50px -12px var(--shadow-color-light);
+
+    --success-light: oklch(62% var(--chroma-secondary) var(--hue-success));
+    --error-light: oklch(67% var(--chroma-accent) var(--hue-error));
+    --warning-light: oklch(80% var(--chroma-accent) var(--hue-warning));
+    --success-bg-light: oklch(97.5% var(--chroma-subtle) var(--hue-success) / 0.7);
+    --error-bg-light: oklch(97.5% var(--chroma-subtle) var(--hue-error) / 0.7);
+    --warning-bg-light: oklch(98.5% var(--chroma-subtle) var(--hue-warning) / 0.7);
+    --success-border-light: oklch(88% var(--chroma-subtle) var(--hue-success));
+    --error-border-light: oklch(88% var(--chroma-subtle) var(--hue-error));
+    --warning-border-light: oklch(90% var(--chroma-subtle) var(--hue-warning));
+
+    --lightness-text-strong-dark: 98%;
+    --lightness-text-normal-dark: 90%;
+    --lightness-text-soft-dark: 78%;
+    --lightness-text-muted-dark: 65%;
+
+    --lightness-surface-1-dark: 5%;
+    --lightness-surface-2-dark: 9%;
+    --lightness-surface-3-dark: 14%;
+    --lightness-surface-4-dark: 19%;
+    --lightness-surface-overlay-dark: 25%;
+
+    --lightness-border-dark: 28%;
+    --lightness-border-hover-dark: 34%;
+    --lightness-border-focus-dark: 40%;
+
+    --lightness-text-on-accent-dark: 8%;
+
+    --bg-secondary-rgb-dark: 23, 26, 31;
+    --bg-tertiary-rgb-dark: 36, 40, 46;
+
+    --accent-primary-dark: oklch(var(--lightness-brand-dark) var(--chroma-accent) var(--hue-primary));
+    --accent-primary-hover-dark: oklch(calc(var(--lightness-brand-dark) + 6%) var(--chroma-accent) var(--hue-primary));
+    --accent-primary-active-dark: oklch(calc(var(--lightness-brand-dark) + 12%) var(--chroma-accent) var(--hue-primary));
+
+    --accent-secondary-dark: oklch(calc(var(--lightness-brand-dark) - 7%) var(--chroma-secondary) var(--hue-secondary));
+    --accent-secondary-hover-dark: oklch(calc(var(--lightness-brand-dark) - 3%) var(--chroma-secondary) var(--hue-secondary));
+    --accent-secondary-active-dark: oklch(var(--lightness-brand-dark) var(--chroma-secondary) var(--hue-secondary));
+
+    --accent-tertiary-dark: oklch(calc(var(--lightness-brand-dark) - 10%) var(--chroma-tertiary) var(--hue-tertiary));
+
+    --text-1-dark: oklch(var(--lightness-text-strong-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-2-dark: oklch(var(--lightness-text-normal-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-3-dark: oklch(var(--lightness-text-soft-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-muted-dark: oklch(var(--lightness-text-muted-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --text-on-accent-dark: oklch(var(--lightness-text-on-accent-dark) var(--chroma-neutral) var(--hue-primary));
+
+    --surface-1-dark: oklch(var(--lightness-surface-1-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-2-dark: oklch(var(--lightness-surface-2-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-3-dark: oklch(var(--lightness-surface-3-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-4-dark: oklch(var(--lightness-surface-4-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --surface-accent-dark: oklch(calc(var(--lightness-brand-dark) - 48%) var(--chroma-subtle) var(--hue-primary) / 0.35);
+    --surface-overlay-dark: oklch(var(--lightness-surface-overlay-dark) var(--chroma-neutral-subtle) var(--hue-neutral) / 0.85);
+
+    --border-1-dark: oklch(var(--lightness-border-dark) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --border-2-dark: oklch(calc(var(--lightness-border-dark) + 6%) var(--chroma-neutral-subtle) var(--hue-neutral));
+    --border-accent-dark: oklch(var(--lightness-brand-dark) var(--chroma-subtle) var(--hue-primary) / 0.45);
+    --border-hover-dark: oklch(var(--lightness-border-hover-dark) var(--chroma-neutral) var(--hue-neutral));
+    --border-focus-dark: oklch(var(--lightness-border-focus-dark) var(--chroma-accent) var(--hue-primary));
+
+    --shadow-color-dark: oklch(2% 0.018 0 / 45%);
+    --shadow-hover-color-dark: oklch(2% 0.02 0 / 55%);
+    --shadow-inset-dark: inset 0 1px 2px 0 oklch(100% 0.004 0 / 8%);
+    --shadow-highlight-dark: 0 1px 0px oklch(100% 0.008 0 / 10%) inset;
+
+    --shadow-sm-dark: 0 1px 3px 0 var(--shadow-color-dark), 0 1px 2px -1px var(--shadow-color-dark);
+    --shadow-md-dark: 0 4px 8px -2px var(--shadow-color-dark), 0 2px 4px -2px var(--shadow-color-dark);
+    --shadow-lg-dark: 0 12px 16px -4px var(--shadow-color-dark), 0 4px 6px -4px var(--shadow-color-dark);
+    --shadow-xl-dark: 0 20px 25px -5px var(--shadow-color-dark), 0 10px 10px -6px var(--shadow-color-dark);
+    --shadow-2xl-dark: 0 28px 50px -12px var(--shadow-color-dark);
+
+    --success-dark: oklch(72% var(--chroma-secondary) var(--hue-success));
+    --error-dark: oklch(74% var(--chroma-accent) var(--hue-error));
+    --warning-dark: oklch(82% var(--chroma-accent) var(--hue-warning));
+    --success-bg-dark: oklch(18% var(--chroma-subtle) var(--hue-success) / 0.35);
+    --error-bg-dark: oklch(18% var(--chroma-subtle) var(--hue-error) / 0.35);
+    --warning-bg-dark: oklch(20% var(--chroma-subtle) var(--hue-warning) / 0.35);
+    --success-border-dark: oklch(32% var(--chroma-subtle) var(--hue-success) / 0.5);
+    --error-border-dark: oklch(32% var(--chroma-subtle) var(--hue-error) / 0.5);
+    --warning-border-dark: oklch(34% var(--chroma-subtle) var(--hue-warning) / 0.5);
+
+    --bg-primary: var(--surface-1-light);
+    --bg-secondary: var(--surface-2-light);
+    --bg-tertiary: var(--surface-3-light);
+    --bg-accent: var(--surface-accent-light);
+    --bg-overlay: var(--surface-overlay-light);
+    --bg-secondary-rgb: var(--bg-secondary-rgb-light);
+    --bg-tertiary-rgb: var(--bg-tertiary-rgb-light);
+    --text-primary: var(--text-1-light);
+    --text-secondary: var(--text-2-light);
+    --text-muted: var(--text-muted-light);
+    --text-on-accent: var(--text-on-accent-light);
+    --accent-primary: var(--accent-primary-light);
+    --accent-primary-hover: var(--accent-primary-hover-light);
+    --accent-primary-active: var(--accent-primary-active-light);
+    --accent-secondary: var(--accent-secondary-light);
+    --accent-secondary-hover: var(--accent-secondary-hover-light);
+    --accent-secondary-active: var(--accent-secondary-active-light);
+    --accent-tertiary: var(--accent-tertiary-light);
+    --border-primary: var(--border-1-light);
+    --border-secondary: var(--border-2-light);
+    --border-accent: var(--border-accent-light);
+    --border-hover: var(--border-hover-light);
+    --border-focus: var(--border-focus-light);
+    --shadow-color: var(--shadow-color-light);
+    --shadow-hover-color: var(--shadow-hover-color-light);
+    --shadow-inset: var(--shadow-inset-light);
+    --shadow-highlight: var(--shadow-highlight-light);
+    --shadow-sm: var(--shadow-sm-light);
+    --shadow-md: var(--shadow-md-light);
+    --shadow-lg: var(--shadow-lg-light);
+    --shadow-xl: var(--shadow-xl-light);
+    --shadow-2xl: var(--shadow-2xl-light);
+    --success: var(--success-light);
+    --error: var(--error-light);
+    --warning: var(--warning-light);
+    --success-bg: var(--success-bg-light);
+    --error-bg: var(--error-bg-light);
+    --warning-bg: var(--warning-bg-light);
+    --success-border: var(--success-border-light);
+    --error-border: var(--error-border-light);
+    --warning-border: var(--warning-border-light);
+
+    --border-radius-sm: 0.4rem;
+    --border-radius-md: 0.8rem;
+    --border-radius-lg: 1.2rem;
+    --border-radius-xl: 1.6rem;
+    --font-family: 'Poppins', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-size-base: clamp(1rem, 0.92rem + 0.3vw, 1.12rem);
+    --line-height-base: clamp(1.65, 1.55rem + 0.4vw, 1.8);
+    --font-size-sm: calc(var(--font-size-base) * 0.85);
+    --font-size-lg: calc(var(--font-size-base) * 1.3);
+    --font-size-xl: calc(var(--font-size-base) * 1.6);
+    --font-size-xxl: calc(var(--font-size-base) * 2.1);
+    --font-size-xxxl: calc(var(--font-size-base) * 2.9);
+
+    --space-unit: 1rem;
+    --space-xxs: calc(var(--space-unit) * 0.35);
+    --space-xs: calc(var(--space-unit) * 0.6);
+    --space-s: calc(var(--space-unit) * 0.85);
+    --space-m: calc(var(--space-unit) * 1.2);
+    --space-l: calc(var(--space-unit) * 1.8);
+    --space-xl: calc(var(--space-unit) * 2.8);
+    --space-xxl: calc(var(--space-unit) * 4.5);
+    --space-xxxl: calc(var(--space-unit) * 7);
+
+    --anim-duration-fast: 0.2s;
+    --anim-duration-normal: 0.4s;
+    --anim-duration-slow: 0.7s;
+    --anim-duration-xslow: 1.1s;
+    --anim-easing-standard: cubic-bezier(0.5, 0, 0.15, 1);
+    --anim-easing-decelerate: cubic-bezier(0.1, 0.7, 0.1, 1);
+    --anim-easing-accelerate: cubic-bezier(0.7, 0, 0.9, 0.3);
+    --anim-easing-bounce: cubic-bezier(0.25, 1.8, 0.5, 0.8);
+    --anim-easing-elastic: cubic-bezier(0.5, 1.5, 0.5, 0.8);
+    --anim-easing-elegant: cubic-bezier(0.85, 0, 0.15, 1);
+
+    --transition-speed: var(--anim-duration-normal);
+    --transition-easing: var(--anim-easing-elegant);
+    --focus-ring-color: oklch(var(--lightness-brand-light) var(--chroma-accent) var(--hue-primary) / 0.7);
+    --focus-ring-width: 3px;
+    --focus-ring-offset: 2px;
+    --disabled-opacity: 0.45;
+}
+
+body.dark-mode {
+    --bg-primary: var(--surface-1-dark);
+    --bg-secondary: var(--surface-2-dark);
+    --bg-tertiary: var(--surface-3-dark);
+    --bg-accent: var(--surface-accent-dark);
+    --bg-overlay: var(--surface-overlay-dark);
+    --bg-secondary-rgb: var(--bg-secondary-rgb-dark);
+    --bg-tertiary-rgb: var(--bg-tertiary-rgb-dark);
+    --text-primary: var(--text-1-dark);
+    --text-secondary: var(--text-2-dark);
+    --text-muted: var(--text-muted-dark);
+    --text-on-accent: var(--text-on-accent-dark);
+    --accent-primary: var(--accent-primary-dark);
+    --accent-primary-hover: var(--accent-primary-hover-dark);
+    --accent-primary-active: var(--accent-primary-active-dark);
+    --accent-secondary: var(--accent-secondary-dark);
+    --accent-secondary-hover: var(--accent-secondary-hover-dark);
+    --accent-secondary-active: var(--accent-secondary-active-dark);
+    --accent-tertiary: var(--accent-tertiary-dark);
+    --border-primary: var(--border-1-dark);
+    --border-secondary: var(--border-2-dark);
+    --border-accent: var(--border-accent-dark);
+    --border-hover: var(--border-hover-dark);
+    --border-focus: var(--border-focus-dark);
+    --shadow-color: var(--shadow-color-dark);
+    --shadow-hover-color: var(--shadow-hover-color-dark);
+    --shadow-inset: var(--shadow-inset-dark);
+    --shadow-highlight: var(--shadow-highlight-dark);
+    --shadow-sm: var(--shadow-sm-dark);
+    --shadow-md: var(--shadow-md-dark);
+    --shadow-lg: var(--shadow-lg-dark);
+    --shadow-xl: var(--shadow-xl-dark);
+    --shadow-2xl: var(--shadow-2xl-dark);
+    --success: var(--success-dark);
+    --error: var(--error-dark);
+    --warning: var(--warning-dark);
+    --success-bg: var(--success-bg-dark);
+    --error-bg: var(--error-bg-dark);
+    --warning-bg: var(--warning-bg-dark);
+    --success-border: var(--success-border-dark);
+    --error-border: var(--error-border-dark);
+    --warning-border: var(--warning-border-dark);
+    --focus-ring-color: oklch(var(--lightness-brand-dark) var(--chroma-accent) var(--hue-primary) / 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    word-wrap: break-word;
+    font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1, 'ss01' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+    border-style: solid;
+    border-width: 0;
+    outline-offset: var(--focus-ring-offset);
+}
+
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--bg-secondary);
+    transition: outline var(--anim-duration-fast) var(--transition-easing), box-shadow var(--anim-duration-fast) var(--transition-easing);
+    border-radius: var(--border-radius-sm);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overscroll-behavior-y: contain;
+    font-size: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable both-edges;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-hover) color-mix(in srgb, var(--bg-primary) 50%, transparent);
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    transition: background-color var(--transition-speed) ease-in-out, color var(--transition-speed) ease-in-out;
+    padding-top: 0;
+    overflow-x: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(var(--bg-secondary-rgb), 0.02), rgba(var(--bg-secondary-rgb), 0.02)),
+                      radial-gradient(ellipse at top left, rgba(var(--bg-secondary-rgb), 0.1) 0%, transparent 50%),
+                      radial-gradient(ellipse at bottom right, rgba(var(--bg-tertiary-rgb), 0.1) 0%, transparent 50%);
+}
+
+.learning-item-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin-top: var(--space-s);
+    align-items: center;
+}
+
+button.feedback-btn {
+    font-size: calc(var(--font-size-sm) * 0.8);
+    padding: 2px var(--space-xs);
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--anim-duration-fast) ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    line-height: 1.3;
+    box-shadow: none;
+}
+
+button.feedback-btn i.fas {
+    font-size: 0.9em;
+    margin-right: 2px;
+}
+
+button.feedback-btn:hover {
+    background-color: var(--surface-3);
+    color: var(--warning);
+    border-color: var(--warning-border);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+button.feedback-btn:active {
+    background-color: var(--surface-4);
+    transform: translateY(0px);
+    box-shadow: var(--shadow-inset);
+}
+
+button.feedback-btn:focus-visible {
+    border-color: var(--border-focus);
+    outline: calc(var(--focus-ring-width) - 1px) solid var(--focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary);
+}
+
+.search-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--surface-overlay-light) 80%, transparent);
+    backdrop-filter: blur(8px) saturate(100%);
+    -webkit-backdrop-filter: blur(8px) saturate(100%);
+    z-index: 2000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10vh 5% var(--space-xl) 5%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--anim-duration-normal) ease, visibility var(--anim-duration-normal) ease;
+    overflow-y: auto;
+}
+body.dark-mode .search-modal-overlay {
+    background-color: color-mix(in srgb, var(--surface-overlay-dark) 90%, transparent);
+}
+
+body.search-active .search-modal-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-modal-content {
+    background-color: var(--surface-2);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-2xl);
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform var(--anim-duration-normal) var(--anim-easing-elegant);
+}
+
+body.search-active .search-modal-content {
+    transform: scale(1);
+}
+
+.search-modal-close-btn {
+    position: absolute;
+    top: var(--space-m);
+    right: var(--space-m);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0 var(--space-xs);
+    line-height: 1;
+    transition: color var(--anim-duration-fast) ease, transform var(--anim-duration-fast) ease;
+}
+.search-modal-close-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.1) rotate(90deg);
+}
+
+.search-input-container {
+    position: relative;
+    margin-bottom: var(--space-l);
+}
+
+.search-modal-icon {
+    position: absolute;
+    top: 50%;
+    left: var(--space-m);
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+#search-modal-input {
+    width: 100%;
+    padding: var(--space-m) var(--space-m) var(--space-m) calc(var(--space-m) + var(--space-xl));
+    font-size: var(--font-size-lg);
+    font-family: inherit;
+    color: var(--text-primary);
+    background-color: var(--surface-3);
+    border: 1px solid var(--border-2);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-inset);
+    transition: border-color var(--anim-duration-fast) ease, box-shadow var(--anim-duration-fast) ease;
+    appearance: none;
+}
+#search-modal-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+#search-modal-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-inset), 0 0 0 2px color-mix(in oklch, var(--accent-primary) l c h / 0.3);
+}
+
+#search-modal-input::-webkit-search-cancel-button,
+#search-modal-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-results-container {
+    margin-top: var(--space-l);
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: var(--space-xs);
+}
+
+.search-placeholder, .search-no-results {
+    color: var(--text-muted);
+    text-align: center;
+    padding: var(--space-l) 0;
+    font-style: italic;
+}
+
+.search-result-item {
+    display: block;
+    padding: var(--space-m);
+    margin-bottom: var(--space-s);
+    border-radius: var(--border-radius-md);
+    background-color: var(--surface-3);
+    border: 1px solid transparent;
+    transition: background-color var(--anim-duration-fast) ease, border-color var(--anim-duration-fast) ease, transform var(--anim-duration-fast) ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: var(--surface-4);
+    border-color: var(--border-hover);
+    transform: translateX(4px);
+}
+
+.search-result-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-xxs);
+}
+.search-result-title mark {
+    background-color: color-mix(in oklch, var(--accent-secondary) l c h / 0.4);
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+.search-result-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: var(--space-xs);
+}
+.search-result-desc mark {
+    background-color: color-mix(in oklch, var(--accent-secondary) l c h / 0.4);
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+.search-result-type {
+    font-size: calc(var(--font-size-sm) * 0.85);
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1px var(--space-xs);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--surface-4);
+}
+.search-result-type.quiz {
+    color: var(--accent-primary);
+    background-color: var(--surface-accent);
+}
+.search-result-type.lecture {
+    color: var(--accent-secondary);
+    background-color: color-mix(in oklch, var(--accent-secondary) l c h / 0.2);
+}
+
+@media (max-width: 768px) {
+    .search-modal-overlay {
+        padding: 5vh 3% var(--space-l) 3%;
+    }
+    .search-modal-content {
+        padding: var(--space-l);
+    }
+    #search-modal-input {
+        font-size: var(--font-size-base);
+        padding: var(--space-s) var(--space-s) var(--space-s) calc(var(--space-s) + var(--space-l));
+    }
+    .search-modal-icon {
+        left: var(--space-s);
+        font-size: 1.1rem;
+    }
+    .search-results-container {
+        max-height: 60vh;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+        scroll-snap-type: none !important;
+    }
+    *, *::before, *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+        animation-delay: 0ms !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: color-mix(in srgb, var(--bg-primary) 50%, transparent);
+    margin-block: var(--space-xs);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-hover);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color var(--anim-duration-fast) ease-in-out, border-color var(--anim-duration-fast) ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-secondary);
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+body ::-webkit-scrollbar-thumb {
+    border-color: var(--bg-primary);
+}
+
+.container {
+    width: 94%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-l);
+    padding-right: var(--space-l);
+}
+
+#main-header {
+    background-color: color-mix(in srgb, var(--surface-2) 85%, transparent);
+    backdrop-filter: blur(12px) saturate(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    padding: var(--space-s) 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid color-mix(in srgb, var(--border-1) 50%, transparent);
+    transition: background-color var(--transition-speed) var(--transition-easing),
+                border-color var(--transition-speed) var(--transition-easing),
+                box-shadow var(--transition-speed) var(--transition-easing),
+                padding var(--transition-speed) var(--transition-easing);
+}
+
+body.scrolled #main-header {
+    background-color: color-mix(in srgb, var(--surface-3) 92%, transparent);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--border-1);
+     /* padding: var(--space-xs) 0; */
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-m);
+}
+.logo-container {
+    flex-shrink: 0;
+}
+.logo-container a {
+    text-decoration: none;
+}
+.logo-container h1 {
+    font-size: calc(var(--font-size-base) * 1.35);
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(80deg, var(--accent-primary), var(--accent-primary-hover));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+    transition: filter 0.3s ease;
+}
+.logo-container h1:hover {
+    filter: brightness(1.1);
+}
+
+#main-header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-s);
+    align-items: center;
+    padding: 0; margin: 0;
+}
+
+#main-header nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    padding: var(--space-xs) var(--space-m);
+    border-radius: var(--border-radius-xl);
+    transition: color var(--transition-speed) var(--transition-easing),
+                background-color var(--transition-speed) var(--transition-easing),
+                transform var(--transition-speed) var(--transition-easing);
+    position: relative;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    transform: scale(1);
+}
+
+#main-header nav a:hover {
+    color: var(--text-primary);
+    background-color: var(--surface-3);
+    transform: scale(1.05);
+}
+
+#main-header nav a.active {
+    color: var(--accent-primary);
+    font-weight: 600;
+    background-color: var(--surface-accent);
+}
+
+#main-header nav a:focus-visible {
+    color: var(--accent-primary);
+    background-color: var(--surface-accent);
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+#main-header nav a::after {
+   display: none;
+}
+
+#header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    flex-shrink: 0;
+}
+
+.search-icon-btn, .theme-toggle-header-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    padding: var(--space-xs);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.search-icon-btn:hover, .theme-toggle-header-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--surface-3);
+}
+
+.search-icon-btn:focus-visible, .theme-toggle-header-btn:focus-visible {
+     color: var(--text-primary);
+     background-color: var(--surface-accent);
+     outline: var(--focus-ring-width) solid var(--focus-ring-color);
+     outline-offset: 1px;
+}
+
+/*
+#theme-toggle-btn {
+    display: none;
+}
+*/
+
+.mobile-menu-toggle { display: none; }
+.mobile-nav { display: none; }
+#hero,
+.content-section {
+    scroll-snap-align: start;
+    scroll-margin-top: 100px;
+    padding: var(--space-xxxl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-section {
+    border-bottom: 1px solid var(--border-primary);
+    transition: border-color var(--transition-speed) var(--transition-easing), background-color var(--transition-speed) var(--transition-easing);
+    position: relative;
+    background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--bg-secondary) 30%, transparent) 100%);
+}
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-secondary), transparent);
+    opacity: 0.3;
+    transition: opacity var(--transition-speed) var(--transition-easing), width 0.4s ease, background 0.4s ease;
+    filter: blur(0.5px);
+}
+.content-section:hover::before {
+    width: 75%;
+    opacity: 0.5;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+}
+.content-section:last-of-type {
+    border-bottom: none;
+    background: none;
+}
+.content-section:last-of-type::before {
+    display: none;
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: clamp(2.3rem, 1.4rem + 3.5vw, 3.4rem);
+    margin-bottom: var(--space-xxl);
+    color: var(--text-primary);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: var(--space-l);
+    letter-spacing: -2.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-l);
+    transition: color var(--transition-speed) var(--transition-easing);
+}
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 80px; height: 6px;
+    background: linear-gradient(90deg,
+        oklch(from var(--accent-primary) l calc(c * 0.6) h / 0.1),
+        var(--accent-primary),
+        oklch(from var(--accent-secondary) l calc(c * 0.8) calc(h - 30) / 0.5),
+        oklch(from var(--accent-primary) l calc(c * 0.6) h / 0.1)
+    );
+    border-radius: 3px;
+    transition: background var(--transition-speed) var(--transition-easing), width var(--transition-speed) var(--anim-easing-elegant), filter var(--transition-speed) ease;
+    opacity: 1;
+    filter: blur(1px);
+}
+.content-section:hover h2::after {
+    width: 150px;
+    filter: blur(0.5px);
+}
+.content-section h2 i.fas {
+    font-size: 1em;
+    transition: color var(--transition-speed) var(--transition-easing), transform 0.6s var(--anim-easing-elastic), filter 0.4s ease;
+    background: linear-gradient(70deg, var(--accent-primary), var(--accent-secondary-hover));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+}
+.content-section:hover h2 i.fas {
+    transform: scale(1.35) rotate(-10deg) translateY(-3px);
+    filter: drop-shadow(0 4px 6px color-mix(in oklch, var(--accent-primary) l c h / 0.2));
+}
+#main-footer {
+    background-color: var(--bg-tertiary);
+    color: var(--text-muted);
+    text-align: center;
+    padding: var(--space-xl) 0;
+    margin-top: auto;
+    font-size: var(--font-size-sm);
+    border-top: 1px solid var(--border-primary);
+    transition: background-color var(--transition-speed) var(--transition-easing), color var(--transition-speed) var(--transition-easing), border-color var(--transition-speed) var(--transition-easing);
+    position: relative;
+}
+#main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--border-primary) 40%, transparent), transparent);
+    opacity: 0.6;
+    pointer-events: none;
+}
+#main-footer p {
+    line-height: 1.7;
+}
+#hero {
+    min-height: 100vh;
+    padding: 0;
+    scroll-margin-top: 0;
+    color: var(--text-on-accent-light);
+    text-align: center;
+    position: relative;
+    background: linear-gradient(130deg,
+        oklch(from var(--accent-primary-light) calc(l * 0.85) calc(c * 1.3) h),
+        oklch(from var(--accent-secondary-light) calc(l * 1.05) c calc(h + 20) / 0.8),
+        oklch(from var(--accent-tertiary-light) l calc(c * 1.1) h / 0.7),
+        oklch(from var(--accent-primary-light) l calc(c * 0.9) calc(h - 100) / 0.85)
+    );
+    background-size: 400% 400%;
+    animation: aurora-super-enhanced 50s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@keyframes aurora-super-enhanced {
+    0% { background-position: 0% 50%; filter: hue-rotate(-5deg) brightness(1) saturate(1.1); }
+    25% { background-position: 100% 0%; filter: hue-rotate(10deg) brightness(1.1) saturate(1.2); }
+    50% { background-position: 50% 100%; filter: hue-rotate(0deg) brightness(1.15) saturate(1.25); }
+    75% { background-position: 0% 100%; filter: hue-rotate(-10deg) brightness(1.1) saturate(1.2); }
+    100% { background-position: 0% 50%; filter: hue-rotate(-5deg) brightness(1) saturate(1.1); }
+}
+
+body.dark-mode #hero {
+    color: var(--text-on-accent-dark);
+    background: linear-gradient(130deg,
+        oklch(from var(--accent-primary-dark) calc(l * 0.8) calc(c * 1.2) h / 0.9),
+        oklch(from var(--accent-secondary-dark) calc(l * 1.1) c calc(h + 20) / 0.7),
+        oklch(from var(--accent-tertiary-dark) calc(l * 0.95) calc(c * 1.1) h / 0.65),
+        oklch(from var(--accent-primary-dark) calc(l * 0.85) calc(c * 0.9) calc(h - 100) / 0.8)
+    );
+    background-size: 400% 400%;
+    animation: aurora-super-enhanced 50s ease-in-out infinite alternate;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+}
+#hero h2 {
+    font-size: clamp(2.8rem, 1.4rem + 6.5vw, 5.5rem);
+    margin-bottom: var(--space-l); font-weight: 800; letter-spacing: -2.5px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    line-height: 1.1;
+    animation: slideDown 1s var(--anim-easing-elegant) both;
+    animation-delay: 0.3s;
+}
+#hero p {
+    font-size: clamp(1.2rem, 1rem + 1.5vw, 1.8rem);
+    margin-bottom: var(--space-xl); opacity: 0.95;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    color: #f0f0f0;
+    max-width: 820px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.7;
+    animation: slideUp 1s var(--anim-easing-elegant) both;
+    animation-delay: 0.5s;
+}
+#hero .btn {
+    animation: popIn 0.8s var(--anim-easing-bounce) both;
+}
+#hero .btn:nth-of-type(1) { animation-delay: 0.8s; }
+#hero .btn:nth-of-type(2) { animation-delay: 0.95s; }
+
+@keyframes slideDown { from { opacity: 0; transform: translateY(-40px); filter: blur(4px); } to { opacity: 1; transform: translateY(0); filter: blur(0px);} }
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); filter: blur(4px); } to { opacity: 1; transform: translateY(0); filter: blur(0px); } }
+@keyframes popIn { from { opacity: 0; transform: scale(0.7) translateY(10px); filter: blur(2px); } to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0px); } }
+
+.btn {
+    padding: calc(var(--space-s) + 4px) calc(var(--space-xl) + 2px);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    display: inline-block;
+    margin: var(--space-s);
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-md), var(--shadow-highlight);
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-speed) var(--anim-easing-elegant), box-shadow var(--transition-speed) var(--anim-easing-elegant), background-position var(--transition-speed) var(--anim-easing-elegant), border-color var(--transition-speed) var(--anim-easing-elegant), color var(--transition-speed) var(--anim-easing-elegant);
+    z-index: 1;
+    background-size: 250% auto;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    will-change: transform, box-shadow;
+    -webkit-mask-image: radial-gradient(white, black);
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -10%; left: -200%;
+    width: 150%; height: 120%;
+    background: linear-gradient(100deg, transparent 35%, color-mix(in srgb, white 35%, transparent) 50%, transparent 65%);
+    transition: left var(--anim-duration-slow) var(--anim-easing-elegant);
+    z-index: 1;
+    transform: skewX(-20deg);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+body.dark-mode .btn::before {
+      background: linear-gradient(100deg, transparent 35%, color-mix(in srgb, white 15%, transparent) 50%, transparent 65%);
+      opacity: 0.3;
+}
+
+.btn:hover::before {
+    left: 150%;
+    transition-duration: var(--anim-duration-xslow);
+}
+
+.btn-primary {
+    background-image: linear-gradient(120deg, var(--accent-primary-active) 0%, var(--accent-primary) 40%, var(--accent-primary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-primary-active) 40%, black 50%);
+}
+.btn-secondary {
+    background-image: linear-gradient(120deg, var(--accent-secondary-active) 0%, var(--accent-secondary) 40%, var(--accent-secondary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-secondary-active) 40%, black 50%);
+}
+.btn:hover {
+    background-position: 100% center;
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: var(--shadow-xl), var(--shadow-highlight);
+    color: var(--text-on-accent);
+    border-color: transparent;
+}
+.btn:active {
+    transform: translateY(-1px) scale(0.99);
+    box-shadow: var(--shadow-sm), var(--shadow-inset);
+    background-position: left center;
+    transition-duration: var(--anim-duration-fast);
+}
+.btn:focus-visible {
+    background-position: 100% center;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color), var(--shadow-lg);
+}
+#hero .btn {
+    color: #fff;
+    text-shadow: 1px 1px 4px oklch(0 0 0 / 0.5);
+    box-shadow: var(--shadow-lg), 0 6px 18px -6px oklch(0 0 0 / 0.35);
+}
+body.dark-mode #hero .btn {
+    color: var(--text-on-accent-dark);
+    text-shadow: 1px 1px 4px oklch(0 0 0 / 0.6);
+     box-shadow: var(--shadow-lg-dark), 0 6px 18px -6px oklch(0 0 0 / 0.45);
+}
+#hero .btn:hover {
+    color: #fff;
+    box-shadow: var(--shadow-xl), 0 10px 25px -10px var(--accent-primary);
+}
+body.dark-mode #hero .btn:hover {
+    color: var(--text-on-accent-dark);
+    box-shadow: var(--shadow-xl-dark), 0 10px 25px -10px var(--accent-primary-dark);
+}
+#hero .btn:focus-visible {
+    box-shadow: 0 0 0 var(--focus-ring-offset) rgba(255,255,255,0.7), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--accent-primary-light), var(--shadow-xl);
+}
+body.dark-mode #hero .btn:focus-visible {
+    box-shadow: 0 0 0 var(--focus-ring-offset) rgba(0,0,0,0.7), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--accent-primary-dark), var(--shadow-xl-dark);
+}
+
+/* === GENEL KART STİLLERİ (ÖNCE GELMELİ) === */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: var(--space-l);
+}
+.card {
+    background: linear-gradient(155deg, var(--surface-2), var(--surface-3));
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md), var(--shadow-highlight);
+    padding: var(--space-l);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    border: 1px solid var(--border-secondary);
+    transition: transform var(--anim-duration-normal) var(--anim-easing-elegant),
+                box-shadow var(--anim-duration-normal) var(--anim-easing-elegant),
+                border-color var(--anim-duration-normal) var(--anim-easing-elegant),
+                background var(--transition-speed) var(--transition-easing);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+    animation: fadeInUp 0.8s var(--anim-easing-elegant) both;
+    backface-visibility: hidden;
+}
+
+.card:hover { /* Genel hover, spesifik olanlar bunu ezecek */
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: var(--shadow-xl), var(--shadow-highlight);
+    border-color: var(--border-hover);
+    z-index: 10;
+    background: linear-gradient(155deg, var(--surface-3), var(--surface-4));
+}
+
+.card > * { position: relative; z-index: 1;} /* Genel çocuk eleman stili */
+
+.card-icon { /* Genel ikon kutusu stili */
+    width: 75px; height: 75px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, var(--surface-4), var(--surface-3));
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: var(--space-m);
+    transition: background 0.4s ease, transform 0.4s var(--anim-easing-elastic), box-shadow 0.4s ease;
+    border: none;
+    box-shadow: var(--shadow-md), var(--shadow-inset);
+    z-index: 2;
+}
+.card:hover .card-icon { /* Genel ikon kutusu hover */
+    background: linear-gradient(140deg, var(--surface-accent), color-mix(in srgb, var(--accent-primary) 20%, var(--surface-4)));
+    transform: scale(1.2) translateY(-8px) rotate(8deg);
+    box-shadow: var(--shadow-lg), 0 0 15px 4px color-mix(in oklch, var(--accent-primary) l c h / 0.2);
+}
+.card-icon i.fas { /* Genel ikon stili */
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    transition: color 0.4s ease, transform 0.5s var(--anim-easing-elastic), filter 0.4s ease;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+.card:hover .card-icon i.fas { /* Genel ikon hover */
+    transform: rotate(-15deg) scale(1.15);
+    color: var(--accent-primary-hover);
+    filter: drop-shadow(0 2px 3px color-mix(in oklch, var(--accent-primary) l c h / 0.15));
+}
+.card h3 { /* Genel başlık */
+    font-size: var(--font-size-lg);
+    font-weight: 600; color: var(--text-primary);
+    margin-bottom: var(--space-s);
+    transition: color var(--transition-speed) var(--transition-easing);
+    z-index: 2; position: relative;
+    line-height: 1.3;
+}
+.card p { /* Genel paragraf */
+    font-size: var(--font-size-base); color: var(--text-secondary);
+    margin-bottom: var(--space-m); flex-grow: 1;
+    transition: color var(--transition-speed) var(--transition-easing);
+    line-height: 1.7;
+    z-index: 2; position: relative;
+}
+.audience-tags { /* Genel etiketler */
+    margin-bottom: var(--space-m); display: flex; gap: var(--space-xs); flex-wrap: wrap; justify-content: center; z-index: 2; position: relative;
+}
+.audience-tag { /* Genel etiket */
+    display: inline-block;
+    font-size: calc(var(--font-size-sm) * 0.85);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: var(--space-xxs) var(--space-s);
+    border-radius: var(--border-radius-sm);
+    background: var(--surface-3);
+    color: var(--text-muted);
+    border: 1px solid var(--border-secondary);
+    transition: all var(--anim-duration-fast) ease;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+}
+.card:hover .audience-tag {
+    transform: none;
+}
+.audience-tag:hover {
+    background: linear-gradient(145deg, var(--accent-secondary-hover), var(--accent-secondary));
+    color: var(--text-on-accent);
+    border-color: transparent;
+    transform: scale(1.08);
+    box-shadow: var(--shadow-sm);
+}
+.audience-tag.tıp { border-color: #64b5f6; color: #1976d2; background: #e3f2fd;}
+.audience-tag.diş { border-color: #81c784; color: #388e3c; background: #e8f5e9;}
+body.dark-mode .audience-tag.tıp { border-color: #2196f3; color: #90caf9; background: rgba(33, 150, 243, 0.15);}
+body.dark-mode .audience-tag.diş { border-color: #4caf50; color: #a5d6a7; background: rgba(76, 175, 80, 0.15);}
+
+.card-link { /* Genel link/buton */
+    display: inline-block; text-decoration: none;
+    color: var(--text-on-accent);
+    background-image: linear-gradient(120deg, var(--accent-primary-active) 0%, var(--accent-primary) 40%, var(--accent-primary-hover) 100%);
+    font-weight: 600; margin-top: auto;
+    padding: var(--space-s) var(--space-l);
+    border: 1px solid color-mix(in srgb, var(--accent-primary-active) 40%, black 50%);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-speed) var(--anim-easing-elegant);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    opacity: 1; transform: none;
+    will-change: box-shadow, background-position;
+    z-index: 2; position: relative;
+    box-shadow: var(--shadow-sm), var(--shadow-highlight);
+    background-size: 250% auto;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.card-link:hover {
+    background-position: 100% center;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: var(--shadow-md), var(--shadow-highlight), 0 0 10px 2px color-mix(in oklch, var(--accent-primary) l c h / 0.15);
+    border-color: transparent;
+}
+.card-link.disabled {
+    pointer-events: none; color: var(--text-muted);
+    background-image: none;
+    background-color: var(--surface-3);
+    border-color: var(--border-secondary);
+    opacity: var(--disabled-opacity);
+    transform: none;
+    box-shadow: var(--shadow-inset);
+}
+.card-link:focus-visible {
+    opacity: 1; transform: none;
+    border-color: var(--border-focus);
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary), var(--shadow-lg);
+}
+.card-link.disabled:focus-visible { outline: none; box-shadow: var(--shadow-inset); }
+.card:hover .card-link {
+    transform: translateY(-4px);
+}
+.card:hover .card-link:hover {
+    transform: scale(1.05) translateY(-6px);
+}
+
+
+/* === HİYERARŞİ NAV KARTLARI (SONRA GELMELİ) === */
+.hierarchy-nav-card {
+    display: flex; /* Genel .card'ın flex-direction'ını ezer */
+    align-items: center; /* Genel .card'ın align-items'ını ezer */
+    justify-content: space-between; /* Yeni kural */
+    cursor: pointer;
+    padding: var(--space-m); /* Genel .card padding'ini ezer */
+    /* Genel card'dan farklı olarak: */
+    text-align: left; /* İçeriği sola yasla */
+    flex-direction: row; /* Yan yana olmasını garantile */
+    /* Geçişleri yeniden tanımla veya devral */
+    transition: transform var(--anim-duration-fast) var(--anim-easing-standard),
+                box-shadow var(--anim-duration-fast) var(--anim-easing-standard),
+                background var(--transition-speed) var(--transition-easing);
+    will-change: transform, box-shadow;
+    /* Genel card animasyonunu istemiyorsak kaldırabiliriz */
+    animation: none; /* fadeInUp animasyonunu iptal et */
+}
+
+.hierarchy-nav-card .card-icon { /* Nav kart ikon kutusu */
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    margin-right: var(--space-m);
+    margin-bottom: 0; /* Genel card margin'ini ezer */
+    /* Genel card-icon stillerinden farklılaşanlar */
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    /* Ortalamayı garantile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform var(--anim-duration-normal) var(--anim-easing-elastic); /* Hover animasyonu için */
+}
+
+.hierarchy-nav-card .card-icon i { /* Nav kart ikonu */
+    font-size: 1.8rem; /* Genel card-icon i'den farklı olabilir */
+    color: var(--accent-primary); /* Premium kartlar bunu ezecek */
+    transition: transform var(--anim-duration-normal) var(--anim-easing-elastic),
+                 color var(--anim-duration-fast) ease;
+    filter: none; /* Genel drop-shadow'u kaldır */
+}
+
+.hierarchy-nav-card h3 { /* Nav kart başlığı */
+    flex-grow: 1;
+    text-align: left;
+    margin-bottom: 0; /* Genel h3 margin'ini ezer */
+    font-size: var(--font-size-lg);
+    /* font-weight ve color genel card h3'ten miras alınır */
+}
+
+.hierarchy-chevron { /* Nav kart chevron */
+    margin-left: var(--space-m);
+    color: var(--text-muted);
+    font-size: 1.2em;
+    flex-shrink: 0;
+    transition: transform var(--anim-duration-fast) var(--anim-easing-standard),
+                color var(--anim-duration-fast) var(--anim-easing-standard);
+}
+
+/* Nav Kart Hover Efektleri */
+.hierarchy-nav-card:hover {
+     /* Genel .card:hover'dan transform ve box-shadow alır */
+     /* Sadece arka planı farklı yapalım */
+    background: linear-gradient(155deg, var(--surface-3), var(--surface-2));
+}
+
+.hierarchy-nav-card:hover .card-icon {
+     /* Genel .card:hover .card-icon'dan farklı */
+     transform: scale(1.15) rotate(5deg);
+     /* background ve box-shadow değişmesin */
+}
+
+.hierarchy-nav-card:hover .card-icon i {
+      /* Genel .card:hover .card-icon i'den farklı */
+      transform: none; /* Dönmesin */
+      color: var(--accent-primary); /* Rengi aynı kalsın veya değişsin */
+      filter: none;
+}
+
+
+.hierarchy-nav-card:hover .hierarchy-chevron {
+    transform: translateX(6px);
+    color: var(--accent-primary);
+}
+
+/* Nav Kart Focus */
+.hierarchy-nav-card:focus {
+    outline: none;
+}
+.hierarchy-nav-card:focus-visible {
+     outline: var(--focus-ring-width) solid var(--focus-ring-color);
+     box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary);
+     position: relative;
+     z-index: 1;
+}
+
+
+/* === PREMIUM NAV KARTLARI (EN SON GELMELİ, DİĞERLERİNİ EZER) === */
+/* Ortak Premium Ayarları */
+.card-premium-ydus,
+.card-premium-tus,
+.card-premium-dus {
+    border-left-width: 5px;
+    border-image-slice: 1; /* Kullanılmasa bile */
+    position: relative;
+    overflow: hidden;
+    filter: brightness(1.02);
+    transition: all var(--anim-duration-fast) var(--anim-easing-elegant);
+    /* Genel .hierarchy-nav-card hover'ını ezecek kendi hover'ları var */
+}
+.card-premium-ydus h3,
+.card-premium-tus h3,
+.card-premium-dus h3 {
+     font-weight: 600; /* .hierarchy-nav-card h3'ü ezer (aynıysa gereksiz) */
+}
+
+
+/* YDUS - Gold Efekti */
+.card-premium-ydus {
+    --gold-hue: 88;
+    --gold-chroma: 0.16;
+    --gold-lightness: 82%;
+    border-left-color: oklch(var(--gold-lightness) var(--gold-chroma) var(--gold-hue));
+    background: linear-gradient(140deg,
+                   oklch(calc(var(--gold-lightness) + 12%) calc(var(--gold-chroma) * 0.5) var(--gold-hue) / 0.35),
+                   oklch(var(--gold-lightness) var(--gold-chroma) var(--gold-hue) / 0.12),
+                   color-mix(in oklch, var(--surface-2), transparent 30%) 70%
+                );
+    box-shadow: 0 5px 18px -6px oklch(var(--gold-lightness) var(--gold-chroma) var(--gold-hue) / 0.4),
+                inset 0 2px 4px -1px oklch(100% 0.05 var(--gold-hue) / 0.6),
+                var(--shadow-md);
+}
+.card-premium-ydus:hover {
+    border-left-color: oklch(calc(var(--gold-lightness) + 5%) calc(var(--gold-chroma) + 0.04) var(--gold-hue));
+    box-shadow: 0 10px 22px -6px oklch(var(--gold-lightness) var(--gold-chroma) var(--gold-hue) / 0.5),
+                 inset 0 2px 4px -1px oklch(100% 0.05 var(--gold-hue) / 0.8),
+                 var(--shadow-lg);
+    transform: translateY(-6px) scale(1.03); /* Genel hover'ı ezer */
+    filter: brightness(1.05);
+    /* background-position: 10% 10%; /* Gradyan kaydırma */
+     background: linear-gradient(140deg,
+                   oklch(calc(var(--gold-lightness) + 15%) calc(var(--gold-chroma) * 0.6) var(--gold-hue) / 0.4),
+                   oklch(calc(var(--gold-lightness) + 2%) calc(var(--gold-chroma)+ 0.02) var(--gold-hue) / 0.15),
+                   color-mix(in oklch, var(--surface-3), transparent 30%) 75%
+                ); /* Hover arkaplanı */
+}
+.card-premium-ydus .card-icon i {
+     color: oklch(calc(var(--gold-lightness) - 5%) var(--gold-chroma) var(--gold-hue)); /* Genel ikonu ezer */
+}
+.card-premium-ydus h3 {
+    font-weight: 700; /* Ortak premium h3'ü ezer */
+}
+
+/* TUS - Silver Efekti */
+.card-premium-tus {
+    --silver-hue: 240;
+    --silver-chroma: 0.03;
+    --silver-lightness: 88%;
+    border-left-color: oklch(var(--silver-lightness) var(--silver-chroma) var(--silver-hue));
+     background: linear-gradient(145deg,
+                   oklch(calc(var(--silver-lightness) + 6%) calc(var(--silver-chroma) * 0.4) var(--silver-hue) / 0.25),
+                   oklch(var(--silver-lightness) var(--silver-chroma) var(--silver-hue) / 0.08),
+                   color-mix(in oklch, var(--surface-2), transparent 20%) 70%
+                );
+      box-shadow: 0 4px 14px -6px oklch(var(--silver-lightness) var(--silver-chroma) var(--silver-hue) / 0.5),
+                  inset 0 1px 2px 0px oklch(100% 0.01 var(--silver-hue) / 0.5),
+                  var(--shadow-md);
+}
+.card-premium-tus:hover {
+    border-left-color: oklch(calc(var(--silver-lightness) + 2%) calc(var(--silver-chroma) + 0.02) var(--silver-hue));
+     box-shadow: 0 8px 18px -6px oklch(var(--silver-lightness) var(--silver-chroma) var(--silver-hue) / 0.6),
+                 inset 0 1px 2px 0px oklch(100% 0.01 var(--silver-hue) / 0.7),
+                 var(--shadow-lg);
+     transform: translateY(-5px) scale(1.02); /* Genel hover'ı ezer */
+     filter: brightness(1.03);
+     background: linear-gradient(145deg,
+                   oklch(calc(var(--silver-lightness) + 8%) calc(var(--silver-chroma) * 0.5) var(--silver-hue) / 0.3),
+                   oklch(calc(var(--silver-lightness) + 2%) calc(var(--silver-chroma)+ 0.01) var(--silver-hue) / 0.1),
+                   color-mix(in oklch, var(--surface-3), transparent 20%) 75%
+                ); /* Hover arkaplanı */
+}
+.card-premium-tus .card-icon i {
+     color: oklch(var(--silver-lightness) var(--silver-chroma) var(--silver-hue)); /* Genel ikonu ezer */
+}
+
+/* DUS - Bronze Efekti */
+.card-premium-dus {
+    --bronze-hue: 48;
+    --bronze-chroma: 0.09;
+    --bronze-lightness: 68%;
+    border-left-color: oklch(var(--bronze-lightness) var(--bronze-chroma) var(--bronze-hue));
+     background: linear-gradient(150deg,
+                  oklch(calc(var(--bronze-lightness) + 18%) calc(var(--bronze-chroma) * 0.6) var(--bronze-hue) / 0.2),
+                  oklch(var(--bronze-lightness) var(--bronze-chroma) var(--bronze-hue) / 0.1),
+                  color-mix(in oklch, var(--surface-2), transparent 10%) 75%
+                );
+     box-shadow: 0 3px 12px -5px oklch(var(--bronze-lightness) var(--bronze-chroma) var(--bronze-hue) / 0.4),
+                 inset 0 1px 2px -1px oklch(100% 0.03 var(--bronze-hue) / 0.4),
+                 var(--shadow-md);
+}
+.card-premium-dus:hover {
+     border-left-color: oklch(calc(var(--bronze-lightness) + 5%) calc(var(--bronze-chroma) + 0.02) var(--bronze-hue));
+      box-shadow: 0 6px 16px -5px oklch(var(--bronze-lightness) var(--bronze-chroma) var(--bronze-hue) / 0.5),
+                  inset 0 1px 2px -1px oklch(100% 0.03 var(--bronze-hue) / 0.6),
+                  var(--shadow-lg);
+     transform: translateY(-4px); /* Genel hover'ı ezer */
+     background: linear-gradient(150deg,
+                  oklch(calc(var(--bronze-lightness) + 20%) calc(var(--bronze-chroma) * 0.7) var(--bronze-hue) / 0.25),
+                  oklch(calc(var(--bronze-lightness) + 2%) calc(var(--bronze-chroma)+ 0.01) var(--bronze-hue) / 0.12),
+                  color-mix(in oklch, var(--surface-3), transparent 10%) 80%
+                ); /* Hover arkaplanı */
+}
+.card-premium-dus .card-icon i {
+      color: oklch(var(--bronze-lightness) var(--bronze-chroma) var(--bronze-hue)); /* Genel ikonu ezer */
+}
+
+/* Premium Kart Hover İkon/Chevron (Ortak) */
+.card-premium-ydus:hover .card-icon,
+.card-premium-tus:hover .card-icon,
+.card-premium-dus:hover .card-icon {
+    transform: scale(1.12) rotate(3deg); /* Genel nav hover'ı ezer */
+}
+.card-premium-ydus:hover .hierarchy-chevron,
+.card-premium-tus:hover .hierarchy-chevron,
+.card-premium-dus:hover .hierarchy-chevron {
+     color: var(--text-primary); /* Genel nav hover'ı ezer */
+     transform: translateX(5px); /* Genel nav hover'ı ezer */
+}
+
+
+/* === GERİ BUTONU (SONRA GELMELİ) === */
+.hierarchy-back-btn {
+    /* Grid layout kullanılıyorsa: */
+    grid-column: 1 / -1; /* Tüm genişliği kapla */
+    justify-self: start; /* Sola hizala */
+    /* Grid layout yoksa: */
+    /* display: block; */ /* veya inline-block */
+    width: fit-content; /* İçeriğe sığdır */
+    margin-bottom: var(--space-l);
+    margin-right: auto;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); filter: blur(1px); } to { opacity: 1; transform: translateY(0); filter: blur(0px); } }
+
+#construction-message {
+    animation: popIn 1s ease-out both;
+    animation-delay: 0.4s;
+}
+#construction-message p {
+    text-align: center; font-style: italic; color: var(--text-muted);
+    padding: var(--space-l) var(--space-m);
+    background-color: var(--surface-2);
+    border-radius: var(--border-radius-lg);
+    border: 1px dashed var(--warning-border);
+    transition: background-color var(--transition-speed) var(--transition-easing), color var(--transition-speed) var(--transition-easing), border-color var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) ease;
+    display: flex; align-items: center; justify-content: center; gap: var(--space-m);
+    box-shadow: var(--shadow-sm), var(--shadow-inset);
+}
+#construction-message:hover {
+    box-shadow: var(--shadow-md), var(--shadow-inset);
+    border-color: var(--warning);
+    background-color: var(--surface-3);
+}
+#construction-message i.fas {
+    font-size: 1.5em;
+    color: var(--warning);
+    transition: color var(--transition-speed) var(--transition-easing), transform 0.5s var(--anim-easing-bounce);
+}
+#construction-message:hover i.fas {
+    transform: rotate(-15deg) scale(1.1);
+}
+
+/* --- Stats Container - Yeniden Konumlandırılmış ve Tasarlanmış --- */
+@keyframes slideUpBar {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#stats-container {
+    display: none;
+    background-color: color-mix(in srgb, var(--surface-1) 90%, transparent);
+    backdrop-filter: blur(12px) saturate(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    border-top: 1px solid var(--border-2);
+    padding: var(--space-xs) 4%;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--space-m);
+    min-height: auto;
+    height: 60px;
+    box-shadow: 0 -4px 20px -5px var(--shadow-color);
+    transition: background-color var(--transition-speed) var(--transition-easing), border-color var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
+    overflow: hidden;
+}
+
+body.quiz-active #stats-container {
+    display: flex;
+    animation: slideUpBar 0.5s var(--anim-easing-elegant) both;
+}
+
+/* ... (Stat item, progress bar vb. stilleri burada kalır) ... */
+
+
+/* --- Quiz Ana İçerik Alanı --- */
+.quiz-main-content {
+    width: 94%;
+    max-width: 800px; /* Maksimum genişliği biraz daralttık */
+    margin: var(--space-xl) auto var(--space-xxl) auto; /* Üst ve alt boşluklar. Alt boşluk body padding'i ile birlikte çalışacak */
+    flex-grow: 1;
+    position: relative; /* İçerideki absolute konumlandırmalar için */
+}
+
+/* --- Quiz/Sonuç/Öğrenme Konteynerları - Yeniden Tasarlandı --- */
+@keyframes fadeInScaleUp {
+  from { opacity: 0; transform: scale(0.98) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#quiz-container,
+#result-container,
+#learning-offer-container,
+#learning-round-container,
+#final-review-container {
+    background: linear-gradient(160deg, /* Hafif eğimli gradient */
+        color-mix(in srgb, var(--surface-1) 95%, transparent),
+        color-mix(in srgb, var(--surface-2) 98%, transparent)
+    );
+    backdrop-filter: blur(14px) saturate(120%); /* Biraz daha yoğun efekt */
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-xl); /* Daha yuvarlak kenarlar */
+    /* Daha yumuşak ve katmanlı gölge */
+    box-shadow: 0 12px 30px -8px color-mix(in srgb, var(--shadow-color) 70%, transparent),
+                0 4px 8px -4px color-mix(in srgb, var(--shadow-color) 50%, transparent);
+    margin-bottom: var(--space-xl);
+    display: none;
+    text-align: center;
+    animation: fadeInScaleUp 0.6s var(--anim-easing-elegant) both; /* Yeni animasyon */
+    transition: background var(--transition-speed) var(--transition-easing),
+                box-shadow var(--transition-speed) var(--transition-easing),
+                border-color var(--transition-speed) var(--transition-easing);
+    border: 1px solid color-mix(in srgb, var(--border-1) 40%, transparent); /* Çok daha silik kenarlık */
+    position: relative; /* Pseudo-elementler için */
+    overflow: hidden; /* Pseudo-element taşmalarını engelle */
+}
+
+/* Konteynerlara ek bir parlama efekti (isteğe bağlı) */
+#quiz-container::before,
+#result-container::before,
+#learning-offer-container::before,
+#learning-round-container::before,
+#final-review-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center,
+        color-mix(in oklch, var(--accent-primary) l c h / 0.03) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+#quiz-container:hover::before,
+#result-container:hover::before,
+#learning-offer-container:hover::before,
+#learning-round-container:hover::before,
+#final-review-container:hover::before {
+    opacity: 1;
+}
+
+
+#quiz-container { display: block; } /* İlk gösterilecek olan */
+
+/* --- Konteyner Başlıkları (Sadeleştirildi) --- */
+#quiz-container h2, #result-container h2, #learning-offer-container h3, #learning-round-container h3, #final-review-container h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-l);
+    font-weight: 700; /* Biraz daha kalın */
+    line-height: 1.3;
+    letter-spacing: -1.2px; /* Daha bitişik */
+    transition: color var(--transition-speed) var(--transition-easing);
+    text-align: center;
+    font-size: var(--font-size-xxl); /* Daha büyük başlık */
+    position: relative;
+    padding-bottom: 0; /* Alt padding kaldırıldı */
+    z-index: 1; /* Parlama efektinin altında kalmaması için */
+}
+/* Başlık altı çizgisi kaldırıldı */
+#quiz-container h2::after, #result-container h2::after, #learning-offer-container h3::after, #learning-round-container h3::after, #final-review-container h3::after {
+    display: none;
+}
+
+#question {
+    font-size: calc(var(--font-size-base) * 1.15);
+    margin-bottom: var(--space-l);
+    min-height: 40px;
+    color: var(--text-primary);
+    text-align: left;
+    line-height: 1.65;
+    font-weight: 500;
+    transition: color var(--transition-speed) var(--transition-easing), background-color var(--transition-speed) var(--transition-easing);
+    padding: var(--space-m);
+    background-color: var(--surface-2);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-inset);
+    border-left: 4px solid var(--accent-primary);
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    margin-bottom: var(--space-l);
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: var(--space-m) calc(var(--space-l) + var(--space-m)) var(--space-m) var(--space-m);
+    background-color: var(--surface-3);
+    border: 1px solid var(--border-2);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: transform var(--anim-duration-fast) ease, background-color var(--anim-duration-fast) ease, border-color var(--anim-duration-fast) ease, box-shadow var(--anim-duration-fast) ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.option-label:hover {
+    border-color: var(--accent-primary-hover);
+    background-color: var(--surface-4);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+.option-label:has(input:checked) {
+    border-color: var(--accent-primary);
+    background-color: var(--surface-accent);
+    box-shadow: var(--shadow-md);
+    transform: none;
+    /* animation: checked-simple-pulse 0.8s var(--anim-easing-standard); */
+}
+.option-label input[type="radio"] {
+    margin-right: var(--space-m);
+    flex-shrink: 0;
+    transform: scale(1.25);
+    cursor: pointer;
+    accent-color: var(--accent-primary);
+    transition: transform 0.2s ease;
+}
+.option-label:hover input[type="radio"] {
+    transform: scale(1.35);
+}
+.option-label span:not(.feedback-icon) {
+    color: var(--text-secondary);
+    flex-grow: 1;
+    line-height: 1.55;
+    transition: color var(--transition-speed) var(--transition-easing);
+}
+.option-label:has(input:checked) span:not(.feedback-icon) {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.option-label.correct-option { background-color: var(--success-bg) !important; border-color: var(--success) !important; box-shadow: 0 2px 6px color-mix(in oklch, var(--success) l c h / 0.2), var(--shadow-inset) !important; transform: scale(1.01) !important; }
+.option-label.correct-option span:not(.feedback-icon) { color: var(--success); font-weight: 600;}
+.option-label.correct-option:hover { background-color: color-mix(in srgb, var(--success-bg) 85%, black 4%) !important; transform: scale(1.01) translateX(4px) !important; }
+
+.option-label.incorrect-option { background-color: var(--error-bg) !important; border-color: var(--error) !important; opacity: 0.95; box-shadow: 0 2px 6px color-mix(in oklch, var(--error) l c h / 0.2), var(--shadow-inset) !important; transform: scale(1.01) !important; }
+.option-label.incorrect-option span:not(.feedback-icon) { color: var(--error); }
+.option-label.incorrect-option:hover { background-color: color-mix(in srgb, var(--error-bg) 85%, black 4%) !important; transform: scale(1.01) translateX(4px) !important; }
+.option-label.incorrect-option.user-selected { opacity: 1.0; }
+.option-label.incorrect-option.user-selected span:not(.feedback-icon) { font-weight: 500; }
+
+.options-disabled .option-label { pointer-events: none; opacity: 0.6; filter: grayscale(30%); }
+.options-disabled .option-label:hover { transform: none; box-shadow: var(--shadow-sm); background-color: var(--surface-3); border-color: var(--border-2); }
+.options-disabled .option-label.correct-option, .options-disabled .option-label.user-selected.incorrect-option { opacity: 1; filter: none;}
+
+.feedback-icon {
+    position: absolute; right: var(--space-m); top: 50%;
+    transform: translateY(-50%) scale(0.8); font-size: 1.5em;
+    font-weight: bold; opacity: 0; will-change: transform, opacity;
+    transition: color 0.3s ease; filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+}
+.option-label.correct-option .feedback-icon.correct,
+.option-label.incorrect-option.user-selected .feedback-icon.incorrect {
+    animation: scaleInSimple 0.4s var(--anim-easing-elastic) forwards;
+}
+@keyframes scaleInSimple {
+    from { opacity: 0; transform: translateY(-50%) scale(0.5); }
+    to { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+.feedback-icon.correct { color: var(--success); }
+.feedback-icon.incorrect { color: var(--error); }
+.option-label:focus-visible {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color), var(--shadow-md);
+}
+
+.quiz-main-content button:not(.explanation-toggle) {
+    padding: var(--space-s) var(--space-xl);
+    font-size: calc(var(--font-size-sm) * 0.95);
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    margin-top: var(--space-m);
+    margin-right: var(--space-s);
+    transition: all var(--transition-speed) var(--anim-easing-elegant);
+    box-shadow: var(--shadow-md), var(--shadow-highlight);
+    vertical-align: middle; line-height: 1.4; position: relative; overflow: hidden;
+    z-index: 1; background-size: 250% auto; letter-spacing: 0.6px;
+    text-transform: uppercase; will-change: transform, box-shadow;
+    border: 1px solid transparent;
+}
+.quiz-main-content button:not(.explanation-toggle):last-child { margin-right: 0; }
+.quiz-main-content button:not(.explanation-toggle) {
+    background-image: linear-gradient(120deg, var(--accent-primary-active) 0%, var(--accent-primary) 40%, var(--accent-primary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-primary-active) 40%, black 50%);
+}
+.quiz-main-content button:not(.explanation-toggle).secondary {
+    background-image: linear-gradient(120deg, var(--accent-secondary-active) 0%, var(--accent-secondary) 40%, var(--accent-secondary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-secondary-active) 40%, black 50%);
+}
+.quiz-main-content button:not(.explanation-toggle):hover {
+    background-position: 100% center;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow-lg), var(--shadow-highlight);
+    color: var(--text-on-accent);
+    border-color: transparent;
+}
+.quiz-main-content button:not(.explanation-toggle):active {
+    transform: translateY(0px) scale(0.99);
+    box-shadow: var(--shadow-sm), var(--shadow-inset);
+    background-position: left center;
+    transition-duration: var(--anim-duration-fast);
+}
+.quiz-main-content button:not(.explanation-toggle):disabled {
+    background-image: none !important;
+    background-color: var(--surface-3) !important;
+    color: var(--text-muted) !important;
+    cursor: not-allowed;
+    box-shadow: var(--shadow-inset) !important;
+    transform: none !important;
+    opacity: var(--disabled-opacity);
+    border-color: var(--border-secondary) !important;
+}
+.quiz-main-content button:not(.explanation-toggle).secondary:disabled {
+    background-color: var(--surface-3) !important;
+}
+.quiz-main-content button:not(.explanation-toggle):focus-visible {
+    background-position: 100% center;
+    border-color: var(--border-focus);
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary), var(--shadow-lg);
+}
+
+#feedback {
+    display: none;
+    margin-top: var(--space-m);
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    padding: var(--space-s);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+
+}
+
+#result-container p:first-of-type,
+#learning-offer-container p:first-of-type,
+#final-review-container > p:first-of-type {
+    font-size: var(--font-size-lg);
+    line-height: 1.7; margin-bottom: var(--space-l);
+    text-align: center;
+    color: var(--text-secondary);
+    transition: color var(--transition-speed) ease-in-out;
+    padding: 0 var(--space-m);
+}
+
+#score-info {
+    font-weight: 500; font-size: var(--font-size-base);
+    color: var(--text-primary);
+    text-align: center; margin-bottom: var(--space-l); line-height: 1.6;
+    background-color: var(--surface-2); padding: var(--space-m);
+    border-radius: var(--border-radius-md); border: 1px solid var(--border-2);
+    transition: color var(--transition-speed) ease-in-out, background-color var(--transition-speed) ease-in-out, border-color var(--transition-speed) ease-in-out;
+    box-shadow: var(--shadow-inset);
+}
+
+#learning-round-container, #final-review-container {
+    text-align: left;
+    background-color: color-mix(in srgb, var(--bg-tertiary) 98%, transparent);
+    backdrop-filter: blur(8px) saturate(100%);
+    -webkit-backdrop-filter: blur(8px) saturate(100%);
+    border-radius: var(--border-radius-lg);
+}
+
+.learning-item {
+    margin-bottom: var(--space-l);
+    padding: var(--space-m);
+    border-bottom: 1px solid var(--border-secondary);
+    transition: border-color var(--transition-speed) ease-in-out, background-color 0.2s ease;
+    border-radius: var(--border-radius-sm);
+    background-color: transparent;
+}
+.learning-item:hover {
+     background-color: var(--surface-2);
+}
+.learning-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: var(--space-m); }
+.learning-item h4 {
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    margin-bottom: var(--space-s); line-height: 1.4; font-weight: 600;
+    transition: color var(--transition-speed) ease-in-out;
+}
+.learning-item .answer-line {
+    margin-bottom: var(--space-xs);
+    font-size: calc(var(--font-size-base) * 0.95);
+    color: var(--text-secondary); display: flex; align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    transition: color var(--transition-speed) ease-in-out;
+    line-height: 1.5;
+}
+.learning-item .correct-answer, .learning-item .user-answer-incorrect {
+    padding: 1px var(--space-xs);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    display: inline-flex; align-items: center; gap: calc(var(--space-xs) / 2);
+    transition: background-color var(--transition-speed) ease-in-out, color var(--transition-speed) ease-in-out, border-color var(--transition-speed) ease-in-out;
+    box-shadow: none;
+    font-size: calc(var(--font-size-base) * 0.9);
+    border-width: 1px;
+}
+.learning-item .correct-answer::before { content: '✔'; margin-right: 2px; font-size: 0.9em; }
+.learning-item .user-answer-incorrect::before { content: '✘'; margin-right: 2px; font-size: 0.9em; }
+
+.learning-item .correct-answer { color: var(--success); background-color: var(--success-bg); border-color: var(--success-border); }
+.learning-item .user-answer-incorrect { color: var(--error); background-color: var(--error-bg); border-color: var(--error-border); font-style: normal; }
+
+.learning-item .explanation {
+    font-size: calc(var(--font-size-base)*0.9); color: var(--text-muted); margin-top: var(--space-s);
+    font-style: normal; line-height: 1.6; padding: var(--space-s);
+    background-color: color-mix(in srgb, var(--surface-3) 50%, transparent);
+    border-radius: var(--border-radius-sm); border: 1px solid var(--border-primary);
+    display: none;
+    animation: fadeInExplanationSimple 0.5s var(--anim-easing-standard);
+    transition: all var(--transition-speed) ease-in-out;
+    box-shadow: var(--shadow-inset);
+}
+@keyframes fadeInExplanationSimple {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button.explanation-toggle {
+
+    padding: var(--space-s) var(--space-l);
+    font-size: calc(var(--font-size-sm) * 0.95);
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    margin: 0;
+    margin-right: var(--space-s);
+    transition: all var(--transition-speed) var(--anim-easing-elegant);
+    box-shadow: var(--shadow-sm), var(--shadow-highlight);
+    vertical-align: middle;
+    line-height: 1.4;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-size: 250% auto;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    will-change: transform, box-shadow;
+    border: 1px solid transparent;
+    display: inline-block;
+    text-align: center;
+
+    background-image: linear-gradient(120deg, var(--accent-primary-active) 0%, var(--accent-primary) 40%, var(--accent-primary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-primary-active) 40%, black 50%);
+}
+
+/*
+button.explanation-toggle i.fas {
+    display: none;
+}
+*/
+
+button.explanation-toggle:hover {
+    background-position: 100% center;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-md), var(--shadow-highlight);
+    color: var(--text-on-accent);
+    border-color: transparent;
+}
+
+button.explanation-toggle:active {
+    transform: translateY(0px) scale(0.99);
+    box-shadow: var(--shadow-sm), var(--shadow-inset);
+    background-position: left center;
+    transition-duration: var(--anim-duration-fast);
+}
+
+button.explanation-toggle:focus-visible {
+    background-position: 100% center;
+    border-color: var(--border-focus);
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary), var(--shadow-lg);
+}
+
+.learning-item-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin-top: var(--space-s);
+    align-items: center;
+}
+
+#learning-offer-container button,
+#learning-round-container button:not(.explanation-toggle),
+#result-container button,
+#final-review-container button {
+
+    padding: var(--space-s) var(--space-xl);
+    font-size: calc(var(--font-size-sm) * 0.95);
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    margin-top: var(--space-l);
+    margin-right: var(--space-s);
+    transition: all var(--transition-speed) var(--anim-easing-elegant);
+    box-shadow: var(--shadow-md), var(--shadow-highlight);
+    vertical-align: middle; line-height: 1.4; position: relative; overflow: hidden;
+    z-index: 1; background-size: 250% auto; letter-spacing: 0.6px;
+    text-transform: uppercase; will-change: transform, box-shadow;
+    border: 1px solid transparent;
+}
+#learning-offer-container button:last-child,
+#learning-round-container button:not(.explanation-toggle):last-child,
+#result-container button:last-child,
+#final-review-container button:last-child { margin-right: 0; }
+
+#learning-offer-container button:first-of-type,
+#learning-round-container button:not(.explanation-toggle),
+#result-container button:first-of-type,
+#final-review-container button {
+    background-image: linear-gradient(120deg, var(--accent-primary-active) 0%, var(--accent-primary) 40%, var(--accent-primary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-primary-active) 40%, black 50%);
+}
+#learning-offer-container button.secondary,
+#result-container button.secondary {
+    background-image: linear-gradient(120deg, var(--accent-secondary-active) 0%, var(--accent-secondary) 40%, var(--accent-secondary-hover) 100%);
+    color: var(--text-on-accent);
+    border-color: color-mix(in srgb, var(--accent-secondary-active) 40%, black 50%);
+}
+
+#learning-offer-container button:hover,
+#learning-round-container button:not(.explanation-toggle):hover,
+#result-container button:hover,
+#final-review-container button:hover {
+    background-position: 100% center;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow-lg), var(--shadow-highlight);
+    color: var(--text-on-accent);
+    border-color: transparent;
+}
+
+
+#learning-round-container button:not(.explanation-toggle),
+#final-review-container button:not(.explanation-toggle) {
+    display: block; margin: var(--space-l) auto 0 auto;
+}
+
+@keyframes pulseSimpleGlow {
+    0%, 100% { box-shadow: var(--shadow-lg); filter: brightness(1); transform: scale(1); }
+    50% { box-shadow: var(--shadow-xl), 0 0 15px 4px color-mix(in oklch, var(--accent-primary) l c h / 0.15); filter: brightness(1.05); transform: scale(1.05); }
+}
+
+#theme-toggle-btn {
+    position: fixed; bottom: var(--space-m); right: var(--space-m);
+    z-index: 1001;
+    background: var(--surface-3);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 50%;
+    width: 48px; height: 48px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-speed) var(--anim-easing-elegant);
+    display: flex; justify-content: center; align-items: center;
+    padding: 0; margin: 0;
+    animation: pulseSimpleGlow 6s infinite ease-in-out;
+    will-change: transform, box-shadow, filter;
+    overflow: hidden;
+}
+#theme-toggle-btn:hover {
+    background: var(--surface-4);
+    color: var(--accent-primary-hover);
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.1) rotate(-15deg);
+    animation-play-state: paused;
+    border-color: var(--border-hover);
+    filter: brightness(1.05);
+}
+#theme-toggle-btn:active {
+    transform: scale(1.0) rotate(0deg);
+    box-shadow: var(--shadow-md), var(--shadow-inset);
+    animation-play-state: paused;
+    transition-duration: var(--anim-duration-fast);
+    filter: brightness(1);
+}
+#theme-toggle-btn:focus-visible {
+    animation-play-state: paused;
+    border-color: var(--border-focus);
+    outline: calc(var(--focus-ring-width) - 1px) solid var(--focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--bg-secondary), var(--shadow-lg);
+    filter: brightness(1);
+}
+#theme-toggle-btn span {
+    display: inline-block;
+    transition: transform 0.3s var(--anim-easing-standard);
+}
+#theme-toggle-btn:hover span {
+     transform: scale(1.1) rotate(5deg);
+}
+
+
+/* --- Duyarlılık Ayarları (Stats Bar ve Quiz Konteyner Konumu Güncellendi) --- */
+
+/* Varsayılan (Mobil üstü) */
+body.quiz-active {
+    padding-top: 0; /* Üst padding kaldırıldı */
+    padding-bottom: 80px; /* Alttaki stats bar için boşluk (60px bar + 20px tampon) */
+}
+
+/* ======================================== */
+/* === Mobil Menü ve İlgili Stiller ====== */
+/* ======================================== */
+
+/* --- Hamburger Butonu --- */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    padding: var(--space-xs);
+    cursor: pointer;
+    z-index: 1001;
+    transition: color var(--anim-duration-fast) ease, transform var(--anim-duration-fast) ease;
+}
+.mobile-menu-toggle:hover {
+    color: var(--accent-primary);
+    transform: scale(1.1);
+}
+
+/* --- Mobil Navigasyon Konteyneri (.mobile-nav) --- */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--surface-1) 96%, transparent);
+    backdrop-filter: blur(12px) saturate(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    z-index: 1999;
+    padding: var(--space-xl) 0;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform var(--anim-duration-normal) var(--anim-easing-elegant),
+                opacity var(--anim-duration-normal) ease;
+    opacity: 0;
+    box-shadow: -5px 0px 25px rgba(0,0,0,0.15);
+}
+body.dark-mode .mobile-nav {
+    box-shadow: -5px 0px 25px rgba(0,0,0,0.4);
+}
+
+/* Menü Aktif Olduğunda */
+body.mobile-menu-active .mobile-nav {
+    display: flex;
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+/* --- Kapatma Butonu (Sağ Üst Köşe) --- */
+.mobile-menu-close-btn {
+    position: absolute;
+    top: var(--space-m);
+    right: var(--space-l);
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: var(--space-xs);
+    line-height: 1;
+    transition: color var(--anim-duration-fast) ease, transform var(--anim-duration-fast) ease;
+    z-index: 2000;
+}
+.mobile-menu-close-btn:hover {
+    color: var(--error);
+    transform: scale(1.15) rotate(90deg);
+}
+
+/* --- Mobil Navigasyon Linkleri --- */
+.mobile-nav ul {
+    list-style: none;
+    padding: 0 var(--space-l);
+    margin: var(--space-xl) 0 0 0;
+    text-align: center;
+    width: 100%;
+    flex-grow: 1;
+}
+.mobile-nav li {
+    margin-bottom: var(--space-m);
+}
+.mobile-nav li:last-child {
+    margin-bottom: 0;
+}
+.mobile-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    padding: var(--space-m) var(--space-l);
+    display: block;
+    border-radius: var(--border-radius-md);
+    transform: translateX(0);
+    background-color: var(--surface-2);
+    border: 1px solid var(--border-2);
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--anim-duration-fast) ease,
+                color var(--anim-duration-fast) ease,
+                transform var(--anim-duration-fast) ease,
+                border-color var(--anim-duration-fast) ease,
+                box-shadow var(--anim-duration-fast) ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--accent-primary);
+    background-color: var(--surface-3);
+    border-color: var(--accent-primary);
+    transform: translateX(5px) translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Aktif sayfa linki için stil (opsiyonel, JS ile class eklenmeli) */
+.mobile-nav a.current-page {
+    color: var(--accent-primary);
+    font-weight: 600;
+    background-color: var(--surface-accent);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-inset);
+}
+.mobile-nav a.current-page:hover { /* Hover'ı normal link hover'ından farklı yapalım */
+     color: var(--accent-primary);
+     background-color: var(--surface-accent);
+     transform: none; /* Aktif sayfada hover hareketi olmasın */
+     box-shadow: var(--shadow-inset);
+}
+
+
+/* --- Mobil Navigasyon Eylemleri (Arama, Tema) --- */
+.mobile-nav-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-m);
+    width: 90%;
+    max-width: 350px;
+    margin-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* Mobil menüdeki butonların stilleri */
+.mobile-nav .search-icon-btn,
+.mobile-nav #theme-toggle-mobile {
+     padding: var(--space-m);
+     font-size: var(--font-size-base);
+     font-weight: 500;
+     border-radius: var(--border-radius-md);
+     cursor: pointer;
+     background-color: var(--surface-3);
+     color: var(--text-secondary);
+     border: 1px solid var(--border-2);
+     width: 100%;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: var(--space-s);
+     transition: all var(--anim-duration-fast) var(--anim-easing-standard);
+     box-shadow: var(--shadow-sm);
+}
+.mobile-nav .search-icon-btn:hover,
+.mobile-nav #theme-toggle-mobile:hover {
+    background-color: var(--surface-4);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.mobile-nav .search-icon-btn:active,
+.mobile-nav #theme-toggle-mobile:active {
+    transform: translateY(0px);
+    box-shadow: var(--shadow-inset);
+}
+
+/* ======================================== */
+/* === Medya Sorguları =================== */
+/* ======================================== */
+
+/* Geniş Ekranlar (Küçük Ayarlamalar) */
+@media (max-width: 1200px) {
+    .container { width: 95%; }
+    .card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+    /* Quiz konteyner max genişliği aynı kalabilir */
+}
+
+
+/* Tablet ve Küçük Laptoplar (Mobil Menü Başlangıcı) */
+@media (max-width: 992px) {
+    html { scroll-snap-type: y proximity; }
+    .container { padding-left: var(--space-l); padding-right: var(--space-l); }
+
+    /* Masaüstü Nav & Eylemleri Gizle, Hamburger Göster */
+    #main-header nav, #header-actions { display: none; }
+    .mobile-menu-toggle { display: block; }
+    #main-header .container { gap: var(--space-l); }
+
+    /* Quiz aktifken body padding (alttaki bar için) */
+    body.quiz-active {
+        padding-top: 0;
+        padding-bottom: 80px; /* Desktop ile aynı */
+    }
+
+    /* Stat bar (tablet) - Ayarlar aynı kalabilir */
+    #stats-container {
+        gap: var(--space-xs);
+        padding: var(--space-xs) 3%;
+        height: 60px; /* Yüksekliği güncelleyelim */
+    }
+    /* Stat item, score, progress, message stilleri ana tanımlardan miras alınır */
+
+
+    /* Quiz alanı (konumlandırma) */
+    .quiz-main-content {
+        max-width: 90%;
+        margin: var(--space-l) auto var(--space-xl) auto; /* Üst marjı normale çevir */
+    }
+    #quiz-container, #result-container, #learning-offer-container, #learning-round-container, #final-review-container {
+        padding: var(--space-l); /* İç padding ayarı */
+        border-radius: var(--border-radius-lg); /* Radius ayarı */
+    }
+
+    /* Kartlar */
+    .card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+    .card:hover { transform: translateY(-6px) scale(1.02); }
+}
+
+
+/* Dikey Tablet ve Büyük Telefonlar */
+@media (max-width: 768px) {
+    html { scroll-snap-type: none; }
+    .container { padding-left: var(--space-m); padding-right: var(--space-m); }
+
+    #main-header { padding: var(--space-s) 0; }
+
+    /* Quiz aktifken body padding (alttaki bar için) */
+    body.quiz-active {
+        padding-top: 0;
+        padding-bottom: 80px; /* Tablet ile aynı */
+    }
+
+    /* Stat bar (tablet) */
+    #stats-container {
+        justify-content: space-around; /* Dağılımı iyileştir */
+        gap: var(--space-s);
+        height: 60px;
+    }
+     /* order vb. ayarları kaldırabiliriz, space-around ile daha iyi olabilir */
+     .progress-stat-container { min-width: 100px; }
+     #stats-status-message { text-align: right; max-width: 120px; }
+
+    /* Quiz Alanı */
+    .quiz-main-content {
+        max-width: 95%;
+        margin: var(--space-l) auto var(--space-xl) auto; /* Üst marjı normale çevir */
+    }
+     #quiz-container, #result-container, #learning-offer-container, #learning-round-container, #final-review-container {
+        padding: var(--space-l); /* Padding'i biraz artıralım */
+        border-radius: var(--border-radius-lg); /* Radius'u biraz artıralım */
+     }
+     #quiz-container h2, #result-container h2, #learning-offer-container h3, #learning-round-container h3, #final-review-container h3 {
+         font-size: var(--font-size-xl); /* Başlık boyutunu biraz küçült */
+     }
+     #question { font-size: var(--font-size-base); }
+     #options label { padding: var(--space-m); font-size: var(--font-size-sm); }
+     .quiz-main-content button:not(.explanation-toggle) { width: 100%; margin-right: 0; padding: var(--space-m); font-size: var(--font-size-sm); } /* Padding'i artıralım */
+
+     /* Öğrenme ekranı */
+     .learning-item { padding: var(--space-m); }
+     .learning-item h4 { font-size: var(--font-size-base); }
+     .learning-item .answer-line { flex-direction: row; align-items: baseline; gap: var(--space-xs); } /* Yatay düzene geri dönelim */
+     button.explanation-toggle, button.feedback-btn { margin-left: 0; margin-top: var(--space-s); }
+
+    /* Kartlar */
+    .card-grid { grid-template-columns: 1fr; gap: var(--space-l); }
+    .card:hover { transform: translateY(-5px); }
+
+    /* Hero Alanı */
+     #hero { min-height: auto; padding: var(--space-xl) 0; }
+     #hero h2 { font-size: clamp(1.8rem, 1.5rem + 4.5vw, 2.8rem); }
+     #hero p { font-size: clamp(1rem, 1rem + 1.6vw, 1.3rem); }
+
+    #theme-toggle-btn { width: 44px; height: 44px; font-size: 1.4rem; bottom: var(--space-s); right: var(--space-s); }
+}
+
+
+/* Küçük Telefonlar */
+@media (max-width: 520px) {
+    .container { padding-left: var(--space-s); padding-right: var(--space-s); }
+
+    /* Stat bar sarma durumunda yükseklik ve padding */
+    #stats-container {
+        flex-wrap: wrap; /* Sarmaya izin ver */
+        height: auto;
+        min-height: 65px; /* Sarmış hali için yaklaşık yükseklik */
+        padding: var(--space-s) 3%; /* İç boşlukları ayarla */
+        justify-content: center; /* Ortala */
+        gap: var(--space-s) var(--space-m); /* Dikey ve yatay boşluk */
+        bottom: 0; /* Altta kalmaya devam */
+    }
+    /* Progress bar tam genişlikte alta geçsin */
+    .progress-stat-container { order: 100; width: 100%; margin-top: var(--space-xs); min-width: auto; padding: 0; }
+    /* Stat item'lar normal sırada */
+    .stat-item { order: 1; flex-basis: auto; font-size: calc(var(--font-size-sm) * 0.85); gap: var(--space-xxs);}
+    #stats-status-message { order: 2; max-width: none; flex-basis: 100%; text-align: center; margin-top: var(--space-xs); font-size: calc(var(--font-size-sm) * 0.8);}
+    .score-value { min-width: 35px; padding: 1px 3px; }
+    /* Çok küçük ekranda skorları gizleme yorumu kaldı */
+    /* .stat-item:nth-of-type(5), .stat-item:nth-of-type(6), .stat-item:nth-of-type(7) { display: none; } */
+
+    body.quiz-active {
+        padding-top: 0;
+        padding-bottom: 110px; /* Stat bar'ın sarma ihtimaline karşı daha fazla boşluk */
+    }
+
+    /* Quiz Alanı */
+    .quiz-main-content {
+        width: 96%;
+        margin: var(--space-l) auto var(--space-xl) auto; /* Üst marjı normale çevir */
+    }
+     #quiz-container, #result-container, #learning-offer-container, #learning-round-container, #final-review-container {
+        padding: var(--space-m); /* Padding'i biraz azaltalım */
+        border-radius: var(--border-radius-lg); /* Radius kalsın */
+     }
+      #quiz-container h2, #result-container h2, #learning-offer-container h3, #learning-round-container h3, #final-review-container h3 {
+         font-size: clamp(1.5rem, 1.2rem + 2.5vw, 1.8rem); /* Başlık boyutunu küçült */
+         letter-spacing: -0.8px;
+     }
+     #question { font-size: calc(var(--font-size-base) * 0.95); padding: var(--space-s); }
+     #options label { padding: var(--space-s); font-size: calc(var(--font-size-sm) * 0.95); }
+     .option-label input[type="radio"] { transform: scale(1.1); margin-right: var(--space-xs); }
+     .feedback-icon { right: var(--space-xs); font-size: 1.2em; }
+     .quiz-main-content button:not(.explanation-toggle) { padding: var(--space-s); font-size: calc(var(--font-size-sm)*0.9); }
+
+    /* Hero & Butonlar */
+    #hero h2 { font-size: clamp(1.6rem, 1.5rem + 4vw, 2.2rem); letter-spacing: -0.5px; }
+    #hero p { font-size: calc(var(--font-size-base)*0.95); }
+    .btn { width: calc(100% - var(--space-m)); margin: var(--space-s) auto; padding: var(--space-s); font-size: calc(var(--font-size-sm)*0.9); }
+
+    #theme-toggle-btn { width: 40px; height: 40px; font-size: 1.3rem; bottom: var(--space-xs); right: var(--space-xs); }
+}
+</style>
+</head>
+<body>
+
+<header id="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="#hero"> <h1>Uzm.Dr. Sait Ramazan Gülbay</h1></a>
+            </div>
+<nav aria-label="Ana Gezinti">
+    <ul>
+        <li><a href="#hero" id="nav-home" class="active" aria-current="page">Ana Sayfa</a></li>
+        <li><a href="#quizler" id="nav-quizler">Konular ve Quizler</a></li>
+        <li><a href="#hakkinda" id="nav-hakkinda">Hakkında</a></li>
+    </ul>
+</nav>
+            <div id="header-actions">
+                <button class="search-icon-btn" aria-label="Ara">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+        </div> </header>
+
+    <div class="mobile-nav" id="mobile-navigation" aria-hidden="true">
+        <button class="mobile-menu-close-btn" aria-label="Menüyü Kapat">&times;</button>
+<ul>
+    <li><a href="#hero">Ana Sayfa</a></li>
+    <li><a href="#quizler">Konular ve Quizler</a></li>
+    <li><a href="#hakkinda">Hakkında</a></li>
+</ul>
+        <div class="mobile-nav-actions">
+            <button class="search-icon-btn" aria-label="Ara (Mobil)">
+                 <i class="fas fa-search" aria-hidden="true"></i> Ara
+            </button>
+            <button id="theme-toggle-mobile" aria-label="Temayı Değiştir (Mobil)">
+                 <span>🌓</span>
+            </button>
+        </div>
+    </div>
+    <div id="homepage-content">
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <h2 id="hero-heading">Tıp ve Diş Hekimliği Öğrencileri İçin Gelişmiş Eğitim Kaynakları</h2>
+                <p>Güncel, interaktif ders materyalleri, sunumlar ve akıllı quizlerle öğrenme deneyiminizi zenginleştirin.</p>
+<a href="#quizler" class="btn btn-primary">İçerikler için tıklayın</a>
+            </div>
+        </section>
+
+
+    </div>
+<section id="quizler" class="content-section" aria-labelledby="quizler-heading">
+    <h2 id="quizler-heading"><i class="fas fa-sitemap" aria-hidden="true"></i> Konular ve Quizler</h2>
+    <div id="hierarchical-nav-container" class="card-grid">
+        </div>
+</section>
+            <section id="hakkinda" class="content-section" aria-labelledby="hakkinda-heading">
+                 <h2 id="hakkinda-heading"><i class="fas fa-info-circle" aria-hidden="true"></i> Hakkında</h2>
+                 <p style="text-align: center; max-width: 650px; margin: 0 auto; line-height: 1.8;">Mikrobiyoloji eğitim materyalleri geliştirerek öğretime katkıda bulunmak, mikrobiyoloji öğretimini bir adım daha ileriye taşımak için çalışıyoruz. Bilgiyi interaktif ve erişilebilir kılma hedefiyle... İşimiz vaktimizden çok.</p>
+            </section>
+        </main> </div> <div id="stats-container" style="display: none;" aria-live="polite" role="status">
+        <div class="stat-item"><span>Tur:</span> <span id="stats-current-round">-</span></div>
+        <div class="progress-stat-container">
+            <span>İlerleme:</span> <span id="stats-round-progress">-</span>
+            <div id="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="stats-round-progress"><div id="progress-bar-fill" style="width: 0%;"></div></div>
+        </div>
+        <div class="stat-item"><span>D:</span> <span id="stats-round-correct">0</span></div>
+        <div class="stat-item"><span>Y:</span> <span id="stats-round-incorrect">0</span></div>
+        <div class="stat-item"><span>1.Tur:</span> <span id="stats-round1-score" class="score-value">-</span></div>
+        <div class="stat-item"><span>2.Tur:</span> <span id="stats-round2-score" class="score-value">-</span></div>
+        <div class="stat-item"><span>Final:</span> <span id="stats-round3-score" class="score-value">-</span></div>
+        <div id="stats-status-message" class="stat-item">Durum: Başlatılıyor...</div>
+    </div>
+
+    <div class="quiz-main-content" style="display: none;" role="region" aria-label="Quiz Alanı">
+        <div id="quiz-container" style="display: none;">
+             <h2 id="quiz-title" aria-live="assertive">Quiz Başlığı Yükleniyor...</h2> <div id="question" aria-live="assertive">Soru yükleniyor...</div>
+             <div id="options" role="radiogroup" aria-labelledby="question"></div>
+             <button id="submit-btn">Cevabı Kontrol Et</button>
+             <div id="feedback" style="display: none;" aria-live="assertive"></div>
+        </div>
+
+        <div id="learning-offer-container" style="display: none;" aria-labelledby="offer-title">
+            <h3 id="offer-title">Tur Değerlendirmesi</h3>
+            <p id="offer-message">Öğrenme fırsatı mesajı burada görünecek.</p>
+            <button id="start-learning-btn">Öğretim Turunu Başlat</button>
+            <button id="start-next-test-btn" class="secondary">Sonraki Tur Sorularını Çöz</button>
+        </div>
+
+        <div id="learning-round-container" style="display: none;" aria-labelledby="learning-title">
+            <h3 id="learning-title">Öğrenme Turu</h3>
+            <p>Bu turda yanlış yanıtladığınız soruların doğru cevapları ve açıklamaları aşağıdadır.</p>
+            <div id="learning-content">
+                </div>
+            <button id="continue-to-next-test-btn">Sonraki Tur Sorularını Çöz</button>
+        </div>
+
+        <div id="result-container" style="display: none;" aria-labelledby="result-heading">
+            <h2 id="result-heading">Test Tamamlandı!</h2>
+            <p id="score-info">Skor bilgisi yükleniyor...</p>
+            <p id="final-message">Sonuç mesajı burada görünecek.</p>
+            <button id="show-final-review-btn">Tüm Soruları ve Cevapları İncele</button>
+            <button onclick="goHome();" class="secondary">Ana Sayfaya Dön</button>
+        </div>
+
+        <div id="final-review-container" style="display: none;" aria-labelledby="final-review-heading">
+             <h3 id="final-review-heading">Tüm Sorular ve Cevaplar</h3>
+             <p>Testteki tüm soruların doğru cevaplarını ve açıklamalarını aşağıda bulabilirsiniz.</p>
+             <div id="final-review-content">
+                 </div>
+             <button onclick="goHome();">Ana Sayfaya Dön</button>
+        </div>
+    </div> <footer id="main-footer">
+        <div class="container">
+            <p><small>&copy; <span id="copyright-year">2025</span> Uzm.Dr. Sait Ramazan Gülbay. Tüm hakları saklıdır.</small></p>
+            </div>
+    </footer>
+
+    <button id="theme-toggle-btn" aria-label="Temayı Değiştir">
+        <span>🌓</span> </button>
+<div id="search-modal" class="search-modal-overlay" aria-hidden="true">
+    <div class="search-modal-content" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+        <button id="search-modal-close" class="search-modal-close-btn" aria-label="Aramayı Kapat">&times;</button>
+        <h2 id="search-modal-title" class="sr-only">İçerik Ara</h2>
+        <div class="search-input-container">
+            <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+            <input type="search" id="search-modal-input" placeholder="Quiz veya konu ara...">
+        </div>
+        <div id="search-modal-results" class="search-results-container">
+            <p class="search-placeholder">Aramak için en az 2 karakter girin...</p>
+        </div>
+    </div>
+</div>
+<style> .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; } </style>
+
+<script>
+const learningHierarchy = {
+  "YDUS": { // YDUS için disiplinler eklendi
+    "İmmünoloji": {},
+    "Bakteriyoloji": {},
+    "Viroloji": {},
+    "Mikoloji": {},
+    "Parazitoloji": {},
+    "Enfeksiyon Hastalıkları": {},
+    "Genel Mikrobiyoloji": {}
+    // YDUS'a özel başka disiplinler/konular eklenebilir
+  },
+  "TUS": { // TUS için disiplinler eklendi
+    "İmmünoloji": {},
+    "Bakteriyoloji": {},
+    "Viroloji": {},
+    "Mikoloji": {},
+    "Parazitoloji": {},
+    "Enfeksiyon Hastalıkları": {},
+    "Genel Mikrobiyoloji": {}
+     // TUS'a özel başka disiplinler/konular eklenebilir
+  },
+  "DUS": { // DUS için disiplinler eklendi
+    "İmmünoloji": {},
+    "Bakteriyoloji": {},
+    "Viroloji": {},
+    "Mikoloji": {},
+    "Parazitoloji": {},
+    "Enfeksiyon Hastalıkları": {},
+    "Genel Mikrobiyoloji": {}
+     // DUS'a özel başka disiplinler/konular eklenebilir
+  },
+  "Tıp Fakültesi Dersleri": { // Bu kısım aynı kalıyor
+    "İmmünoloji": {
+      "demo": { title: "Demo", description: "İmmünolojinin temelleri ve immün sistemin hücresel elemanları hakkında bilginizi test edin.", lectureAvailable: false, quizId: "demo" },
+       "immunoloji_giris_hucreler": { title: "İmmünolojiye Giriş ve İmmün Sistem Hücreleri", description: "İmmünolojinin temelleri ve immün sistemin hücresel elemanları hakkında bilginizi test edin.", lectureAvailable: false, quizId: "immunoloji_giris_hucreler" },
+      "antikorlar": { title: "Antikorlar", description: "İmmünoglobulinlerin yapısı, sınıfları ve fonksiyonları üzerine odaklanın.", lectureAvailable: false, quizId: "antikorlar" },
+       "dogal_immun_yanit": { title: "Doğal İmmün Yanıt", description: "Doğuştan gelen bağışıklık mekanizmalarını, reseptörlerini ve kompleman sistemini test edin.", lectureAvailable: false, quizId: "dogal_immun_yanit" },
+       "kazanilmis_immun_yanit": { title: "Kazanılmış İmmün Yanıt", description: "Lenfosit olgunlaşması, aktivasyonu, MHC molekülleri ve aşırı duyarlılık reaksiyonları bilginizi ölçün.", lectureAvailable: false, quizId: "kazanilmis_immun_yanit" }
+    },
+    "Bakteriyoloji": {
+        "anaeroblar": { title: "Anaeroblar", description: "Oksijensiz ortamda yaşayan bakteriler ve neden oldukları enfeksiyonlar.", lectureAvailable: false, quizId: "anaeroblar" },
+        "spiroketler": { title: "Spiroketler", description: "Treponema, Borrelia ve Leptospira gibi önemli spiroketler ve ilişkili hastalıklar.", lectureAvailable: false, quizId: "spiroketler" },
+        "gram_negatif_non_fermenter_basiller": { title: "Gram Negatif Non-fermenter Basiller", description: "Pseudomonas, Burkholderia, Acinetobacter ve Stenotrophomonas türleri.", lectureAvailable: false, quizId: "gram_negatif_non_fermenter_basiller" },
+        "gram_negatif_koklar": { title: "Gram Negatif Koklar", description: "Neisseria (Meningokok, Gonokok) ve Moraxella türleri hakkında bilgiler.", lectureAvailable: false, quizId: "gram_negatif_koklar" },
+         "mikobakteriler": { title: "Mikobakteriler", description: "Tüberküloz, lepra etkenleri ve atipik mikobakteriler.", lectureAvailable: false, quizId: "mikobakteriler" },
+         "gram_pozitif_basiller": { title: "Gram Pozitif Basiller", description: "Bacillus, Clostridium, Listeria, Corynebacterium ve diğerleri.", lectureAvailable: false, quizId: "gram_pozitif_basiller" }
+    },
+    "Genel Mikrobiyoloji": {}, "Viroloji": {}, "Mikoloji": {}, "Parazitoloji": {}, "Enfeksiyon Hastalıkları": {}
+  },
+  "Diş H. Fakültesi Dersleri": { // Bu kısım aynı kalıyor
+     "İmmünoloji": {
+      "demo": { title: "Demo", description: "İmmünolojinin temelleri ve immün sistemin hücresel elemanları hakkında bilginizi test edin.", lectureAvailable: false, quizId: "demo" },
+      "immunoloji_giris_hucreler": { title: "İmmünolojiye Giriş ve İmmün Sistem Hücreleri", description: "İmmünolojinin temelleri ve immün sistemin hücresel elemanları hakkında bilginizi test edin.", lectureAvailable: false, quizId: "immunoloji_giris_hucreler" },
+      "antikorlar": { title: "Antikorlar", description: "İmmünoglobulinlerin yapısı, sınıfları ve fonksiyonları üzerine odaklanın.", lectureAvailable: false, quizId: "antikorlar" },
+       "dogal_immun_yanit": { title: "Doğal İmmün Yanıt", description: "Doğuştan gelen bağışıklık mekanizmalarını, reseptörlerini ve kompleman sistemini test edin.", lectureAvailable: false, quizId: "dogal_immun_yanit" },
+       "kazanilmis_immun_yanit": { title: "Kazanılmış İmmün Yanıt", description: "Lenfosit olgunlaşması, aktivasyonu, MHC molekülleri ve aşırı duyarlılık reaksiyonları bilginizi ölçün.", lectureAvailable: false, quizId: "kazanilmis_immun_yanit" }
+    },
+    "Bakteriyoloji": {
+        "anaeroblar": { title: "Anaeroblar", description: "Oksijensiz ortamda yaşayan bakteriler ve neden oldukları enfeksiyonlar.", lectureAvailable: false, quizId: "anaeroblar" },
+        "spiroketler": { title: "Spiroketler", description: "Treponema, Borrelia ve Leptospira gibi önemli spiroketler ve ilişkili hastalıklar.", lectureAvailable: false, quizId: "spiroketler" },
+        "gram_negatif_non_fermenter_basiller": { title: "Gram Negatif Non-fermenter Basiller", description: "Pseudomonas, Burkholderia, Acinetobacter ve Stenotrophomonas türleri.", lectureAvailable: false, quizId: "gram_negatif_non_fermenter_basiller" },
+        "gram_negatif_koklar": { title: "Gram Negatif Koklar", description: "Neisseria (Meningokok, Gonokok) ve Moraxella türleri hakkında bilgiler.", lectureAvailable: false, quizId: "gram_negatif_koklar" },
+         "mikobakteriler": { title: "Mikobakteriler", description: "Tüberküloz, lepra etkenleri ve atipik mikobakteriler.", lectureAvailable: false, quizId: "mikobakteriler" },
+         "gram_pozitif_basiller": { title: "Gram Pozitif Basiller", description: "Bacillus, Clostridium, Listeria, Corynebacterium ve diğerleri.", lectureAvailable: false, quizId: "gram_pozitif_basiller" }
+    },
+    "Genel Mikrobiyoloji": {}, "Viroloji": {}, "Mikoloji": {}, "Parazitoloji": {}, "Enfeksiyon Hastalıkları": {}
+  }
+};
+
+const hierarchicalNavContainerEl = document.getElementById('hierarchical-nav-container');
+let hierarchyState = { currentLayer: 1, path: [] };
+
+const hierarchyIconMap = {
+    // Layer 1 Keys
+    "YDUS": "fas fa-medal",
+    "TUS": "fas fa-stethoscope",
+    "DUS": "fas fa-tooth",
+    "Tıp Fakültesi Dersleri": "fas fa-moon", // <<< Değişiklik burada
+    "Diş H. Fakültesi Dersleri": "fas fa-tooth",
+    // Layer 2 Keys (Add more as needed)
+    "İmmünoloji": "fas fa-shield-alt",
+    "Bakteriyoloji": "fas fa-bacteria",
+    "Viroloji": "fas fa-virus",
+    "Mikoloji": "fas fa-mushroom",
+    "Parazitoloji": "fas fa-bug",
+    "Enfeksiyon Hastalıkları": "fas fa-biohazard",
+    "Genel Mikrobiyoloji": "fas fa-microscope",
+    // Add more specific icons for other disciplines
+    "default": "fas fa-folder-open" // Default icon if key not found
+};
+
+function createNavigationCard(key, layerNumber) {
+    const card = document.createElement('article');
+    let cardClasses = 'card hierarchy-nav-card'; // Temel sınıflar
+
+    // Katman 1'deki özel kartlar için ek sınıflar ekle
+    if (layerNumber === 1) {
+        if (key === "YDUS") cardClasses += ' card-premium-ydus';
+        else if (key === "TUS") cardClasses += ' card-premium-tus';
+        else if (key === "DUS") cardClasses += ' card-premium-dus';
+        // İleride Tıp/Diş için de özel sınıf eklenebilir:
+        // else if (key === "Tıp Fakültesi Dersleri") cardClasses += ' card-faculty-tip';
+        // else if (key === "Diş H. Fakültesi Dersleri") cardClasses += ' card-faculty-dis';
+    }
+
+    card.className = cardClasses; // Oluşturulan sınıfları ata
+    card.dataset.key = key;
+    card.dataset.layer = layerNumber;
+    card.setAttribute('role', 'button');
+    card.tabIndex = 0;
+
+    const iconClass = hierarchyIconMap[key] || hierarchyIconMap["default"];
+    const iconDiv = document.createElement('div');
+    iconDiv.className = 'card-icon';
+
+    const icon = document.createElement('i');
+    icon.className = iconClass;
+    icon.setAttribute('aria-hidden', 'true');
+    iconDiv.appendChild(icon);
+
+    const title = document.createElement('h3');
+    title.textContent = key;
+
+    const chevronIcon = document.createElement('i');
+    chevronIcon.className = 'fas fa-chevron-right hierarchy-chevron';
+    chevronIcon.setAttribute('aria-hidden', 'true');
+
+    card.appendChild(iconDiv);
+    card.appendChild(title);
+    card.appendChild(chevronIcon);
+
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navigateToNextLayer(key, layerNumber);
+        }
+    });
+
+    return card;
+}
+
+function createTopicCard(topicData, topicKey) {
+    const card = document.createElement('article');
+    card.className = 'card hierarchy-topic-card';
+    card.dataset.topicKey = topicKey; // Kartı daha sonra bulmak için eklendi
+
+    const iconDiv = document.createElement('div');
+    iconDiv.className = 'card-icon';
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-graduation-cap';
+    icon.setAttribute('aria-hidden', 'true');
+    iconDiv.appendChild(icon);
+
+    const title = document.createElement('h3');
+    title.textContent = topicData.title;
+
+    const description = document.createElement('p');
+    description.textContent = topicData.description;
+
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'card-actions';
+    actionsDiv.style.marginTop = 'auto';
+    actionsDiv.style.paddingTop = 'var(--space-m)';
+
+    const lectureBtn = document.createElement('button');
+    lectureBtn.textContent = "Konu Anlatımı";
+    lectureBtn.className = 'btn btn-secondary';
+    lectureBtn.disabled = !topicData.lectureAvailable;
+    if (!topicData.lectureAvailable) {
+       lectureBtn.textContent = "Konu Anlatımı (Yakında)";
+       lectureBtn.style.opacity = '0.6';
+       lectureBtn.style.cursor = 'not-allowed';
+    }
+    lectureBtn.dataset.action = 'lecture';
+    lectureBtn.dataset.topicKey = topicKey;
+
+    const quizBtn = document.createElement('button');
+    quizBtn.textContent = "Quizi Başlat";
+    quizBtn.className = 'btn btn-primary';
+    quizBtn.dataset.action = 'quiz';
+    quizBtn.dataset.quizId = topicData.quizId;
+
+    actionsDiv.appendChild(lectureBtn);
+    actionsDiv.appendChild(quizBtn);
+
+    card.appendChild(iconDiv);
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(actionsDiv);
+
+    return card;
+}
+
+
+function createBackButton() {
+    const backButton = document.createElement('button');
+    backButton.textContent = '← Geri';
+    backButton.className = 'btn btn-secondary hierarchy-back-btn'; // Stil için .btn sınıfını kullandım
+    backButton.dataset.action = 'back';
+    // Geri butonunu gridin başına yerleştirmek için stil
+    backButton.style.marginBottom = 'var(--space-l)';
+    backButton.style.marginRight = 'auto'; // Solda kalmasını sağlar
+    backButton.style.gridColumn = '1 / -1'; // Tüm sütunları kaplamasını sağlar (opsiyonel)
+    return backButton;
+}
+
+
+function renderHierarchyView() {
+    if (!hierarchicalNavContainerEl || !learningHierarchy) return;
+
+    hierarchicalNavContainerEl.innerHTML = ''; // Konteyneri temizle
+    hierarchicalNavContainerEl.scrollTop = 0; // Scroll'u başa al
+
+    let currentDataLevel = learningHierarchy;
+    let layerToRender = hierarchyState.currentLayer;
+    let itemsToRender = {};
+    let showBackButton = false;
+
+    try {
+        // Gösterilecek veri setini belirle
+        if (layerToRender === 1) {
+            itemsToRender = learningHierarchy;
+        } else if (layerToRender === 2 && hierarchyState.path.length >= 1) {
+            const key1 = hierarchyState.path[0];
+            if (learningHierarchy[key1]) {
+                itemsToRender = learningHierarchy[key1];
+                showBackButton = true;
+            } else {
+                 throw new Error(`Layer 1 key not found: ${key1}`);
+            }
+        } else if (layerToRender === 3 && hierarchyState.path.length >= 2) {
+            const key1 = hierarchyState.path[0];
+            const key2 = hierarchyState.path[1];
+            if (learningHierarchy[key1] && learningHierarchy[key1][key2]) {
+                itemsToRender = learningHierarchy[key1][key2];
+                showBackButton = true;
+            } else {
+                 throw new Error(`Layer 2 path not found: ${key1} -> ${key2}`);
+            }
+        } else {
+             // Geçersiz durum, başa dön
+             throw new Error(`Invalid hierarchy state: layer=${layerToRender}, path=${JSON.stringify(hierarchyState.path)}`);
+        }
+
+         // Geri butonunu ekle (eğer gerekiyorsa)
+         if (showBackButton) {
+            const backButton = createBackButton();
+            hierarchicalNavContainerEl.appendChild(backButton); // Başa ekle
+         }
+
+         // Veri setini kontrol et ve kartları oluştur
+         if (typeof itemsToRender !== 'object' || itemsToRender === null || Object.keys(itemsToRender).length === 0) {
+             // Boş mesajı göster (eğer geri butonu eklendiyse bile)
+             const emptyMsg = document.createElement('p');
+             emptyMsg.textContent = 'Bu kategoride henüz içerik bulunmamaktadır.';
+             emptyMsg.style.textAlign = 'center';
+             emptyMsg.style.width = '100%';
+             emptyMsg.style.gridColumn = '1 / -1'; // Gridin tamamını kapla
+             hierarchicalNavContainerEl.appendChild(emptyMsg);
+         } else {
+             // Kartları oluştur ve ekle
+             Object.keys(itemsToRender).forEach(key => {
+                 let card;
+                 if (layerToRender < 3) {
+                     // Katman 1 veya 2 için navigasyon kartı
+                     card = createNavigationCard(key, layerToRender);
+                 } else {
+                     // Katman 3 için konu kartı
+                     card = createTopicCard(itemsToRender[key], key);
+                 }
+                 hierarchicalNavContainerEl.appendChild(card);
+             });
+         }
+
+    } catch (error) {
+        console.error("Error rendering hierarchy view:", error, hierarchyState);
+        hierarchicalNavContainerEl.innerHTML = ''; // Hata durumunda temizle
+        // Hata mesajını göster
+        const errorMsg = document.createElement('p');
+        errorMsg.style.color = 'var(--error)';
+        errorMsg.style.textAlign = 'center';
+        errorMsg.style.width = '100%';
+        errorMsg.style.gridColumn = '1 / -1';
+        errorMsg.textContent = 'İçerik yüklenirken bir hata oluştu. Lütfen tekrar deneyin veya yöneticiye bildirin.';
+        hierarchicalNavContainerEl.appendChild(errorMsg);
+
+        // Hata durumunda başa dönmek için state'i sıfırla ve geri butonu ekle (opsiyonel)
+        hierarchyState = { currentLayer: 1, path: [] };
+        // Geri butonu hatadan sonra mantıklı olmayabilir, bu yüzden eklemiyorum.
+    }
+}
+
+
+
+function navigateToNextLayer(key, currentLayerNumber) {
+     // Sadece 3. katmana kadar ilerle
+     if (currentLayerNumber < 3) {
+         hierarchyState.currentLayer++;
+         hierarchyState.path.push(key);
+         renderHierarchyView(); // Yeni katmanı göster
+     }
+}
+
+function goBackHierarchy() {
+    if (hierarchyState.currentLayer > 1) {
+        hierarchyState.currentLayer--;
+        hierarchyState.path.pop();
+        renderHierarchyView(); // Önceki katmanı göster
+    }
+}
+
+function handleHierarchyNavClick(event) {
+    // Tıklanan en yakın ilgili elemanı bul
+    const clickedNavCard = event.target.closest('.hierarchy-nav-card');
+    const clickedActionButton = event.target.closest('button[data-action]');
+
+    if (clickedNavCard && clickedNavCard.dataset.key && clickedNavCard.dataset.layer) {
+        // Katman 1 veya 2 navigasyon kartına tıklandı
+        event.preventDefault();
+        const key = clickedNavCard.dataset.key;
+        const layer = parseInt(clickedNavCard.dataset.layer, 10);
+        navigateToNextLayer(key, layer);
+    } else if (clickedActionButton) {
+        // Bir aksiyon butonuna (Quiz, Konu, Geri) tıklandı
+        event.preventDefault();
+        const action = clickedActionButton.dataset.action;
+
+        if (action === 'quiz' && clickedActionButton.dataset.quizId) {
+            startQuiz(clickedActionButton.dataset.quizId);
+        } else if (action === 'lecture' && clickedActionButton.dataset.topicKey) {
+             alert('Konu anlatımı özelliği yakında eklenecektir.');
+             console.log("Konu anlatımı istendi:", clickedActionButton.dataset.topicKey);
+        } else if (action === 'back') {
+            goBackHierarchy();
+        }
+    }
+}
+
+const quizData = {
+    'demo': {
+        title: "İmmünoloji Temelleri",
+        questions: [
+            { id: 'demo_q1', question: "1. Patojenle İlişkili Moleküler Kalıplar (PAMP) için hangisi örnek değildir?", options: ["Lipopolisakkarit (LPS)", "Peptidoglikan", "Çift iplikli RNA", "Monosodyum ürat kristalleri", "Fungal glikanlar"], correctAnswer: "Monosodyum ürat kristalleri", explanation: "Monosodyum ürat kristalleri, hücre hasarı sonucu ortaya çıkan DAMP'lara (Hasarla İlişkili Moleküler Kalıplar) örnektir. Diğerleri PAMP'tır." },
+            { id: 'demo_q2', question: "2. Doğal immün yanıt ve kazanılmış immün yanıt arasındaki farklardan hangisi yanlıştır?", options: ["Kazanılmış immün yanıtta izotip değişimi ve antikor üretimi vardır", "Doğal immün yanıtta doğuştan gelen bellek hücreleri sayesinde bakterilere karşı spesifik yanıt vardır", "Kazanılmış yanıtın ana hücre grubu lenfositlerdir", "Doğal yanıt ilk karşılaşmada gelişen ama daha etkisiz olan yanıttır", "Bir yaratılış mucizesi olarak kazanılmış yanıttaki bellek hücreleri çok fazla sayıda etkene karşı özelleşebilecek kabiliyettedir"], correctAnswer: "Doğal immün yanıtta doğuştan gelen bellek hücreleri sayesinde bakterilere karşı spesifik yanıt vardır", explanation: "Doğal immün yanıtın hafızası yoktur ve her karşılaşmada aynı şekilde yanıt verir; spesifik bellek kazanılmış yanıta özgüdür." },
+            { id: 'demo_q3', question: "3. Hümoral immüniteden sorumlu temel hücre tipi hangisidir?", options: ["T helper lenfosit", "Sitotoksik T lenfosit", "NK hücresi", "B lenfosit", "Makrofaj"], correctAnswer: "B lenfosit", explanation: "B lenfositler ve onların ürünü olan antikorlar hümoral immüniteden sorumludur ve genellikle hücre dışı mikroorganizmalara karşı etkilidir." },
+            { id: 'demo_q4', question: "4. Hücresel immüniteden sorumlu temel hücre tipi hangisidir?", options: ["B lenfosit", "Plazma hücresi", "T lenfosit", "Mast hücresi", "Bazofil"], correctAnswer: "T lenfosit", explanation: "T lenfositler (hem Helper hem Sitotoksik) hücresel immüniteden sorumludur ve özellikle hücre içi mikroorganizmalara ve tümör hücrelerine karşı etkilidir." }
+        ]
+    },
+};
+
+
+let currentQuizId = null;
+let currentQuizData = null;
+let currentRound = 'INIT';
+let questionsForRound = [];
+let incorrectInRound1 = [];
+let incorrectInRound2 = [];
+let currentQuestionIndexInRound = 0;
+let userAnswers = {};
+
+
+let stats = {
+    round1Correct: 0, round1Incorrect: 0,
+    round2Correct: 0, round2Incorrect: 0,
+    round3Correct: 0,
+    round1Score: 0, round2Score: 0, round3Score: 0,
+    round1TotalQuestions: 0,
+    round2TotalQuestions: 0, round3TotalQuestions: 0,
+    currentRoundCorrect: 0, currentRoundIncorrect: 0,
+    currentRoundTotal: 0,
+    statusMessage: "Başlatılıyor..."
+};
+const statsCurrentRoundEl = document.getElementById('stats-current-round');
+const statsRoundProgressEl = document.getElementById('stats-round-progress');
+const statsRoundCorrectEl = document.getElementById('stats-round-correct');
+const statsRoundIncorrectEl = document.getElementById('stats-round-incorrect');
+const statsRound1ScoreEl = document.getElementById('stats-round1-score');
+const statsRound2ScoreEl = document.getElementById('stats-round2-score');
+const statsRound3ScoreEl = document.getElementById('stats-round3-score');
+const statsStatusMessageEl = document.getElementById('stats-status-message');
+const progressBarTrackEl = document.getElementById('progress-bar-track');
+const progressBarFillEl = document.getElementById('progress-bar-fill');
+
+const quizContainerEl = document.getElementById('quiz-container');
+const quizTitleEl = document.getElementById('quiz-title');
+const questionEl = document.getElementById('question');
+const optionsEl = document.getElementById('options');
+const submitBtn = document.getElementById('submit-btn');
+const feedbackEl = document.getElementById('feedback');
+
+const learningOfferContainerEl = document.getElementById('learning-offer-container');
+const offerTitleEl = document.getElementById('offer-title');
+const offerMessageEl = document.getElementById('offer-message');
+const startLearningBtn = document.getElementById('start-learning-btn');
+const startNextTestBtn = document.getElementById('start-next-test-btn');
+
+const learningRoundContainerEl = document.getElementById('learning-round-container');
+const learningTitleEl = document.getElementById('learning-title');
+const learningContentEl = document.getElementById('learning-content');
+const continueToNextTestBtn = document.getElementById('continue-to-next-test-btn');
+
+const resultContainerEl = document.getElementById('result-container');
+const scoreInfoEl = document.getElementById('score-info');
+const finalMessageEl = document.getElementById('final-message');
+const showFinalReviewBtn = document.getElementById('show-final-review-btn');
+
+const finalReviewContainerEl = document.getElementById('final-review-container');
+const finalReviewContentEl = document.getElementById('final-review-content');
+
+const homepageContentEl = document.getElementById('homepage-content');
+const mainContentContainerEl = document.querySelector('main.container');
+const quizlerSectionEl = document.getElementById('quizler');
+const statsContainerEl = document.getElementById('stats-container');
+const quizMainContentEl = document.querySelector('.quiz-main-content');
+
+const themeToggleButton = document.getElementById('theme-toggle-btn');
+const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+
+const searchModal = document.getElementById('search-modal');
+const searchInput = document.getElementById('search-modal-input');
+const searchResultsContainer = document.getElementById('search-modal-results');
+const searchCloseBtn = document.getElementById('search-modal-close');
+const headerSearchBtn = document.querySelector('#main-header .search-icon-btn');
+const mobileSearchBtn = document.querySelector('.mobile-nav .search-icon-btn');
+
+const mobileMenuToggleBtn = document.querySelector('.mobile-menu-toggle');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileMenuCloseBtn = document.querySelector('.mobile-menu-close-btn');
+
+const hakkindaSectionEl = document.getElementById('hakkinda');
+
+function getScoreColor(score) {
+    const clampedScore = Math.max(0, Math.min(100, score));
+    const hue = clampedScore * 1.2; 
+    const saturation = 45 + clampedScore * 0.5; 
+    const lightness = 48 + clampedScore * 0.07; 
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+
+function animateValue(element, start, end, duration) {
+    if (!element) return;
+    const startValue = (start === '-' || isNaN(parseFloat(start))) ? 0 : parseFloat(start);
+    const endValue = Math.round(end);
+    
+    if (startValue === endValue && element.textContent === endValue + '%') return;
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentValue = Math.floor(progress * (endValue - startValue) + startValue);
+        element.textContent = currentValue + '%';
+        element.style.color = getScoreColor(currentValue);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            
+            element.textContent = endValue + '%';
+            element.style.color = getScoreColor(endValue);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+function animateIntegerChange(element, endValue, duration = 300) {
+    if (!element) return;
+    const startValueText = element.textContent;
+    
+    const startValue = isNaN(parseInt(startValueText, 10)) ? 0 : parseInt(startValueText, 10);
+    const finalEndValue = parseInt(endValue, 10);
+    if (startValue === finalEndValue) return; 
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentValue = Math.floor(progress * (finalEndValue - startValue) + startValue);
+        element.textContent = currentValue;
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            element.textContent = finalEndValue; 
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+function animateProgressText(element, currentNumber, totalNumber, duration = 300) {
+    if (!element || totalNumber <= 0) {
+        if (element) element.textContent = "-"; return;
+    }
+    
+    const match = element.textContent.match(/(\d+)\/(\d+)/);
+    const startNumber = match ? parseInt(match[1], 10) : 0;
+    
+    const finalCurrentNumberToShow = Math.min(parseInt(currentNumber, 10), parseInt(totalNumber, 10));
+    const finalTotalNumber = parseInt(totalNumber, 10);
+
+    
+    if (element.textContent === `${finalCurrentNumberToShow}/${finalTotalNumber}`) return;
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const animatedCurrentValue = Math.floor(progress * (finalCurrentNumberToShow - startNumber) + startNumber);
+        element.textContent = `${animatedCurrentValue}/${finalTotalNumber}`;
+
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            
+            element.textContent = `${finalCurrentNumberToShow}/${finalTotalNumber}`;
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+function getStatusMessageClass(message) {
+    if (!message) return "";
+    if (message.includes("Mükemmel") || message.includes("Başarılı") || message.includes("Çok iyi") || message.includes("Harika")) return "success-message";
+    if (message.includes("gayret") || message.includes("gerekli") || message.includes("Tamamlandı") || message.includes("önerilir")) return "improvement-message";
+    if (message.includes("Sonuç") || message.includes("İnceleme") || message.includes("Seçim Bekleniyor")) return "info-message"; 
+    return ""; 
+}
+
+
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+    
+    while (currentIndex > 0) {
+        
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+    return array;
+}
+
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+// --- Temel UI Kontrol Fonksiyonları ---
+
+// Quiz içindeki farklı containerları göster/gizle
+function showQuizContainer(containerId) {
+    const containers = [
+        quizContainerEl, resultContainerEl, learningOfferContainerEl,
+        learningRoundContainerEl, finalReviewContainerEl
+    ];
+    containers.forEach(container => {
+        if (container) {
+            container.style.display = (container.id === containerId) ? 'block' : 'none';
+        }
+    });
+    // Scroll işlemi burada değil, quiz görünümüne geçildiğinde (startQuiz içinde) yapılmalı
+}
+
+// İstatistik panelini güncelle
+function updateStatsDisplay(animate = false, animationDuration = 300) {
+    if (!statsContainerEl || statsContainerEl.style.display === 'none') return; // Panel görünür değilse güncelleme
+
+    let roundText = "-";
+    switch (currentRound) {
+        case 'TEST_1': roundText = "1. Tur"; break;
+        case 'LEARN_1_OFFER': roundText = "1. Tur Sonu"; break;
+        case 'LEARN_1': roundText = "Öğrenme (1)"; break; // Tur numarasını belirt
+        case 'TEST_2': roundText = "2. Tur"; break;
+        case 'LEARN_2_OFFER': roundText = "2. Tur Sonu"; break;
+        case 'LEARN_2': roundText = "Öğrenme (2)"; break; // Tur numarasını belirt
+        case 'TEST_3': roundText = "Final Tur"; break;
+        case 'RESULTS': roundText = "Sonuç"; break;
+        case 'FINAL_REVIEW': roundText = "İnceleme"; break;
+        case 'INIT':
+        default: roundText = "Başlıyor";
+    }
+    if (statsCurrentRoundEl) statsCurrentRoundEl.textContent = roundText;
+
+    // İlerleme Metni & Barı
+    const currentDisplayNumber = currentQuestionIndexInRound + 1; // Gösterilecek soru no (1'den başlar)
+    const totalForRound = stats.currentRoundTotal;
+    let progressText = "-";
+    let progressPercent = 0;
+
+    if (currentRound.startsWith('TEST_') && totalForRound > 0) {
+        // İlerlemeyi, mevcut soru sayısını geçmeyecek şekilde ayarla
+        const currentProgressNumber = Math.min(currentQuestionIndexInRound, totalForRound);
+        progressText = `${currentProgressNumber}/${totalForRound}`; // Tur bitince 10/10 yerine, son sorudan sonra 10/10 göstermeli
+        progressPercent = Math.min(100, (currentProgressNumber / totalForRound) * 100);
+
+        // Soru yüklendiğinde index 0 olur, ama 1/X görünmeli, cevap kontrol edilince index 1 olur ama hala 1/X görünmeli, sonraki soruya geçerken 2/X görünmeli
+        // Bu yüzden animasyonu soru yüklenirken ve cevap kontrol edildikten sonra değil, doğrudan loadQuestion ve checkAnswer içinde yönetmek daha doğru olabilir.
+        // Şimdilik burada bırakalım, ama ileride ince ayar gerekebilir.
+        if (animate) {
+             // animateProgressText çağrısı index'i kullanmalı, display number değil
+             animateProgressText(statsRoundProgressEl, currentQuestionIndexInRound, totalForRound, animationDuration);
+        } else {
+             if (statsRoundProgressEl) statsRoundProgressEl.textContent = `${Math.min(currentDisplayNumber, totalForRound)}/${totalForRound}`; // Statik güncelleme için display number kullan
+        }
+        if(progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', Math.round(progressPercent));
+    } else {
+        // Test olmayan turlarda ilerleme sıfırla
+        if (statsRoundProgressEl) statsRoundProgressEl.textContent = '-';
+        if (progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 0);
+    }
+    // Progress bar fill animasyonsuz güncellenebilir veya CSS transition ile halledilebilir.
+    if (progressBarFillEl) progressBarFillEl.style.width = `${progressPercent}%`;
+
+
+    // Mevcut Tur Doğru/Yanlış Sayıları
+    if (animate) {
+        animateIntegerChange(statsRoundCorrectEl, stats.currentRoundCorrect, animationDuration);
+        animateIntegerChange(statsRoundIncorrectEl, stats.currentRoundIncorrect, animationDuration);
+    } else {
+        if (statsRoundCorrectEl) statsRoundCorrectEl.textContent = (currentRound.startsWith('TEST_') || currentRound === 'RESULTS' || currentRound === 'FINAL_REVIEW') ? stats.currentRoundCorrect : '-';
+        if (statsRoundIncorrectEl) statsRoundIncorrectEl.textContent = (currentRound.startsWith('TEST_') || currentRound === 'RESULTS' || currentRound === 'FINAL_REVIEW') ? stats.currentRoundIncorrect : '-';
+    }
+
+    // Tur Skorlarını Göster/Gizle ve Animate Et (finishRound içinde tetiklenecek)
+    const displayScore = (el, score, roundNum, totalQuestionsInRound) => {
+        if (!el) return;
+         // Skorun gösterilip gösterilmeyeceğini belirle
+        let shouldDisplay = false;
+        if (roundNum === 1 && stats.round1TotalQuestions > 0 && (currentRound !== 'INIT' && currentRound !== 'TEST_1')) {
+            shouldDisplay = true; // 1. tur bittikten sonra göster
+        } else if (roundNum === 2 && stats.round2TotalQuestions > 0 && (currentRound === 'LEARN_2_OFFER' || currentRound === 'LEARN_2' || currentRound === 'TEST_3' || currentRound === 'RESULTS' || currentRound === 'FINAL_REVIEW')) {
+            shouldDisplay = true; // 2. tur bittikten sonra göster
+        } else if (roundNum === 3 && stats.round3TotalQuestions > 0 && (currentRound === 'RESULTS' || currentRound === 'FINAL_REVIEW')) {
+            shouldDisplay = true; // 3. tur bittikten sonra (yani sonuçlarda) göster
+        }
+
+
+        if (shouldDisplay) {
+             // AnimateValue zaten renk ve % ekliyor, burada sadece textContent'i '-' den farklı bir şeye set edip animateValue'yu çağırmak yeterli (finishRound içinde)
+             // Animasyonsuz durumda direkt göster
+             if (!animate) {
+                 el.textContent = Math.round(score) + '%';
+                 el.style.color = getScoreColor(score);
+             } else if(el.textContent === '-' || el.textContent === '0%') { // '-' den veya '0%' dan başlarken animasyon olsun
+                 // animateValue finishRound içinde çağrılacak
+             } else { // Zaten bir değer varsa statik güncelle
+                 el.textContent = Math.round(score) + '%';
+                 el.style.color = getScoreColor(score);
+             }
+        } else {
+            el.textContent = '-';
+            el.style.color = ''; // Rengi sıfırla
+        }
+    };
+
+    // Skorları güncelle (animasyon finishRound'da tetiklenir)
+    displayScore(statsRound1ScoreEl, stats.round1Score, 1, stats.round1TotalQuestions);
+    displayScore(statsRound2ScoreEl, stats.round2Score, 2, stats.round2TotalQuestions);
+    displayScore(statsRound3ScoreEl, stats.round3Score, 3, stats.round3TotalQuestions);
+
+    // Durum Mesajı
+    if (statsStatusMessageEl) {
+        statsStatusMessageEl.textContent = stats.statusMessage;
+        // Mesaja göre CSS sınıfı ekle/kaldır
+        statsStatusMessageEl.className = `stat-item ${getStatusMessageClass(stats.statusMessage)}`;
+    }
+}
+// --- Quiz Mantığı Fonksiyonları ---
+
+function initializeQuiz(selectedQuizId, selectedQuizTitle, selectedQuestions) {
+    console.log(`Quiz Başlatılıyor: ${selectedQuizId}`);
+    currentQuizId = selectedQuizId;
+    currentQuizData = quizData[selectedQuizId]; // Seçilen quiz verisini sakla
+    currentRound = 'TEST_1';
+    // Soruları karıştırarak kopyasını al
+    questionsForRound = shuffleArray([...selectedQuestions]);
+    incorrectInRound1 = [];
+    incorrectInRound2 = [];
+    currentQuestionIndexInRound = 0;
+    userAnswers = {}; // Kullanıcı cevaplarını sıfırla
+    // İstatistikleri sıfırla
+    stats = {
+        round1Correct: 0, round1Incorrect: 0,
+        round2Correct: 0, round2Incorrect: 0,
+        round3Correct: 0,
+        round1Score: 0, round2Score: 0, round3Score: 0,
+        round1TotalQuestions: questionsForRound.length,
+        round2TotalQuestions: 0, round3TotalQuestions: 0, // Bunlar ilgili turlar başlayınca set edilecek
+        currentRoundCorrect: 0, currentRoundIncorrect: 0,
+        currentRoundTotal: questionsForRound.length,
+        statusMessage: "1. Tur Devam Ediyor..."
+    };
+
+    if (feedbackEl) { // Geri bildirim alanını temizle
+        feedbackEl.textContent = '';
+        feedbackEl.className = '';
+        feedbackEl.style.display = 'none';
+    }
+    if (quizTitleEl) quizTitleEl.textContent = selectedQuizTitle; // Quiz başlığını ayarla
+
+    // Skor göstergelerini ve ilerleme çubuğunu sıfırla
+    [statsRound1ScoreEl, statsRound2ScoreEl, statsRound3ScoreEl].forEach(el => {
+        if (el) { el.textContent = '-'; el.style.color = ''; }
+    });
+    if (progressBarFillEl) progressBarFillEl.style.width = '0%';
+    if (progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 0);
+
+
+    updateStatsDisplay(false); // Başlangıç istatistiklerini göster (animasyonsuz)
+    showQuizContainer('quiz-container'); // Soru konteynerını göster
+    loadQuestion(); // İlk soruyu yükle
+}
+
+function loadQuestion() {
+    if (feedbackEl) feedbackEl.style.display = 'none'; // Varsa eski geri bildirimi gizle
+    if (optionsEl) optionsEl.classList.remove('options-disabled'); // Seçenekleri tekrar aktif et
+
+    // Turdaki tüm sorular bittiyse turu bitir
+    if (currentQuestionIndexInRound >= questionsForRound.length) {
+        if (progressBarFillEl) progressBarFillEl.style.width = '100%'; // Barı %100 yap
+        if(progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 100);
+        // İlerleme metnini X/X yap (örneğin 10/10)
+        if (stats.currentRoundTotal > 0 && statsRoundProgressEl) {
+             statsRoundProgressEl.textContent = `${stats.currentRoundTotal}/${stats.currentRoundTotal}`;
+        }
+        updateStatsDisplay(false); // Son istatistikleri göster
+        setTimeout(finishRound, 100); // Kısa bir gecikme ile turu bitir
+        return;
+    }
+
+    // Mevcut soruyu al
+    const currentQuestion = questionsForRound[currentQuestionIndexInRound];
+    if (!currentQuestion) {
+        console.error("Soru yüklenemedi, index:", currentQuestionIndexInRound);
+        goHome(); // Hata durumunda ana sayfaya dön
+        return;
+    }
+
+    if (questionEl) questionEl.innerHTML = currentQuestion.question; // Soru metnini yaz
+    if (optionsEl) optionsEl.innerHTML = ''; // Eski seçenekleri temizle
+
+    // Seçenekleri karıştır
+    const shuffledOptions = shuffleArray([...currentQuestion.options]);
+
+    // Seçenekleri radio buton olarak oluştur
+    shuffledOptions.forEach((option, index) => {
+        const optionId = `option_${currentQuestion.id}_${index}`; // Benzersiz ID
+        const label = document.createElement('label');
+        label.htmlFor = optionId;
+        label.classList.add('option-label');
+
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.id = optionId;
+        input.name = `option_${currentQuestion.id}`; // Aynı soru için aynı name
+        input.value = option;
+
+        const span = document.createElement('span');
+        span.textContent = option; // Seçenek metni
+
+        // Geri bildirim ikonları (başlangıçta gizli)
+        const correctIcon = document.createElement('span');
+        correctIcon.classList.add('feedback-icon', 'correct');
+        correctIcon.innerHTML = '&#10004;'; // Check mark
+        const incorrectIcon = document.createElement('span');
+        incorrectIcon.classList.add('feedback-icon', 'incorrect');
+        incorrectIcon.innerHTML = '&#10006;'; // X mark
+
+        label.appendChild(input);
+        label.appendChild(span);
+        label.appendChild(correctIcon);
+        label.appendChild(incorrectIcon);
+        if (optionsEl) optionsEl.appendChild(label);
+    });
+
+    if (submitBtn) submitBtn.disabled = false; // Cevapla butonunu aktif et
+     // İlerleme metnini güncelle (örn: 1/10)
+    if (statsRoundProgressEl && stats.currentRoundTotal > 0) {
+         statsRoundProgressEl.textContent = `${Math.min(currentQuestionIndexInRound + 1, stats.currentRoundTotal)}/${stats.currentRoundTotal}`;
+    }
+    // İlerleme barını ve diğer sayaçları animasyonlu güncelle
+    updateStatsDisplay(true);
+}
+
+function checkAnswer() {
+    const currentQuestion = questionsForRound[currentQuestionIndexInRound];
+    const selectedOptionInput = optionsEl ? optionsEl.querySelector(`input[name="option_${currentQuestion.id}"]:checked`) : null;
+
+    // Seçenek işaretlenmemişse uyarı ver
+    if (!selectedOptionInput) {
+        if (feedbackEl) {
+            feedbackEl.textContent = 'Lütfen bir cevap seçin!';
+            feedbackEl.className = 'warning-message'; // Uyarı stili için sınıf
+            feedbackEl.style.display = 'block';
+            // Uyarıyı kısa süre sonra kaldır
+            setTimeout(() => { if (feedbackEl) feedbackEl.style.display = 'none'; }, 2000);
+        }
+        return;
+    }
+
+    if (submitBtn) submitBtn.disabled = true; // Butonu pasif yap
+    if (optionsEl) optionsEl.classList.add('options-disabled'); // Seçenekleri pasif yap
+
+    const userAnswer = selectedOptionInput.value;
+    const correctAnswer = currentQuestion.correctAnswer;
+    userAnswers[currentQuestion.id] = userAnswer; // Kullanıcının cevabını kaydet
+
+    let wasCorrect = (userAnswer === correctAnswer);
+
+    // Tüm seçeneklere stilleri uygula
+    const optionLabels = optionsEl ? optionsEl.querySelectorAll('.option-label') : [];
+    optionLabels.forEach(label => {
+        const input = label.querySelector('input');
+        if (!input) return;
+        // Doğru seçeneği her zaman işaretle
+        if (input.value === correctAnswer) {
+            label.classList.add('correct-option');
+        }
+        // Kullanıcının seçtiğini işaretle
+        if (input.checked) {
+            label.classList.add('user-selected');
+            // Kullanıcının seçimi yanlışsa, onu da işaretle
+            if (!wasCorrect) {
+                label.classList.add('incorrect-option');
+            }
+        }
+    });
+
+    // İstatistikleri güncelle
+    if (wasCorrect) {
+        stats.currentRoundCorrect++;
+        if (currentRound === 'TEST_1') stats.round1Correct++;
+        else if (currentRound === 'TEST_2') stats.round2Correct++;
+        else if (currentRound === 'TEST_3') stats.round3Correct++;
+    } else {
+        stats.currentRoundIncorrect++;
+        if (currentRound === 'TEST_1') { stats.round1Incorrect++; incorrectInRound1.push(currentQuestion); }
+        else if (currentRound === 'TEST_2') { stats.round2Incorrect++; incorrectInRound2.push(currentQuestion); }
+        // TEST_3'teki yanlışları tekrar sormayacağız, sadece sayacı artır
+    }
+
+    // Doğru/Yanlış sayaçlarını animasyonlu güncelle
+    animateIntegerChange(statsRoundCorrectEl, stats.currentRoundCorrect, 300);
+    animateIntegerChange(statsRoundIncorrectEl, stats.currentRoundIncorrect, 300);
+
+    currentQuestionIndexInRound++; // Sonraki soruya geçmek için indeksi artır
+
+    // İlerleme barını anında güncelle (animasyonsuz veya CSS ile)
+    const progressPercent = Math.min(100, (stats.currentRoundTotal > 0 ? (currentQuestionIndexInRound / stats.currentRoundTotal) * 100 : 0));
+    if (progressBarFillEl) progressBarFillEl.style.width = `${progressPercent}%`;
+    if(progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', Math.round(progressPercent));
+    // İlerleme metnini animasyonlu güncelle (örn: 2/10 olacak şekilde)
+    animateProgressText(statsRoundProgressEl, currentQuestionIndexInRound, stats.currentRoundTotal, 300);
+
+
+    // Geri bildirimi gösterdikten sonra bir süre bekle ve sonraki soruyu yükle
+    setTimeout(() => {
+        loadQuestion();
+    }, 1800); // Geri bildirimi görme süresi
+}
+
+function finishRound() {
+    console.log(`Tur Bitiriliyor: ${currentRound}`);
+    const prevScore1Text = statsRound1ScoreEl ? statsRound1ScoreEl.textContent : '-';
+    const prevScore2Text = statsRound2ScoreEl ? statsRound2ScoreEl.textContent : '-';
+    const prevScore3Text = statsRound3ScoreEl ? statsRound3ScoreEl.textContent : '-';
+    const animationTime = 600; // Skor animasyon süresi
+    const resultDelay = animationTime + 50; // Animasyon sonrası bekleme
+
+    let roundScore = 0;
+    let roundTotal = 0;
+    let roundCorrect = 0;
+
+    // Tamamlanan turun skorunu hesapla
+    switch (currentRound) {
+        case 'TEST_1':
+            roundTotal = stats.round1TotalQuestions;
+            roundCorrect = stats.round1Correct;
+            stats.round1Score = roundTotal > 0 ? Math.round((roundCorrect / roundTotal) * 100) : 100;
+            animateValue(statsRound1ScoreEl, prevScore1Text, stats.round1Score, animationTime);
+            setTimeout(() => {
+                if (incorrectInRound1.length === 0) { // Yanlış yoksa sonuçlara git
+                    stats.statusMessage = "Sonuçlar Hazırlanıyor...";
+                    updateStatsDisplay(false);
+                    currentRound = 'RESULTS';
+                    showResults();
+                } else { // Yanlış varsa öğrenme teklif et
+                    stats.statusMessage = "1. Tur Tamamlandı";
+                    updateStatsDisplay(false);
+                    currentRound = 'LEARN_1_OFFER';
+                    offerLearningRound(1);
+                }
+            }, resultDelay);
+            break;
+        case 'TEST_2':
+             // 2. tur sadece 1. turdaki yanlışlardan oluşur
+            roundTotal = incorrectInRound1.length;
+            roundCorrect = stats.round2Correct;
+            stats.round2TotalQuestions = roundTotal; // Toplamı kaydet
+            stats.round2Score = roundTotal > 0 ? Math.round((roundCorrect / roundTotal) * 100) : 100;
+             // 2. tur skorunu animasyonlu göster
+            animateValue(statsRound2ScoreEl, prevScore2Text, stats.round2Score, animationTime);
+            setTimeout(() => {
+                if (incorrectInRound2.length === 0) { // Yanlış kalmadıysa sonuçlara git
+                    stats.statusMessage = "Sonuçlar Hazırlanıyor...";
+                    updateStatsDisplay(false);
+                    currentRound = 'RESULTS';
+                    showResults();
+                } else { // Hala yanlış varsa öğrenme teklif et (veya doğrudan 3. tura geç)
+                    stats.statusMessage = "2. Tur Tamamlandı";
+                    updateStatsDisplay(false);
+                    currentRound = 'LEARN_2_OFFER';
+                    offerLearningRound(2); // Veya doğrudan startNextTestRound(3) çağrılabilir
+                }
+            }, resultDelay);
+            break;
+        case 'TEST_3':
+            // 3. tur sadece 2. turdaki yanlışlardan oluşur
+            roundTotal = incorrectInRound2.length;
+            roundCorrect = stats.round3Correct;
+            stats.round3TotalQuestions = roundTotal; // Toplamı kaydet
+            stats.round3Score = roundTotal > 0 ? Math.round((roundCorrect / roundTotal) * 100) : 100;
+            // Final tur skorunu animasyonlu göster
+            animateValue(statsRound3ScoreEl, prevScore3Text, stats.round3Score, animationTime);
+            setTimeout(() => {
+                stats.statusMessage = "Sonuçlar Hazırlanıyor...";
+                updateStatsDisplay(false);
+                currentRound = 'RESULTS';
+                showResults(); // Her durumda sonuçlara git
+            }, resultDelay);
+            break;
+        default:
+            console.error("finishRound beklenmeyen durumda çağrıldı:", currentRound);
+            goHome(); // Hata durumunda ana sayfaya dön
+    }
+     // Tur bittiğinde ilerleme barını sıfırla ve doğru/yanlış sayaçlarını temizle
+     // Bu, bir sonraki aşamaya geçmeden önce görsel olarak yapılır.
+    if (statsRoundProgressEl) statsRoundProgressEl.textContent = '-';
+    if (progressBarFillEl) progressBarFillEl.style.width = '0%';
+    if (progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 0);
+    if (statsRoundCorrectEl) statsRoundCorrectEl.textContent = '-';
+    if (statsRoundIncorrectEl) statsRoundIncorrectEl.textContent = '-';
+    // Skorlar hariç diğer istatistikleri güncelle
+    updateStatsDisplay(false);
+}
+
+
+function offerLearningRound(roundNumber) {
+    const incorrectList = (roundNumber === 1) ? incorrectInRound1 : incorrectInRound2;
+    const incorrectCount = incorrectList.length;
+
+    if (incorrectCount === 0) { // Teorik olarak buraya gelinmemeli ama kontrol edelim
+        console.warn(`Öğrenme turu ${roundNumber} için yanlış soru bulunamadı.`);
+        // Eğer 1. tur sonrasıysa 2. tura geç, 2. tur sonrasıysa sonuçlara git
+        if (roundNumber === 1) startNextTestRound(2);
+        else showResults();
+        return;
+    }
+
+    if (offerTitleEl) offerTitleEl.textContent = `${roundNumber}. Tur Sonu Değerlendirme`;
+    if (offerMessageEl) offerMessageEl.textContent = `Bu turda ${incorrectCount} soruyu yanlış yanıtladınız. İsterseniz bu sorular için bir öğretim turuna katılabilir veya doğrudan bu soruları tekrar çözmeye geçebilirsiniz.`;
+
+    // Butonlara tıklama olaylarını ata
+    if (startLearningBtn) startLearningBtn.onclick = () => startLearningRound(roundNumber);
+    if (startNextTestBtn) startNextTestBtn.onclick = () => startNextTestRound(roundNumber + 1);
+
+    showQuizContainer('learning-offer-container');
+    stats.statusMessage = `${roundNumber}. Tur Tamamlandı - Seçim Bekleniyor`;
+    updateStatsDisplay(false); // İstatistikleri güncelle (skorlar zaten animasyonla geldi)
+}
+function startLearningRound(roundNumber) {
+    const incorrectList = (roundNumber === 1) ? incorrectInRound1 : incorrectInRound2;
+    if (learningTitleEl) learningTitleEl.textContent = `${roundNumber}. Öğrenme Turu (Yanlışlar)`;
+    if (learningContentEl) learningContentEl.innerHTML = ''; 
+
+    incorrectList.forEach(q => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('learning-item');
+
+        const questionTitle = document.createElement('h4');
+        questionTitle.textContent = q.question.replace(/^\d+\.\s*/, ''); 
+
+        const answerLine = document.createElement('p');
+        answerLine.classList.add('answer-line');
+        
+        answerLine.innerHTML = `Doğru Cevap: <span class="correct-answer">${q.correctAnswer}</span>`;
+        
+        if (userAnswers[q.id] && userAnswers[q.id] !== q.correctAnswer) {
+            answerLine.innerHTML += ` <span class="user-answer-incorrect">(Sizin Cevabınız: ${userAnswers[q.id]})</span>`;
+        }
+
+        const explanationP = document.createElement('p');
+        explanationP.classList.add('explanation');
+        explanationP.style.display = 'none'; 
+        if (q.explanation) {
+            explanationP.textContent = q.explanation;
+        } else {
+            explanationP.textContent = "Bu soru için ek açıklama bulunmamaktadır.";
+            explanationP.style.fontStyle = 'italic';
+        }
+
+        
+        const controlsContainer = document.createElement('div');
+        controlsContainer.classList.add('learning-item-controls');
+
+        
+        const toggleButton = document.createElement('button');
+        toggleButton.textContent = "Açıklama Göster";
+        toggleButton.classList.add('explanation-toggle'); 
+        toggleButton.onclick = () => {
+            const isHidden = explanationP.style.display === 'none';
+            explanationP.style.display = isHidden ? 'block' : 'none';
+            toggleButton.textContent = isHidden ? 'Açıklama Gizle' : 'Açıklama Göster';
+        };
+        controlsContainer.appendChild(toggleButton);
+
+        
+        const feedbackBtn = document.createElement('button');
+        feedbackBtn.innerHTML = '<i class="fas fa-flag" aria-hidden="true"></i> Sorun Bildir';
+        feedbackBtn.classList.add('feedback-btn');
+        feedbackBtn.title = 'Bu soruyla ilgili bir sorun veya geri bildirim bildirin';
+        feedbackBtn.onclick = () => sendFeedback(q.id); 
+        controlsContainer.appendChild(feedbackBtn);
+
+
+        itemDiv.appendChild(questionTitle);
+        itemDiv.appendChild(answerLine);
+        itemDiv.appendChild(controlsContainer); 
+        itemDiv.appendChild(explanationP); 
+
+        if (learningContentEl) learningContentEl.appendChild(itemDiv);
+    });
+
+    if (continueToNextTestBtn) continueToNextTestBtn.onclick = () => startNextTestRound(roundNumber + 1);
+
+    currentRound = (roundNumber === 1) ? 'LEARN_1' : 'LEARN_2';
+    stats.statusMessage = `${roundNumber}. Öğrenme Turu`;
+
+    
+    if (statsRoundProgressEl) statsRoundProgressEl.textContent = '-';
+    if (progressBarFillEl) progressBarFillEl.style.width = '0%';
+    if (progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 0);
+    if (statsRoundCorrectEl) statsRoundCorrectEl.textContent = '-';
+    if (statsRoundIncorrectEl) statsRoundIncorrectEl.textContent = '-';
+
+    updateStatsDisplay(false);
+    showQuizContainer('learning-round-container');
+}
+
+function startNextTestRound(roundNumber) {
+    let title = "";
+    let questionsToAsk = [];
+
+    if (roundNumber === 2) {
+        currentRound = 'TEST_2';
+        questionsToAsk = shuffleArray([...incorrectInRound1]); 
+        title = "2. Tur Test Soruları (Yanlışlar)";
+        stats.statusMessage = "2. Tur Devam Ediyor...";
+        stats.round2TotalQuestions = questionsToAsk.length; 
+    } else if (roundNumber === 3) {
+        currentRound = 'TEST_3';
+        questionsToAsk = shuffleArray([...incorrectInRound2]); 
+        title = "Final Turu Test Soruları (Yanlışlar)";
+        stats.statusMessage = "Final Turu Devam Ediyor...";
+        stats.round3TotalQuestions = questionsToAsk.length; 
+    } else {
+        console.error("Geçersiz sonraki tur numarası:", roundNumber);
+        
+        showResults(); 
+        return;
+    }
+
+    
+    if (questionsToAsk.length === 0) {
+        console.log(`Tur ${roundNumber} için soru yok, tur bitiriliyor.`);
+        
+        if (roundNumber === 2) stats.round2Score = 100;
+        if (roundNumber === 3) stats.round3Score = 100;
+        
+        
+        
+        
+        
+        showResults();
+        return;
+    }
+
+    questionsForRound = questionsToAsk; 
+
+    if (quizTitleEl) quizTitleEl.textContent = title;
+    currentQuestionIndexInRound = 0; 
+    stats.currentRoundCorrect = 0; 
+    stats.currentRoundIncorrect = 0;
+    stats.currentRoundTotal = questionsForRound.length; 
+
+    
+    if (roundNumber === 2 && statsRound2ScoreEl) { statsRound2ScoreEl.textContent = '-'; statsRound2ScoreEl.style.color = ''; }
+    if (roundNumber === 3 && statsRound3ScoreEl) { statsRound3ScoreEl.textContent = '-'; statsRound3ScoreEl.style.color = ''; }
+    if (progressBarFillEl) progressBarFillEl.style.width = '0%'; 
+    if(progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 0);
+
+    updateStatsDisplay(false); 
+    showQuizContainer('quiz-container'); 
+    loadQuestion(); 
+}
+
+function showResults() {
+    currentRound = 'RESULTS'; 
+    let message = "";
+    let messageClass = "";
+
+    
+    if (stats.round1Score === 100) {
+        message = "Mükemmel! İlk turda tüm soruları doğru bildiniz. Tebrikler!";
+        messageClass = "success-message";
+    } else if (stats.round2TotalQuestions > 0 && stats.round2Score === 100) {
+        message = `Çok iyi! İlk turdaki ${stats.round1Incorrect} yanlışınızı ikinci turda düzelttiniz (${stats.round1Score}% -> ${stats.round2Score}%). Başarılı!`;
+        messageClass = "success-message";
+    } else if (stats.round3TotalQuestions > 0 && stats.round3Score === 100) {
+         message = `Harika! Kalan ${stats.round2Incorrect} yanlışınızı final turunda düzelttiniz (${stats.round2Score}% -> ${stats.round3Score}%). Sonuç mükemmel!`;
+        messageClass = "success-message";
+    } else if (stats.round3TotalQuestions > 0) { 
+        const finalIncorrectCount = stats.round3TotalQuestions - stats.round3Correct;
+        message = `Test tamamlandı. İlk tur: %${stats.round1Score}, İkinci tur: %${stats.round2Score}, Final tur: %${stats.round3Score}. Son turda ${finalIncorrectCount} yanlışınız kaldı. Gelişim için gayret gösterdiniz!`;
+        messageClass = "improvement-message";
+    } else if (stats.round2TotalQuestions > 0) { 
+        const round2IncorrectCount = stats.round2TotalQuestions - stats.round2Correct;
+         message = `Test tamamlandı. İlk tur: %${stats.round1Score}, İkinci tur: %${stats.round2Score}. İkinci turda ${round2IncorrectCount} yanlışınız kaldı. Daha fazla pratik faydalı olabilir.`;
+        messageClass = "improvement-message";
+    } else { 
+        message = `Test tamamlandı. İlk turdaki skorunuz: %${stats.round1Score}. ${stats.round1Incorrect} yanlışınız var. Daha fazla pratik yapmanız önerilir.`;
+        messageClass = "improvement-message";
+    }
+
+    
+    if (scoreInfoEl) {
+        let scoreText = `İlk Tur Skoru: ${stats.round1Score}% (${stats.round1Correct}/${stats.round1TotalQuestions})`;
+        if (stats.round2TotalQuestions > 0) { scoreText += `<br>2. Tur Skoru (Yanlışlar Üzerinden): ${stats.round2Score}% (${stats.round2Correct}/${stats.round2TotalQuestions})`; }
+        if (stats.round3TotalQuestions > 0) { scoreText += `<br>Final Tur Skoru (Yanlışlar Üzerinden): ${stats.round3Score}% (${stats.round3Correct}/${stats.round3TotalQuestions})`; }
+        scoreInfoEl.innerHTML = scoreText;
+    }
+
+    
+    if (finalMessageEl) { finalMessageEl.textContent = message; finalMessageEl.className = getStatusMessageClass(message); }
+
+    stats.statusMessage = "Test Tamamlandı";
+
+    
+    if (statsRoundProgressEl) statsRoundProgressEl.textContent = '-';
+    if (progressBarFillEl) progressBarFillEl.style.width = '100%'; 
+    if (progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 100);
+    if (statsRoundCorrectEl) statsRoundCorrectEl.textContent = '-';
+    if (statsRoundIncorrectEl) statsRoundIncorrectEl.textContent = '-';
+
+    updateStatsDisplay(false); 
+    showQuizContainer('result-container'); 
+}
+
+function showFinalReview() {
+     
+    if (!finalReviewContentEl || !currentQuizData || !currentQuizData.questions) {
+        console.error("Final inceleme gösterilemiyor: Gerekli elementler veya quiz verisi eksik.");
+        goHome(); 
+        return;
+    }
+
+    finalReviewContentEl.innerHTML = ''; 
+    currentRound = 'FINAL_REVIEW';
+    stats.statusMessage = "Genel İnceleme";
+
+    
+    currentQuizData.questions.forEach(q => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('learning-item'); 
+
+        const questionTitle = document.createElement('h4');
+        questionTitle.textContent = q.question.replace(/^\d+\.\s*/, '');
+
+        const answerLine = document.createElement('p');
+        answerLine.classList.add('answer-line');
+        answerLine.innerHTML = `Doğru Cevap: <span class="correct-answer">${q.correctAnswer}</span>`;
+        
+        if (userAnswers[q.id] && userAnswers[q.id] !== q.correctAnswer) {
+            answerLine.innerHTML += ` <span class="user-answer-incorrect">(Sizin Cevabınız: ${userAnswers[q.id]})</span>`;
+        }
+
+        const explanationP = document.createElement('p');
+        explanationP.classList.add('explanation');
+        if (q.explanation) {
+            explanationP.textContent = q.explanation;
+        } else {
+            explanationP.textContent = "Bu soru için ek açıklama bulunmamaktadır.";
+            explanationP.style.fontStyle = 'italic';
+        }
+        explanationP.style.display = 'block'; 
+
+        
+         const controlsContainer = document.createElement('div');
+         controlsContainer.classList.add('learning-item-controls'); 
+
+        
+        const feedbackBtn = document.createElement('button');
+        feedbackBtn.innerHTML = '<i class="fas fa-flag" aria-hidden="true"></i> Sorun Bildir';
+        feedbackBtn.classList.add('feedback-btn');
+        feedbackBtn.title = 'Bu soruyla ilgili bir sorun veya geri bildirim bildirin';
+        feedbackBtn.onclick = () => sendFeedback(q.id);
+        controlsContainer.appendChild(feedbackBtn); 
+
+
+        itemDiv.appendChild(questionTitle);
+        itemDiv.appendChild(answerLine);
+        itemDiv.appendChild(explanationP); 
+        itemDiv.appendChild(controlsContainer); 
+
+        finalReviewContentEl.appendChild(itemDiv);
+    });
+
+    
+    if (statsRoundProgressEl) statsRoundProgressEl.textContent = '-';
+    if (progressBarFillEl) progressBarFillEl.style.width = '0%';
+    if (progressBarTrackEl) progressBarTrackEl.setAttribute('aria-valuenow', 0);
+    if (statsRoundCorrectEl) statsRoundCorrectEl.textContent = '-';
+    if (statsRoundIncorrectEl) statsRoundIncorrectEl.textContent = '-';
+
+    updateStatsDisplay(false);
+    showQuizContainer('final-review-container');
+}
+
+
+function sendFeedback(questionId) {
+    
+    if (!currentQuizData || !currentQuizData.questions || !currentQuizData.title) {
+        console.error("Geri bildirim gönderilemiyor: Quiz verisi eksik.");
+        alert("Bir hata oluştu, geri bildirim gönderilemedi. Lütfen daha sonra tekrar deneyin.");
+        return;
+    }
+
+    
+    const questionData = currentQuizData.questions.find(q => q.id === questionId);
+    if (!questionData) {
+        console.error("Geri bildirim gönderilemiyor: Soru ID bulunamadı:", questionId);
+        alert("Bir hata oluştu, soru bilgisi bulunamadı.");
+        return;
+    }
+
+    const quizTitle = currentQuizData.title;
+    const questionText = questionData.question.replace(/^\d+\.\s*/, ''); 
+    const recipient = "srgulbay@gmail.com"; 
+
+    const subject = `Quiz Geri Bildirimi: [${quizTitle}] - Soru ID: ${questionId}`;
+    const body = `
+Quiz Adı: ${quizTitle}
+Soru ID: ${questionId}
+Soru Metni: ${questionText}
+Doğru Cevap: ${questionData.correctAnswer}
+------------------------------------
+Lütfen geri bildiriminizi/sorunu buraya yazın:
+
+[Buraya yazınız...]
+------------------------------------
+
+
+`;
+
+    
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    
+    try {
+        window.location.href = mailtoLink; 
+    } catch (e) {
+        console.error("Mailto linki açılamadı:", e);
+        alert("E-posta istemciniz otomatik olarak açılamadı. Lütfen manuel olarak geri bildirim gönderin: " + recipient);
+    }
+}
+
+
+function goHome() {
+    console.log("Ana sayfa görünümüne dönülüyor...");
+
+    
+    if (statsContainerEl) statsContainerEl.style.display = 'none';
+    if (quizMainContentEl) quizMainContentEl.style.display = 'none';
+    
+
+    
+    if (homepageContentEl) homepageContentEl.style.display = 'block';    
+    
+    if (quizlerSectionEl) quizlerSectionEl.style.display = 'block';      
+    if (hakkindaSectionEl) hakkindaSectionEl.style.display = 'block';    
+    
+
+    document.body.classList.remove('quiz-active');
+    window.scrollTo(0, 0);
+
+    
+    currentQuizId = null;
+    currentQuizData = null;
+    
+
+    
+    updateStatsDisplay(false);
+
+    
+    document.querySelectorAll('#main-header nav a.active, .mobile-nav a.active').forEach(link => link.classList.remove('active'));
+    const homeNavLinkDesktop = document.querySelector('#main-header nav a[href="#hero"]');
+    const homeNavLinkMobile = document.querySelector('.mobile-nav a[href="#hero"]');
+    if(homeNavLinkDesktop) homeNavLinkDesktop.classList.add('active');
+    if(homeNavLinkMobile) homeNavLinkMobile.classList.add('active');
+}
+
+
+function startQuiz(quizId) {
+    console.log(`Quiz Başlatılıyor: ${quizId}`);
+    const selectedQuiz = quizData[quizId];
+
+    
+    if (!selectedQuiz || !selectedQuiz.questions || selectedQuiz.questions.length === 0) {
+        const quizLink = document.querySelector(`.card-link[onclick*="startQuiz('${quizId}')"]`);
+        let message = `Quiz "${quizId}" bulunamadı veya soruları eksik.`;
+        if (quizLink && quizLink.classList.contains('disabled')) {
+            message = `"${selectedQuiz?.title || quizId}" başlıklı quiz henüz hazır değil.`;
+        }
+        alert(message);
+        console.error(`Quiz datası bulunamadı veya boş: ${quizId}`);
+        return;
+    }
+
+    
+    if (homepageContentEl) homepageContentEl.style.display = 'none';    
+    if (quizlerSectionEl) quizlerSectionEl.style.display = 'none';      
+    if (hakkindaSectionEl) hakkindaSectionEl.style.display = 'none';    
+    
+    
+
+    
+    if (statsContainerEl) statsContainerEl.style.display = 'flex';
+    if (quizMainContentEl) quizMainContentEl.style.display = 'block';
+    document.body.classList.add('quiz-active');
+    
+
+    window.scrollTo(0, 0); 
+
+    
+    initializeQuiz(quizId, selectedQuiz.title, selectedQuiz.questions);
+}
+
+function applyTheme(theme) {
+    const isDark = theme === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+
+    
+    const icon = isDark ? '☀️' : '🌓';
+    if (themeToggleButton) { 
+         
+        const span = themeToggleButton.querySelector('span');
+        if(span) span.textContent = icon;
+        themeToggleButton.setAttribute('aria-label', isDark ? 'Açık Temaya Geç' : 'Koyu Temaya Geç');
+    }
+    if (themeToggleMobileBtn) { 
+        const span = themeToggleMobileBtn.querySelector('span');
+         if(span) span.textContent = icon;
+        themeToggleMobileBtn.setAttribute('aria-label', isDark ? 'Açık Temaya Geç (Mobil)' : 'Koyu Temaya Geç (Mobil)');
+    }
+}
+
+
+function toggleTheme() {
+    const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    applyTheme(newTheme);
+    try {
+        localStorage.setItem('quizTheme', newTheme); 
+    } catch (e) {
+        console.error("LocalStorage kullanılamıyor, tema kaydedilemedi.", e);
+    }
+}
+
+
+function initializeTheme() {
+    let preferredTheme = 'light'; 
+    try {
+        preferredTheme = localStorage.getItem('quizTheme') || preferredTheme;
+    } catch (e) {
+        console.warn("LocalStorage okunamıyor, varsayılan tema kullanılacak.", e);
+    }
+    
+    if (!localStorage.getItem('quizTheme') && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+         preferredTheme = 'dark';
+    }
+    applyTheme(preferredTheme);
+}
+
+
+function smoothScrollToTarget(targetId) {
+    const isHeroLink = targetId === '#hero' || targetId === '#'; 
+
+     
+     document.querySelectorAll('#main-header nav a.active, .mobile-nav a.active').forEach(link => link.classList.remove('active'));
+
+     
+     const activeLinkDesktop = document.querySelector(`#main-header nav a[href="${targetId}"]`);
+     const activeLinkMobile = document.querySelector(`.mobile-nav a[href="${targetId}"]`);
+     if(activeLinkDesktop) activeLinkDesktop.classList.add('active');
+     if(activeLinkMobile) activeLinkMobile.classList.add('active');
+
+
+    if (isHeroLink) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            
+            let offset = 0;
+            const headerElement = document.getElementById('main-header');
+            const statsBar = document.getElementById('stats-container');
+
+            if (document.body.classList.contains('quiz-active') && statsBar && getComputedStyle(statsBar).display !== 'none') {
+                 offset = statsBar.offsetHeight;
+            } else if (headerElement && getComputedStyle(headerElement).position === 'sticky') {
+                 offset = headerElement.offsetHeight;
+            }
+
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            
+            const offsetPosition = elementPosition + window.scrollY - offset - 20; 
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        } else {
+            console.warn("Kaydırma hedefi bulunamadı:", targetId);
+        }
+    }
+}
+
+
+
+let searchableIndex = []; 
+
+
+function createSearchIndex() {
+    searchableIndex = [];
+    console.log("Arama indeksi oluşturuluyor (hiyerarşik)...");
+    if (typeof learningHierarchy !== 'object' || learningHierarchy === null) {
+        console.error("learningHierarchy bulunamadı veya geçerli değil.");
+        return;
+    }
+
+    Object.keys(learningHierarchy).forEach(layer1Key => {
+        const layer1Data = learningHierarchy[layer1Key];
+        if (typeof layer1Data !== 'object' || layer1Data === null) return;
+
+        Object.keys(layer1Data).forEach(layer2Key => {
+            const layer2Data = layer1Data[layer2Key];
+            if (typeof layer2Data !== 'object' || layer2Data === null) return;
+
+            Object.keys(layer2Data).forEach(topicKey => {
+                const topicData = layer2Data[topicKey];
+                if (typeof topicData === 'object' && topicData !== null && topicData.title) {
+                    searchableIndex.push({
+                        id: topicKey,
+                        title: topicData.title,
+                        description: topicData.description || '',
+                        type: 'topic',
+                        path: [layer1Key, layer2Key, topicKey],
+                        quizId: topicData.quizId
+                    });
+                }
+            });
+        });
+    });
+
+    console.log(`Hiyerarşik arama indeksi ${searchableIndex.length} konu ile oluşturuldu.`);
+}
+
+function highlightSearchResultCard(topicKey) {
+    const targetCard = hierarchicalNavContainerEl ? hierarchicalNavContainerEl.querySelector(`.hierarchy-topic-card[data-topic-key="${topicKey}"]`) : null;
+
+    if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        targetCard.style.transition = 'outline 0.1s ease-out';
+        targetCard.style.outline = '3px solid var(--accent-primary)';
+        setTimeout(() => {
+            if(targetCard) targetCard.style.outline = 'none';
+        }, 2500);
+    } else {
+        console.warn("Vurgulanacak kart bulunamadı:", topicKey);
+        const quizlerSection = document.getElementById('quizler');
+         if(quizlerSection) {
+             quizlerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+         }
+    }
+}
+
+function openSearchModal() {
+    if (!searchModal) return;
+    document.body.classList.add('search-active'); 
+    searchModal.setAttribute('aria-hidden', 'false');
+    
+    setTimeout(() => {
+        if (searchInput) searchInput.focus();
+    }, 50);
+    
+}
+
+
+function closeSearchModal() {
+    if (!searchModal) return;
+    document.body.classList.remove('search-active');
+    searchModal.setAttribute('aria-hidden', 'true');
+    if (searchInput) searchInput.value = ''; 
+    if (searchResultsContainer) { 
+        searchResultsContainer.innerHTML = '<p class="search-placeholder">Aramak için en az 2 karakter girin...</p>';
+    }
+     
+}
+
+
+function performSearch() {
+    if (!searchInput || !searchResultsContainer) return;
+
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const minCharLength = 2;
+
+    searchResultsContainer.innerHTML = ''; 
+
+    if (searchTerm.length < minCharLength) {
+        searchResultsContainer.innerHTML = '<p class="search-placeholder">Aramak için en az 2 karakter girin...</p>';
+        return;
+    }
+
+    
+    const normalizeText = (text) => text
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") 
+        .replace(/ı/g, 'i')
+        .toLowerCase();
+
+    const normalizedSearchTerm = normalizeText(searchTerm);
+
+    
+    const results = searchableIndex.filter(item => {
+        const normalizedTitle = normalizeText(item.title || '');
+        const normalizedDesc = normalizeText(item.description || '');
+        
+        return normalizedTitle.includes(normalizedSearchTerm) || normalizedDesc.includes(normalizedSearchTerm);
+    });
+
+    renderSearchResults(results, searchTerm); 
+}
+
+
+function renderSearchResults(results, searchTerm) {
+    if (!searchResultsContainer) return;
+    searchResultsContainer.innerHTML = '';
+
+    if (results.length === 0) {
+        searchResultsContainer.innerHTML = `<p class="search-no-results">"${searchTerm}" için sonuç bulunamadı.</p>`;
+        return;
+    }
+
+    results.forEach(item => {
+        const resultElement = document.createElement('a');
+        resultElement.classList.add('search-result-item');
+        resultElement.href = '#quizler'; // Bölüme gitmesi için
+        resultElement.dataset.path = JSON.stringify(item.path); // Navigasyon için yolu sakla
+
+        const typeEl = document.createElement('span');
+        typeEl.classList.add('search-result-type', 'lecture'); // Stil için 'lecture' kullanabiliriz
+        typeEl.textContent = 'Konu';
+
+        const titleEl = document.createElement('div');
+        titleEl.classList.add('search-result-title');
+        try {
+            const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            titleEl.innerHTML = item.title.replace(regex, '<mark>$1</mark>');
+        } catch (e) { titleEl.textContent = item.title; }
+
+        const descEl = document.createElement('p');
+        descEl.classList.add('search-result-desc');
+        const truncatedDesc = item.description ? item.description.substring(0, 120) + (item.description.length > 120 ? '...' : '') : '';
+        try {
+            const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            descEl.innerHTML = truncatedDesc.replace(regex, '<mark>$1</mark>');
+        } catch (e) { descEl.textContent = truncatedDesc; }
+
+        resultElement.appendChild(typeEl);
+        resultElement.appendChild(titleEl);
+        resultElement.appendChild(descEl);
+
+        resultElement.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSearchModal();
+
+            try {
+                const path = JSON.parse(e.currentTarget.dataset.path);
+                if (Array.isArray(path) && path.length === 3) {
+                    const topicKey = path[2];
+                    hierarchyState.currentLayer = 3;
+                    hierarchyState.path = path.slice(0, 2);
+                    renderHierarchyView();
+                    setTimeout(() => {
+                        highlightSearchResultCard(topicKey);
+                    }, 150); // DOM güncellemesi için kısa bekleme
+                } else {
+                    console.error("Arama sonucu için geçersiz yol verisi:", path);
+                     const quizlerSection = document.getElementById('quizler');
+                     if(quizlerSection) { quizlerSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                }
+            } catch (parseError) {
+                console.error("Arama sonucu yolu ayrıştırılamadı:", parseError);
+                 const quizlerSection = document.getElementById('quizler');
+                 if(quizlerSection) { quizlerSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            }
+        });
+        searchResultsContainer.appendChild(resultElement);
+    });
+}
+
+
+function closeMobileMenu() {
+    const body = document.body;
+    if (body.classList.contains('mobile-menu-active')) {
+        body.classList.remove('mobile-menu-active');
+        if (mobileMenuToggleBtn) {
+             mobileMenuToggleBtn.setAttribute('aria-expanded', 'false');
+              
+             const icon = mobileMenuToggleBtn.querySelector('i');
+             if (icon) {
+                 icon.classList.remove('fa-times');
+                 icon.classList.add('fa-bars');
+             }
+        }
+        if (mobileNav) mobileNav.setAttribute('aria-hidden', 'true');
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    initializeTheme(); 
+    createSearchIndex(); 
+
+    
+    const copyrightYearEl = document.getElementById('copyright-year');
+    if (copyrightYearEl) copyrightYearEl.textContent = new Date().getFullYear();
+
+    
+    if (submitBtn) submitBtn.addEventListener('click', checkAnswer);
+    if (showFinalReviewBtn) showFinalReviewBtn.addEventListener('click', showFinalReview);
+    if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme); 
+
+    
+    const desktopNavLinks = document.querySelectorAll('#main-header nav a[href^="#"]');
+    desktopNavLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); 
+            const targetHref = this.getAttribute('href');
+            
+            if (document.body.classList.contains('quiz-active') && targetHref && targetHref.startsWith('#')) {
+                goHome();
+                
+                setTimeout(() => smoothScrollToTarget(targetHref), 50);
+            } else if (targetHref) { 
+                smoothScrollToTarget(targetHref); 
+            }
+        });
+    });
+
+    
+    if (headerSearchBtn) headerSearchBtn.addEventListener('click', openSearchModal); 
+    if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearchModal); 
+
+    
+    if (searchModal) {
+        searchModal.addEventListener('click', (event) => {
+            if (event.target === searchModal) { 
+                closeSearchModal();
+            }
+        });
+    }
+
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(performSearch, 300)); 
+    }
+
+
+    
+    const body = document.body; 
+
+    
+    if (mobileMenuToggleBtn && mobileNav) {
+        mobileMenuToggleBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuToggleBtn.getAttribute('aria-expanded') === 'true';
+            body.classList.toggle('mobile-menu-active'); 
+            mobileMenuToggleBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileNav.setAttribute('aria-hidden', isExpanded);
+
+            
+            const icon = mobileMenuToggleBtn.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars', isExpanded); 
+                icon.classList.toggle('fa-times', !isExpanded); 
+            }
+        });
+    }
+
+    
+    if (mobileMenuCloseBtn) {
+        mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetHref = link.getAttribute('href');
+
+            
+             if (body.classList.contains('quiz-active') && targetHref && targetHref.startsWith('#')) {
+                 goHome();
+                 
+                 setTimeout(() => smoothScrollToTarget(targetHref), 50);
+             } else if (targetHref && targetHref.startsWith('#')) { 
+                 smoothScrollToTarget(targetHref);
+             } else if (targetHref) { 
+                 window.location.href = targetHref; 
+             }
+             
+             closeMobileMenu();
+        });
+    });
+
+    
+    if (mobileSearchBtn) {
+        mobileSearchBtn.addEventListener('click', () => {
+            closeMobileMenu(); 
+            openSearchModal(); 
+        });
+    }
+
+    
+    if (themeToggleMobileBtn) {
+        themeToggleMobileBtn.addEventListener('click', () => {
+             toggleTheme(); 
+             
+             
+        });
+    }
+
+    
+     document.addEventListener('click', function(event) {
+         
+         if (mobileNav && mobileMenuToggleBtn &&
+             !mobileNav.contains(event.target) &&
+             !mobileMenuToggleBtn.contains(event.target) &&
+             body.classList.contains('mobile-menu-active')) {
+             closeMobileMenu();
+         }
+     });
+
+
+    
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            
+            if (body.classList.contains('search-active')) {
+                closeSearchModal();
+            }
+            
+            else if (body.classList.contains('mobile-menu-active')) {
+                closeMobileMenu();
+            }
+        }
+    });
+
+    
+    goHome();
+    if (hierarchicalNavContainerEl) {
+        hierarchyState = { currentLayer: 1, path: [] }; // Başlangıç durumunu ayarla
+        renderHierarchyView(); // İlk katmanı göster
+    }
+    if (hierarchicalNavContainerEl) {
+        hierarchicalNavContainerEl.addEventListener('click', handleHierarchyNavClick);
+    } 
+});
+</script>
+    </body>
+    </html>
