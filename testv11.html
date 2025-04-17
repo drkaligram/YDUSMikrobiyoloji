@@ -2044,6 +2044,256 @@ button.explanation-toggle:focus-visible {
     display: block; margin: var(--space-l) auto 0 auto;
 }
 
+/* === Ders Notları Görünümü Özel Stilleri === */
+
+/* Ders notu içeriği göründüğünde scrollbar vb. ayarları */
+body.lecture-notes-active {
+  /* Gerekirse ana body scroll ayarlarını override et */
+}
+
+/* Ders notu ana kapsayıcısı (biz ekledik) */
+#lecture-notes-content {
+   /* Gerekirse ek stiller */
+   width: 100%;
+}
+
+/* Ders notu içeriğine özgü stiller (.lecture-notes-view altında) */
+.lecture-notes-view .page {
+    background-color: var(--bg-primary); /* Ana temanın arka planını kullan */
+    width: var(--page-width, 90%); /* Ana değişkenden al veya varsayılan */
+    max-width: 1000px; /* Maksimum genişlik */
+    margin: var(--space-l) auto; /* Ortalama */
+    box-shadow: var(--shadow-lg); /* Ana tema gölgesi */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg); /* Ana tema radius */
+    border: 1px solid var(--border-primary); /* Ana tema kenarlık */
+}
+
+.lecture-notes-view .header,
+.lecture-notes-view .footer {
+    padding: 12px 25px; /* Padding ayarı */
+    font-size: 0.85em; /* Boyut */
+    color: var(--text-secondary); /* İkincil metin rengi */
+    border-color: var(--border-secondary); /* Kenarlık rengi */
+    background-color: var(--surface-2); /* Yüzey rengi */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lecture-notes-view .header {
+     border-bottom: 1px solid var(--border-secondary);
+     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+.lecture-notes-view .footer {
+      border-top: 1px solid var(--border-secondary);
+     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+
+.lecture-notes-view .main-content-area {
+    padding: var(--space-xl) var(--space-l); /* İç padding */
+    flex-grow: 1;
+}
+
+.lecture-notes-view .text-content h1,
+.lecture-notes-view .text-content h2,
+.lecture-notes-view .text-content h3,
+.lecture-notes-view .text-content h4 {
+    font-family: var(--font-family); /* Ana font */
+    color: var(--text-primary); /* Ana metin rengi */
+    scroll-margin-top: var(--scroll-padding-top, 80px);
+    margin-bottom: var(--space-m);
+    margin-top: var(--space-l);
+}
+.lecture-notes-view .text-content h1 { font-size: var(--font-size-xxl); border-bottom: 1px solid var(--border-primary); padding-bottom: var(--space-s);}
+.lecture-notes-view .text-content h2 { font-size: var(--font-size-xl); }
+.lecture-notes-view .text-content h3 { font-size: var(--font-size-lg); font-weight: 600; }
+.lecture-notes-view .text-content h4 { font-size: var(--font-size-base); font-weight: 600; }
+
+.lecture-notes-view .text-content p,
+.lecture-notes-view .text-content ul,
+.lecture-notes-view .text-content ol,
+.lecture-notes-view .text-content li {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-m);
+}
+.lecture-notes-view .text-content ul,
+.lecture-notes-view .text-content ol {
+    padding-left: 2em;
+}
+.lecture-notes-view .text-content strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Spot Box Stilleri (Ana Tema Renkleriyle Uyarlanmış) */
+.lecture-notes-view .spot-box {
+    border: 1px solid var(--border-primary);
+    padding: var(--space-m) var(--space-l);
+    margin: var(--space-l) 0;
+    border-radius: var(--border-radius-md);
+    background-color: var(--surface-2);
+    position: relative;
+    line-height: 1.7;
+    font-size: 0.95em;
+}
+.lecture-notes-view .spot-box .icon-container {
+    position: absolute;
+    top: var(--space-m);
+    left: var(--space-l);
+    width: 20px; height: 20px;
+}
+.lecture-notes-view .spot-box .icon-svg { width: 100%; height: 100%; }
+.lecture-notes-view .spot-box h4 { padding-left: 35px; min-height: 20px; margin-bottom: var(--space-s); font-size: 1.05em; display: flex; align-items: center;}
+.lecture-notes-view .spot-box ul,
+.lecture-notes-view .spot-box p { padding-left: 35px; margin-bottom: var(--space-xs); }
+.lecture-notes-view .spot-box ul { list-style-position: outside; padding-left: calc(35px + 1.3em); }
+
+/* Renkleri ana temadan alalım */
+.lecture-notes-view .spot-box.tip h4,
+.lecture-notes-view .spot-box.tip .icon-svg { color: var(--success); }
+.lecture-notes-view .spot-box.warning h4,
+.lecture-notes-view .spot-box.warning .icon-svg { color: var(--error); }
+.lecture-notes-view .spot-box.clinical h4,
+.lecture-notes-view .spot-box.clinical .icon-svg { color: var(--accent-secondary); } /* Veya başka bir renk */
+.lecture-notes-view .spot-box.detail h4,
+.lecture-notes-view .spot-box.detail .icon-svg { color: var(--warning); } /* Veya başka bir renk */
+
+/* ASCII Diagram (Basit uyarlama) */
+.lecture-notes-view .ascii-diagram {
+    font-family: monospace;
+    white-space: pre;
+    background-color: var(--surface-3); /* Koyu tema için daha iyi olabilir */
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    padding: var(--space-m);
+    margin: var(--space-l) 0;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.5;
+    border-radius: var(--border-radius-sm);
+}
+/* Renkleri isterseniz özelleştirebilirsiniz */
+.lecture-notes-view .ascii-diagram span[class*="color-"] { opacity: 0.85; }
+
+
+/* TOC Panel ve FAB Stilleri (Ana Tema Renkleriyle) */
+.lecture-notes-view .fab-menu-toggle.lecture-fab {
+    position: fixed; /* Sayfa içinde değil, sabit */
+    bottom: 30px;
+    right: 30px;
+    width: auto; height: var(--fab-size, 55px);
+    padding: 0 25px;
+    border-radius: calc(var(--fab-size, 55px) / 2);
+    background-color: var(--accent-primary); /* Ana tema rengi */
+    color: var(--text-on-accent);
+    border: none;
+    display: none; /* Başlangıçta gizli, JS ile gösterilir */
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-size: 10pt;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+    z-index: 1002;
+    line-height: 1.2;
+}
+.lecture-notes-view .fab-menu-toggle.lecture-fab:hover {
+    background-color: var(--accent-primary-hover);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+.lecture-notes-view .toc-panel {
+    max-height: var(--panel-max-height, 60vh);
+    background-color: color-mix(in srgb, var(--surface-1) 90%, transparent); /* Ana tema rengi */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-2xl);
+    border-top: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    transform: translateY(100%);
+    transition: transform 0.4s var(--anim-easing-elegant);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    position: fixed; bottom: 0; left: 0; right: 0;
+}
+.lecture-notes-view .toc-panel.toc-panel-open { transform: translateY(0); }
+.lecture-notes-view .toc-panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 25px; border-bottom: 1px solid var(--border-primary);
+    background-color: transparent; flex-shrink: 0;
+}
+.lecture-notes-view .toc-panel-header h3 { color: var(--text-primary); font-size: 1.1em; font-weight: 600; margin: 0; }
+.lecture-notes-view .toc-panel-close-btn { background: none; border: none; font-size: 1.6em; color: var(--text-muted); transition: var(--transition-fast); cursor: pointer; padding: 0 5px; line-height: 1; }
+.lecture-notes-view .toc-panel-close-btn:hover { color: var(--text-primary); transform: scale(1.1); }
+.lecture-notes-view .toc-panel-content { overflow-y: auto; padding: 15px 0; flex-grow: 1; }
+.lecture-notes-view #toc-list-menu-lecture { list-style: none; padding: 0; margin: 0; }
+.lecture-notes-view #toc-list-menu-lecture li { margin: 0; }
+.lecture-notes-view #toc-list-menu-lecture a {
+    display: block; padding: 10px 25px; text-decoration: none;
+    color: var(--text-secondary); font-size: 0.95em;
+    transition: var(--transition-fast); border-left: 4px solid transparent;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.lecture-notes-view #toc-list-menu-lecture a:hover {
+    background-color: var(--surface-accent); color: var(--accent-primary);
+    padding-left: 29px; border-left-color: var(--accent-primary);
+}
+.lecture-notes-view #toc-list-menu-lecture a.active {
+    background-color: color-mix(in srgb, var(--accent-secondary) 15%, transparent);
+    color: var(--accent-secondary); font-weight: 600;
+    border-left-color: var(--accent-secondary); padding-left: 29px;
+}
+/* Seviye girintileri */
+.lecture-notes-view #toc-list-menu-lecture .level-1 a { padding-left: 25px; font-weight: 600;}
+.lecture-notes-view #toc-list-menu-lecture .level-1 a:hover,
+.lecture-notes-view #toc-list-menu-lecture .level-1 a.active { padding-left: 29px; }
+.lecture-notes-view #toc-list-menu-lecture .level-2 a { padding-left: 40px; }
+.lecture-notes-view #toc-list-menu-lecture .level-2 a:hover,
+.lecture-notes-view #toc-list-menu-lecture .level-2 a.active { padding-left: 44px; }
+.lecture-notes-view #toc-list-menu-lecture .level-3 a { padding-left: 55px; font-size: 0.9em; color: var(--text-muted); }
+.lecture-notes-view #toc-list-menu-lecture .level-3 a:hover,
+.lecture-notes-view #toc-list-menu-lecture .level-3 a.active { padding-left: 59px; color: var(--accent-secondary); }
+
+.lecture-notes-view .panel-overlay {
+    position: fixed; inset: 0;
+    background-color: color-mix(in srgb, var(--surface-overlay-dark) 50%, transparent); /* Ana tema overlay */
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease; z-index: 1000;
+}
+.lecture-notes-view .panel-overlay.panel-overlay-open { opacity: 1; visibility: visible; }
+
+/* === Ders Notları Görünümü Optimizasyonları === */
+
+#lecture-notes-content .page.lecture-notes-view {
+    margin-top: calc(var(--space-l) + var(--space-xl)); /* Ana header'dan ayırmak için üst boşluk */
+    margin-bottom: calc(var(--space-l) + var(--space-xl)); /* Altta da boşluk */
+}
+
+#lecture-notes-content .header {
+    /* Flexbox zaten tanımlı, sadece justify-content'i kontrol et */
+    /* justify-content: space-between; */ /* Zaten olmalı */
+    align-items: center; /* Dikey ortalama */
+}
+
+.lecture-close-main-btn {
+    margin-left: auto; /* Butonu sağa yaslamak için */
+    padding: 5px 10px; /* İç boşluk */
+    line-height: 1; /* Satır yüksekliği */
+    /* toc-panel-close-btn'den gelen diğer stiller kullanılacak */
+}
+
 @keyframes pulseSimpleGlow {
     0%, 100% { box-shadow: var(--shadow-lg); filter: brightness(1); transform: scale(1); }
     50% { box-shadow: var(--shadow-xl), 0 0 15px 4px color-mix(in oklch, var(--accent-primary) l c h / 0.15); filter: brightness(1.05); transform: scale(1.05); }
@@ -2504,6 +2754,8 @@ body.mobile-menu-active .mobile-nav {
 
 
     </div>
+<div id="lecture-notes-content" style="display: none;" role="region" aria-label="Ders Notları Alanı">
+    </div>
 <section id="quizler" class="content-section" aria-labelledby="quizler-heading">
     <h2 id="quizler-heading"><i class="fas fa-sitemap" aria-hidden="true"></i> Konular ve Quizler</h2>
     <div id="hierarchical-nav-container" class="card-grid">
@@ -2590,35 +2842,31 @@ body.mobile-menu-active .mobile-nav {
 
 <script>
 const learningHierarchy = {
-  "YDUS": { // YDUS için disiplinler eklendi
-    "İmmünoloji": {},
-    "Bakteriyoloji": {},
-    "Viroloji": {},
-    "Mikoloji": {},
-    "Parazitoloji": {},
-    "Enfeksiyon Hastalıkları": {},
-    "Genel Mikrobiyoloji": {}
-    // YDUS'a özel başka disiplinler/konular eklenebilir
+  "YDUS": {
+    "İmmünoloji": {
+       // <<< YENİ EKLENEN KART TANIMI >>>
+       "ydus_immunoloji_genel": {
+            title: "YDUS İmmünoloji", // Kart Başlığı
+            description: "YDUS sınavına yönelik kapsamlı immünoloji ders notları ve çalışma soruları.", // Kart Açıklaması
+            lectureAvailable: true, // Ders Notları butonu aktif olacak
+            quizId: "immunoloji_giris_hucreler" // Çalışma Soruları bu quiz'i başlatacak (ID'yi isterseniz değiştirebilirsiniz)
+       }
+       // <<< YENİ KART TANIMI SONU >>>
+    },
+    "Bakteriyoloji": { /* Henüz konu eklenmedi */ },
+    "Viroloji": { /* Henüz konu eklenmedi */ },
+    "Mikoloji": { /* Henüz konu eklenmedi */ },
+    "Parazitoloji": { /* Henüz konu eklenmedi */ },
+    "Enfeksiyon Hastalıkları": { /* Henüz konu eklenmedi */ },
+    "Genel Mikrobiyoloji": { /* Henüz konu eklenmedi */ }
   },
   "TUS": { // TUS için disiplinler eklendi
-    "İmmünoloji": {},
-    "Bakteriyoloji": {},
-    "Viroloji": {},
-    "Mikoloji": {},
-    "Parazitoloji": {},
-    "Enfeksiyon Hastalıkları": {},
-    "Genel Mikrobiyoloji": {}
-     // TUS'a özel başka disiplinler/konular eklenebilir
+    "İmmünoloji": {}, "Bakteriyoloji": {}, "Viroloji": {}, "Mikoloji": {},
+    "Parazitoloji": {}, "Enfeksiyon Hastalıkları": {}, "Genel Mikrobiyoloji": {}
   },
   "DUS": { // DUS için disiplinler eklendi
-    "İmmünoloji": {},
-    "Bakteriyoloji": {},
-    "Viroloji": {},
-    "Mikoloji": {},
-    "Parazitoloji": {},
-    "Enfeksiyon Hastalıkları": {},
-    "Genel Mikrobiyoloji": {}
-     // DUS'a özel başka disiplinler/konular eklenebilir
+    "İmmünoloji": {}, "Bakteriyoloji": {}, "Viroloji": {}, "Mikoloji": {},
+    "Parazitoloji": {}, "Enfeksiyon Hastalıkları": {}, "Genel Mikrobiyoloji": {}
   },
   "Tıp Fakültesi Dersleri": { // Bu kısım aynı kalıyor
     "İmmünoloji": {
@@ -2733,12 +2981,16 @@ function createNavigationCard(key, layerNumber) {
 function createTopicCard(topicData, topicKey) {
     const card = document.createElement('article');
     card.className = 'card hierarchy-topic-card';
-    card.dataset.topicKey = topicKey; // Kartı daha sonra bulmak için eklendi
+    card.dataset.topicKey = topicKey;
 
     const iconDiv = document.createElement('div');
     iconDiv.className = 'card-icon';
+    // Konuyla ilişkili ikon (hierarchyIconMap'ten alınabilir veya varsayılan)
+    // İkonu disiplinden almak daha mantıklı olabilir. hierarchyState.path[1] ile disipline ulaşıp ikonunu alabiliriz.
+    const disciplineKey = hierarchyState.path[1]; // İkonu belirlemek için disiplini al
+    const iconClass = hierarchyIconMap[disciplineKey] || hierarchyIconMap["default"]; // Disiplin ikonunu kullan
     const icon = document.createElement('i');
-    icon.className = 'fas fa-graduation-cap';
+    icon.className = iconClass; // İkonu uygula
     icon.setAttribute('aria-hidden', 'true');
     iconDiv.appendChild(icon);
 
@@ -2753,23 +3005,37 @@ function createTopicCard(topicData, topicKey) {
     actionsDiv.style.marginTop = 'auto';
     actionsDiv.style.paddingTop = 'var(--space-m)';
 
+    // --- Buton Metinleri ve İşlevleri ---
+    let lectureButtonText = "Konu Anlatımı";
+    let quizButtonText = "Quizi Başlat";
+
+    // Özel durum: YDUS İmmünoloji Genel Kartı için metinleri değiştir
+    if (hierarchyState.path[0] === "YDUS" && hierarchyState.path[1] === "İmmünoloji" && topicKey === "ydus_immunoloji_genel") {
+        lectureButtonText = "YDUS İmmünoloji Ders Notları";
+        quizButtonText = "Çalışma Soruları";
+    }
+    // --- Bitiş: Buton Metinleri ve İşlevleri ---
+
+
     const lectureBtn = document.createElement('button');
-    lectureBtn.textContent = "Konu Anlatımı";
+    lectureBtn.textContent = lectureButtonText; // Dinamik metin
     lectureBtn.className = 'btn btn-secondary';
     lectureBtn.disabled = !topicData.lectureAvailable;
     if (!topicData.lectureAvailable) {
-       lectureBtn.textContent = "Konu Anlatımı (Yakında)";
+       lectureBtn.textContent = lectureButtonText + " (Yakında)"; // Yakında eklentisi
        lectureBtn.style.opacity = '0.6';
        lectureBtn.style.cursor = 'not-allowed';
     }
     lectureBtn.dataset.action = 'lecture';
     lectureBtn.dataset.topicKey = topicKey;
 
+
     const quizBtn = document.createElement('button');
-    quizBtn.textContent = "Quizi Başlat";
+    quizBtn.textContent = quizButtonText; // Dinamik metin
     quizBtn.className = 'btn btn-primary';
     quizBtn.dataset.action = 'quiz';
     quizBtn.dataset.quizId = topicData.quizId;
+
 
     actionsDiv.appendChild(lectureBtn);
     actionsDiv.appendChild(quizBtn);
@@ -2900,32 +3166,283 @@ function goBackHierarchy() {
     }
 }
 
+// === Ders Notları İçin Yeni Değişkenler ===
+const lectureNotesContainerEl = document.getElementById('lecture-notes-content');
+let lectureNotesActive = false; // Ders notu görünümünün aktif olup olmadığını takip et
+let lectureTOCObserver = null; // Ders notu için IntersectionObserver
+
+// === Mevcut Fonksiyonun Güncellenmesi ===
 function handleHierarchyNavClick(event) {
-    // Tıklanan en yakın ilgili elemanı bul
     const clickedNavCard = event.target.closest('.hierarchy-nav-card');
     const clickedActionButton = event.target.closest('button[data-action]');
 
     if (clickedNavCard && clickedNavCard.dataset.key && clickedNavCard.dataset.layer) {
-        // Katman 1 veya 2 navigasyon kartına tıklandı
         event.preventDefault();
         const key = clickedNavCard.dataset.key;
         const layer = parseInt(clickedNavCard.dataset.layer, 10);
         navigateToNextLayer(key, layer);
     } else if (clickedActionButton) {
-        // Bir aksiyon butonuna (Quiz, Konu, Geri) tıklandı
         event.preventDefault();
         const action = clickedActionButton.dataset.action;
 
         if (action === 'quiz' && clickedActionButton.dataset.quizId) {
             startQuiz(clickedActionButton.dataset.quizId);
         } else if (action === 'lecture' && clickedActionButton.dataset.topicKey) {
-             alert('Konu anlatımı özelliği yakında eklenecektir.');
-             console.log("Konu anlatımı istendi:", clickedActionButton.dataset.topicKey);
+            // !!! YENİ KISIM: Konu Anlatımı Butonu Tıklandığında !!!
+            const topicKey = clickedActionButton.dataset.topicKey;
+            console.log("Konu anlatımı istendi:", topicKey);
+            // Şimdilik sadece YDUS->Immunology için örnek içeriği yükle
+            // İleride topicKey'e göre doğru içeriği çekmek gerekecek
+             if (hierarchyState.path[0] === "YDUS" && hierarchyState.path[1] === "İmmünoloji") {
+                 if(lectureNotesContainerEl) {
+                     // Diğer görünümleri gizle
+                     if (homepageContentEl) homepageContentEl.style.display = 'none';
+                     if (quizMainContentEl) quizMainContentEl.style.display = 'none';
+                     if (quizlerSectionEl) quizlerSectionEl.style.display = 'none'; // Hiyerarşi de gizlensin
+                     if (hakkindaSectionEl) hakkindaSectionEl.style.display = 'none';
+
+                     // İçeriği yükle ve göster
+                     lectureNotesContainerEl.innerHTML = sampleLectureHtmlContent; // Örnek içeriği bas
+                     lectureNotesContainerEl.style.display = 'block';
+                     lectureNotesActive = true;
+                     window.scrollTo(0, 0); // Sayfanın başına git
+
+                     // Ders notu fonksiyonlarını başlat
+                     initializeLectureNotesFunctionality();
+                 } else {
+                      console.error("Ders notu konteyneri bulunamadı!");
+                 }
+             } else {
+                  alert('Bu konu için anlatım henüz hazırlanmamıştır.');
+             }
+            // !!! YENİ KISIM SONU !!!
         } else if (action === 'back') {
             goBackHierarchy();
         }
     }
 }
+
+// === Ders Notları İçin Yeni Fonksiyonlar ===
+
+function initializeLectureNotesFunctionality() {
+    console.log("Ders notu fonksiyonları başlatılıyor...");
+    const lectureContainer = lectureNotesContainerEl.querySelector('.lecture-notes-view'); // lectureNotesContainerEl global olmalı
+    if (!lectureContainer) {
+        console.error("Ders notu ana konteyneri bulunamadı.");
+        return;
+    }
+
+    const tocPanel = lectureContainer.querySelector('#toc-panel-lecture');
+    const tocListMenu = lectureContainer.querySelector('#toc-list-menu-lecture');
+    const fabToggle = lectureContainer.querySelector('#lecture-fab-toggle');
+    const panelCloseBtn = lectureContainer.querySelector('.toc-panel-close-btn');
+    const panelOverlay = lectureContainer.querySelector('#panel-overlay-lecture');
+    const lectureHeader = lectureContainer.querySelector('.header'); // Header'ı bul
+
+    // --- Kapat Butonunu Oluştur ve Ekle ---
+    if (lectureHeader) {
+        const closeButton = document.createElement('button');
+        closeButton.innerHTML = '&times;'; // Çarpı ikonu
+        closeButton.className = 'toc-panel-close-btn lecture-close-main-btn'; // Mevcut stil sınıfını kullanalım ama ayırt edici olsun
+        closeButton.setAttribute('aria-label', 'Ders Notunu Kapat');
+        closeButton.style.fontSize = '1.8em'; // Boyutunu biraz ayarlayalım
+        closeButton.addEventListener('click', closeLectureNotesView); // Kapatma fonksiyonunu bağla
+        lectureHeader.appendChild(closeButton); // Header'ın sonuna ekle (sağa yaslanacak)
+    }
+    // --- Bitiş: Kapat Butonu ---
+
+
+    // --- TOC Oluşturma ve Diğer Fonksiyonlar (Öncekiyle aynı, uyarlanmış) ---
+    let isLecturePanelOpen = false;
+    let lastActiveLectureMenuItem = null;
+
+    const openLecturePanel = () => { /* ... Önceki kod ... */
+         if (tocPanel) tocPanel.classList.add('toc-panel-open');
+         if (panelOverlay) panelOverlay.classList.add('panel-overlay-open');
+         if (fabToggle) fabToggle.setAttribute('aria-expanded', 'true');
+         isLecturePanelOpen = true;
+         if(lastActiveLectureMenuItem) { lastActiveLectureMenuItem.scrollIntoView({ block: 'nearest' }); }
+    };
+    const closeLecturePanel = () => { /* ... Önceki kod ... */
+          if (tocPanel) tocPanel.classList.remove('toc-panel-open');
+         if (panelOverlay) panelOverlay.classList.remove('panel-overlay-open');
+         if (fabToggle) fabToggle.setAttribute('aria-expanded', 'false');
+         isLecturePanelOpen = false;
+     };
+
+     function setupLectureIntersectionObserver(items) { /* ... Önceki kod ... */
+        if (lectureTOCObserver) { lectureTOCObserver.disconnect(); }
+        lastActiveLectureMenuItem = null;
+        const headingsToObserve = items.map(item => item.element);
+        if (headingsToObserve.length === 0) return;
+        const observerOptions = { root: null, rootMargin: `-${parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scroll-padding-top') || '40', 10)}px 0px -75% 0px`, threshold: 0 };
+        const observerCallback = (entries) => {
+             let highestVisibleHeaddingEntry = null;
+             entries.forEach(entry => {
+                 if (entry.isIntersecting && entry.boundingClientRect.top >= 0 && entry.boundingClientRect.top < window.innerHeight * 0.25) {
+                     if (!highestVisibleHeaddingEntry || entry.boundingClientRect.top < highestVisibleHeaddingEntry.boundingClientRect.top) { highestVisibleHeaddingEntry = entry; }
+                 }
+             });
+             if (highestVisibleHeaddingEntry) {
+                 const id = highestVisibleHeaddingEntry.target.id;
+                 const correspondingMenuItemLink = tocListMenu.querySelector(`a[data-target-id="${id}"]`);
+                 if (correspondingMenuItemLink && correspondingMenuItemLink !== lastActiveLectureMenuItem) {
+                     if(lastActiveLectureMenuItem) { lastActiveLectureMenuItem.classList.remove('active'); }
+                     correspondingMenuItemLink.classList.add('active');
+                     lastActiveLectureMenuItem = correspondingMenuItemLink;
+                     if (isLecturePanelOpen) { correspondingMenuItemLink.scrollIntoView({ block: 'nearest' });}
+                 }
+             }
+        };
+        lectureTOCObserver = new IntersectionObserver(observerCallback, observerOptions);
+        headingsToObserve.forEach(heading => lectureTOCObserver.observe(heading));
+    }
+
+
+    function generateLectureTocList() { /* ... Önceki kod (içindeki generateSafeId dahil)... */
+        if (!tocListMenu) return;
+        tocListMenu.innerHTML = '';
+        const headings = lectureContainer.querySelectorAll('.text-content h1, .text-content h2, .text-content h3');
+        let headingCounter = 0;
+        const menuItemsData = [];
+
+        if (headings.length === 0) {
+             tocListMenu.innerHTML = '<li><a href="#" style="color: var(--color-muted); pointer-events: none;">(İçerik Başlığı Yok)</a></li>';
+             setupLectureIntersectionObserver([]); return;
+        }
+
+        const generateSafeId = (text, index) => {
+           if (!text) return `lecture-heading-${index}`;
+            const safeText = text.toLowerCase().replace(/[ğ]/g, 'g').replace(/[ü]/g, 'u').replace(/[ş]/g, 's').replace(/[ı]/g, 'i').replace(/[ö]/g, 'o').replace(/[ç]/g, 'c').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+            const maxLength = 30;
+            const shortText = safeText.length > maxLength ? safeText.substring(0, maxLength) : safeText;
+            return `lecture-${shortText}-${index}`;
+        };
+
+
+        headings.forEach((heading) => {
+             headingCounter++;
+             const level = parseInt(heading.tagName.substring(1));
+             const title = heading.textContent.trim();
+             let id = heading.id;
+             if (!id) { id = generateSafeId(title, headingCounter); heading.id = id; }
+             if (!title) return;
+
+             menuItemsData.push({ id: id, element: heading });
+             const listItem = document.createElement('li'); listItem.classList.add(`level-${level}`);
+             const link = document.createElement('a'); link.href = `#${id}`; link.textContent = title; link.setAttribute('data-target-id', id);
+
+             link.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 const targetElement = document.getElementById(id);
+                 if (targetElement) {
+                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 }
+                 closeLecturePanel();
+             });
+
+             listItem.appendChild(link); tocListMenu.appendChild(listItem);
+        });
+         setupLectureIntersectionObserver(menuItemsData);
+    }
+
+    // --- Olay Dinleyicileri ---
+    if (fabToggle) fabToggle.addEventListener('click', (e) => { e.stopPropagation(); isLecturePanelOpen ? closeLecturePanel() : openLecturePanel(); });
+    if (panelCloseBtn) panelCloseBtn.addEventListener('click', closeLecturePanel);
+    if (panelOverlay) panelOverlay.addEventListener('click', closeLecturePanel);
+    // Kapat butonu listener'ı yukarıda eklendi.
+
+    // FAB butonunu görünür yap
+    if(themeToggleButton) themeToggleButton.style.display = 'none';
+    if(fabToggle) fabToggle.style.display = 'flex';
+
+    // TOC listesini oluştur
+    generateLectureTocList();
+
+    console.log("Ders notu fonksiyonları başarıyla başlatıldı.");
+}
+function destroyLectureNotesFunctionality() {
+    console.log("Ders notu fonksiyonları temizleniyor...");
+    lectureNotesActive = false;
+    // Eklenen olay dinleyicilerini kaldır (özellikle panel/overlay/fab)
+    // FAB butonunu gizle
+    const fabToggle = document.querySelector('#lecture-fab-toggle');
+    if(fabToggle) fabToggle.style.display = 'none';
+    // Ana FAB'ı görünür yap
+    if(themeToggleButton) themeToggleButton.style.display = 'flex';
+
+
+    // Intersection Observer'ı durdur ve temizle
+    if (lectureTOCObserver) {
+        lectureTOCObserver.disconnect();
+        lectureTOCObserver = null;
+    }
+    lastActiveLectureMenuItem = null;
+    // Dinamik eklenen diğer listenerlar varsa burada kaldırılmalı
+}
+
+function closeLectureNotesView() {
+    if (lectureNotesContainerEl) {
+        destroyLectureNotesFunctionality(); // Listenerları temizle
+        lectureNotesContainerEl.style.display = 'none'; // İçerik alanını gizle
+        lectureNotesContainerEl.innerHTML = ''; // İçeriği temizle (opsiyonel)
+
+        // Ana görünümü (hiyerarşi veya ana sayfa) tekrar göster
+        // En mantıklısı hiyerarşiyi göstermek
+        if (quizlerSectionEl) quizlerSectionEl.style.display = 'block';
+        if (hakkindaSectionEl) hakkindaSectionEl.style.display = 'block'; // Hakkında'yı da gösterelim
+        // Hierarchy state'i korunduğu için doğru katman gösterilmeli
+        renderHierarchyView(); // Son kalınan hiyerarşi görünümünü tekrar çiz
+
+    }
+}
+
+// BU DEĞİŞKENİ GÜNCELLEYİN
+const sampleLectureHtmlContent = `
+    <div class="page content-page lecture-notes-view">
+        <div class="header">
+            <span>Bölüm 1: İmmünolojiye Giriş ve Temel Kavramlar</span>
+            <span>Tarihçe ve Kapsam</span>
+            </div>
+        <div class="main-content-area">
+            <div class="text-content">
+                <h1>İMMÜNOLOJİYE GİRİŞ VE TEMEL KAVRAMLAR (ÖRNEK)</h1>
+                <h2>1.1. İmmünolojinin Tarihçesi ve Kapsamı</h2>
+                <p>İmmünoloji, biyolojik bütünlüğün korunması ve sürdürülmesi için öz (self) ve öz olmayan (non-self) yapıları ayırt ederek yanıt oluşturan karmaşık biyolojik sistemleri inceleyen bilim dalıdır...</p>
+                <p><strong>Tarihsel Gelişim:</strong></p>
+                <p><strong>Erken Gözlemler ve Variolasyon:</strong> Enfeksiyöz hastalıklara karşı kazanılan direncin farkındalığı antik çağlara dayanır...</p>
+                <div class="spot-box tip">
+                    <div class="icon-container">
+                         <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                    </div>
+                    <h4>Akılda Kalsın: İmmünolojinin Öncüleri</h4>
+                    <ul><li><strong>Jenner:</strong> Aşılama (Çiçek aşısı)</li><li><strong>Pasteur:</strong> Mikrop teorisi, atenüe aşılar</li></ul>
+                </div>
+                <h3>1.4.1. Lenfoid Soy (Örnek Alt Başlık)</h3>
+                 <p>Adaptif immünitenin özgüllük ve hafızasından sorumlu ana hücrelerdir...</p>
+                 <div class="ascii-diagram"> ASCII Diagram Örneği:\n   +---+   +---+\n   | A |-->| B |\n   +---+   +---+</div>
+                 <div class="figure-caption">Şekil Örneği: Basit Akış</div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>YDUS Mikrobiyoloji Hazırlık (Örnek)</span>
+            <span>Sayfa 1</span>
+        </div>
+        <div class="toc-panel" id="toc-panel-lecture">
+            <div class="toc-panel-header">
+                <h3>İçindekiler</h3>
+                <button class="toc-panel-close-btn" aria-label="Menüyü Kapat">&times;</button>
+            </div>
+            <div class="toc-panel-content">
+                <ul id="toc-list-menu-lecture"></ul>
+            </div>
+        </div>
+        <div class="panel-overlay" id="panel-overlay-lecture"></div>
+        <button class="fab-menu-toggle lecture-fab" id="lecture-fab-toggle" aria-label="İçindekiler Menüsünü Aç/Kapat" aria-controls="toc-panel-lecture" aria-expanded="false">
+            İçindekiler
+        </button>
+        </div>
+`;
 
 const quizData = {
     'demo': {
